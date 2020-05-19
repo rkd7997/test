@@ -1,0 +1,39 @@
+
+.header {
+    width: 100%;
+    background: darkblue;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        
+        .header_inner {
+            width: 1200px;
+            color: black;
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem;
+
+            .header_menu{
+                width: 80%;
+                display: inline-block;
+                text-align: left;
+
+                a{
+                    color: #ffffff;
+                }
+            }
+
+            .header_user{
+                width: 20%;
+                display: inline-block;
+                text-align: right;
+
+                a{
+                    color: #ffffff;
+                }
+            }
+
+        }
+
+}
