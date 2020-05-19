@@ -235,4 +235,11 @@ fabric.properties
 .idea/**/markdown-navigator.xml
 .idea/**/markdown-navigator/
 
+.idea
+
+pacakge-lock.json
+
+# next.js build output
+.next
+
 # End of https://www.gitignore.io/api/git,node,react,webstorm,visualstudiocode
