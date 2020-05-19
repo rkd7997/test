@@ -237,9 +237,9 @@ fabric.properties
 
 .idea
 
-pacakge-lock.json
+/package-lock.json
 
 # next.js build output
-.next
+/front/.next/
 
 # End of https://www.gitignore.io/api/git,node,react,webstorm,visualstudiocode
