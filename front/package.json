@@ -11,10 +11,12 @@
   "author": "ZeroCho",
   "license": "MIT",
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "antd": "^3.17.0",
     "axios": "^0.18.0",
     "next": "^9.3.2",
     "next-redux-wrapper": "^3.0.0-alpha.2",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
