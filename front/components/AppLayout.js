@@ -13,7 +13,7 @@ const AppLayout = ({ children }) => {
     <div className="header">
       <div className="header_inner">
         <div className="header_menu">
-          <Link href="/"><a>홈(FX 시티)</a></Link>
+          <Link href="/"><h1>홈(FX 시티)</h1></Link>
           <Link href="/exchange"><a>거래</a></Link>
           <Link href="/results"><a>거래결과</a></Link>
           <Link href="/deposit"><a>입출금신청</a></Link>

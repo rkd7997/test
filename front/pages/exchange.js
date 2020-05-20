@@ -8,14 +8,14 @@ const Exchange = () => {
   return (
     <Row>
       <Col xs={24} md={16}>
-        <Row>
+        <Row className="box">
 
         <ChartComponent/>
 
         </Row>
-        <Row>매수매도</Row>
+        <Row className="box">매수매도</Row>
       </Col>
-      <Col xs={24} md={8}>거래내역</Col>
+      <Col xs={24} md={8} className="box">거래내역</Col>
     </Row>
   );
 };

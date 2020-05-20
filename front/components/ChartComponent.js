@@ -39,13 +39,16 @@ const ChartComponent = () => {
     return (
 
         <div>
+
 <i class="ri-admin-line"></i>
+        <div>
         <Bar
         data={expData}
-        width={500}
-        height={500}
+        width={300}
+        height={300}
         options={{ maintainAspectRatio: false }}
-        /> 
+        />
+        </div> 
       </div>
       );
   
