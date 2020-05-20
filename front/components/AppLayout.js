@@ -18,6 +18,8 @@ const AppLayout = ({ children }) => {
           <Link href="/results"><a>거래결과</a></Link>
           <Link href="/deposit"><a>입출금신청</a></Link>
           <Link href="/announcements"><a>공지사항</a></Link>
+          <Link href="/login"><a>로그인</a></Link>
+          <Link href="/signup"><a>회원가입</a></Link>
         </div>
         <div className="header_user">
           <Link href=""><a><i class="ri-user-line"></i>홍길동님</a></Link>
