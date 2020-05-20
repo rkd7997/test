@@ -5,14 +5,6 @@ import { Col,  Row } from 'antd';
 
 const Exchange = () => {
   return (
-    // <Row>
-    //    <Col xs={24} md={16}>
-    //     영역 1
-    //      </Col>
-    //     <Col xs={24} md={8}>
-    //       영역2
-    //     </Col>
-    // </Row>
     <Row>
       <Col xs={24} md={16}>
         <Row>챠트</Row>
