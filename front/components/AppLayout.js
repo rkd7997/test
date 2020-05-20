@@ -20,10 +20,10 @@ const AppLayout = ({ children }) => {
           <Link href="/announcements"><a>공지사항</a></Link>
         </div>
         <div className="header_user">
-          <Link href=""><a>홍길동님</a></Link>
-          <Link href=""><a>삼성점</a></Link>
-          <Link href=""><a>10,000</a></Link>
-          <Link href=""><a>로그아웃</a></Link>
+          <Link href=""><a><i class="ri-user-line"></i>홍길동님</a></Link>
+          <Link href=""><a><i class="ri-store-2-line"></i>삼성점</a></Link>
+          <Link href=""><a><i class="ri-money-dollar-circle-line"></i>10,000</a></Link>
+          <Link href=""><a><i class="ri-logout-circle-r-line"></i>로그아웃</a></Link>
         </div>
       </div>
     </div>

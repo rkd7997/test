@@ -8,6 +8,8 @@
     justify-content: center;
         
         .header_inner {
+            display: flex;
+            align-items: center;
             width: 1200px;
             color: black;
             font-size: 1rem;
@@ -15,8 +17,9 @@
             padding: 1rem 0;
 
             .header_menu{
-                width: 75%;
-                display: inline-block;
+                width: 70%;
+                display: flex;
+                flex: 2;
                 text-align: left;
 
                 a{
@@ -27,15 +30,24 @@
             }
 
             .header_user{
-                width: 25%;
-                display: inline-block;
+                width: 30%;
+                display: flex;
+                flex: 1;
+                justify-content: flex-end;
                 text-align: right;
 
                 a{
+                    display: flex;
                     font-size: 0.8rem;
                     color: #ffffff;
-                    display: inline-block;
                     margin-right: 15px;
+                    
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                i{
+                    margin-right: 3px;
                 }
             }
 

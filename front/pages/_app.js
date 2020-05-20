@@ -16,6 +16,7 @@ const FXCITY = ({ Component, store }) => {
       <Head>
         <title>FX시티</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css" />
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.4.0/fonts/remixicon.css" rel="stylesheet" />
       </Head>
       <AppLayout>
         <Component />
