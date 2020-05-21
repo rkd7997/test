@@ -1,15 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { Col, Input, Menu, Row } from 'antd';
+import { Col, Input, Menu, Row, Layout, Breadcrumb } from 'antd';
 import { useSelector } from 'react-redux';
 import LoginForm from './LoginForm';
 import UserProfile from './UserProfile';
 import './Layout.scss'
 
+const { Header, Content, Footer } = Layout;
+
 const AppLayout = ({ children }) => {
   return (
-    <>
+   <>
     <div className="header">
       <div className="header_inner">
         <div className="header_menu">
@@ -43,4 +45,7 @@ AppLayout.propTypes = {
   children: PropTypes.node,
 };
 
+
 export default AppLayout;
+
+

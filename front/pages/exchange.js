@@ -1,22 +1,21 @@
 import React from 'react';
 import { Button, List, Card, Icon } from 'antd';
-import ChartComponent from '../components/ChartComponent';
-import { Col,  Row } from 'antd';
-
-
+import NicknameEditForm from '../components/NicknameEditForm';
+import ChartComponent from '../components/ChartComponent'
 const Exchange = () => {
   return (
-    <Row>
-      <Col xs={24} md={16}>
-        <Row className="box">
+  <div>
 
-        <ChartComponent/>
+    <div className="left_div">
+      <div className="trad_box"><ChartComponent/></div>
+      <div className="buy_box">매수매도영역</div>
+    </div>
 
-        </Row>
-        <Row className="box">매수매도</Row>
-      </Col>
-      <Col xs={24} md={8} className="box">거래내역</Col>
-    </Row>
+    <div className="right_div">
+      <div className="list_box">거래내역</div>
+    </div>
+
+  </div>
   );
 };
 
