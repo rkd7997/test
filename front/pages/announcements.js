@@ -34,8 +34,6 @@ const Announcements = () => {
             </tr>
           </table>
           <div className="btn_div">
-
-
           <Pagination defaultCurrent={1} total={50} />
           </div>
       </div>
