@@ -81,8 +81,8 @@ const  Graph = () => {
   React.useEffect(()=> {
     if(chartRef.current){
       const chart = createChart(chartRef.current, {
-        width: 600,
-        height: 300,
+        width: 800,
+        height: 280,
         crosshair: {
           mode: "normal"
         }
@@ -204,9 +204,9 @@ const  Graph = () => {
 
 }
   return (
-    <div style={{paddingTop:'300px'}}>
+    // <div style={{paddingTop:'300px'}}>
   <div ref={chartRef} />
-    </div>
+    // </div>
   );
 }
 

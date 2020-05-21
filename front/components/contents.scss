@@ -7,9 +7,9 @@
 
     .contents_inner{
         width: 1200px;
-        padding: 30px 0 0 0;
+        padding: 30px 0 50px 0;
 
-        /* 거래하기 */
+        // 거래하기
         .exchange_div{
             width: 100%;
             display: flex;
@@ -41,24 +41,99 @@
             }
         }
 
-        /* 회원가입 */
+        // 입출금신청
+        .sub_div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            .sub_menu{
+                width: 15%;
+                margin-right: 15px;
+                display: flex;
+                flex-direction: column;
+                background: #ffffff;
+                border: 1px solid #ddd;
+
+                ul{
+                }
+                ul li{
+                    padding: 10px 15px;
+                }
+                ul li.active{
+                    background-color: #ddd;
+                }
+                ul li:hover{
+                    background-color: #ddd;
+                }
+                ul li a{
+                    font-size: 1rem;
+                    display: block;
+                }
+        
+            }
+            .sub_page{
+                width: 85%;
+                padding: 30px;
+                background: #ffffff;
+                border: 1px solid #ddd;
+
+                .info_txt{
+                    margin-top: 20px;
+
+                    p{
+                        color: red;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        // 회원가입
         .signup_div{
-            margin: 20px 0 0 0;
+            margin: 30px 0 0 0;
 
             // 약관내용
             .agree_content{
                 background: #ffffff;
                 border: 1px solid #ddd;
                 padding: 20px;
-                margin: 15px 0 0 0;
+
+                .agree_txt{
+                    padding: 5px;
+                    height: 120px;
+                    border: 1px solid #ddd;
+                    overflow-y: scroll;
+                    background: #f5f5f5;
+                    margin-bottom: 5px;
+
+                    ul{
+                        margin-top: 10px;
+                    }
+                }
+
+                .agree_element{
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid #ddd;
+                }
+                .agree_element:last-child{
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border-bottom: none;
+                }
+
+                label{
+                    display: flex;
+                    align-items: center;
+                }
             }
-            .agree_txt{
-                padding: 5px;
-                height: 120px;
-                border: 1px solid #ddd;
-                overflow-y: scroll;
-                background: #f5f5f5;
-            }
+        }
+
+        .btn_div{
+            margin-top: 20px;
+            text-align: center;
         }
 
     }
