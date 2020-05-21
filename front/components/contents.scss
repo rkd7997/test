@@ -1,11 +1,27 @@
 
 .contents{
     width: 100%;
-    display: inline-flex;
-    justify-content: center;
     
     .contents_inner{
         width: 1200px;
+        .left_div{
+
+            .trad_box{
+                border: 1px solid #f7f7f7;
+                margin-right: 10px;
+            }
+            .buy_box{
+                border: 1px solid #f7f7f7;
+                margin: 10px 10px 0 0;
+            }
+
+        }
+        .right_div{
+
+            .list_box{
+                border: 1px solid #f7f7f7;
+            }
+        }
     }
 
 }
