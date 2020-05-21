@@ -4,7 +4,7 @@ import NicknameEditForm from '../components/NicknameEditForm';
 import ChartComponent from '../components/ChartComponent'
 const Exchange = () => {
   return (
-  <div>
+  <div className="exchange_div">
 
     <div className="left_div">
       <div className="trad_box"><ChartComponent/></div>
