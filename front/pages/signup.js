@@ -28,6 +28,8 @@ const Signup = () => {
   const [termError, setTermError] = useState(false);
 
   const [id, onChangeId] = useInput('');
+  const [mobile, onChangeMobile] = useInput('');
+
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
   const dispatch = useDispatch();
@@ -58,6 +60,24 @@ const Signup = () => {
     });
   }, [password, passwordCheck, term]);
 
+  function fnPopup(){
+    window.open('https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
+                //  https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main
+                //  https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main
+    console.log(document,'폼체크')
+    // document.form_chk.action = "https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb";
+    // document.form_chk.target = "popupChk";
+    // document.form_chk.submit();
+}
+
+  const OnMobileVerification = useCallback((e) => {
+    e.preventDefault();
+    fnPopup();
+
+
+
+  }, [mobile]);
+
   const onChangePasswordCheck = useCallback((e) => {
     setPasswordError(e.target.value !== password);
     setPasswordCheck(e.target.value);
@@ -67,6 +87,7 @@ const Signup = () => {
     setTermError(false);
     setTerm(e.target.checked);
   }, []);
+
 
   return (
     <>
@@ -122,9 +143,9 @@ const Signup = () => {
             </tr>
             <tr>
               <th><label htmlFor="user-name">이름</label></th>
-              <td><Input name="user-name" required onChange={onChangeId} disabled /><input type="button" value="본인인증"/></td>
+              <td><Input name="user-name" required onChange={onChangeId} disabled /><input onClick={OnMobileVerification}  type="button" value="본인인증"/></td>
               <th><label htmlFor="user-phon">휴대폰번호</label></th>
-              <td><Input name="user-phon" required onChange={onChangeId} disabled /></td>
+              <td><Input name="user-phon" required onChange={onChangeMobile}  /></td>
             </tr>
             <tr>
               <th><label htmlFor="user-password">비밀번호</label></th>

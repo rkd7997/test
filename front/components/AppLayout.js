@@ -23,6 +23,8 @@ const AppLayout = ({ children }) => {
             <Link href="/announcements"><a>공지사항</a></Link>
             <Link href="/login"><a>로그인</a></Link>
             <Link href="/signup"><a>회원가입</a></Link>
+            <Link href="/profile"><a>마이페에에이지</a></Link>
+
           </div>
           <div className="header_user">
             <Link href=""><a><i className="ri-user-line"></i>홍길동님</a></Link>
@@ -40,7 +42,10 @@ const AppLayout = ({ children }) => {
       </div>
 
       <div className="footer">
-        <div class="footer_inner">푸터영역</div>
+        <div class="footer_inner">
+        <Link href="/user-term"><a>서비스이용약관</a></Link>
+        <Link href="/private-term"><a>개인정보처리방침</a></Link>
+        </div>
       </div>
     </div>
     </>
