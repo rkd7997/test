@@ -11,10 +11,46 @@ body{
     font-style: normal;
 }
 
-h1, h2, h3, h5, h6{
+h1, h2, h3, h4, h5, h6{
     margin: 0;
 }
 
 a{
     text-decoration: none;
+}
+
+h1{font-size: 1rem;}
+h2{font-size: 0.8rem;}
+h3{font-size: 1.4rem;}
+h4{font-size: 1.1rem;}
+
+.tit_01{
+    width: 100%;
+    border-bottom: 2px solid #dddddd;
+}
+.tit_02{
+    width: 100%;
+}
+
+form, table{
+    width: 100%;
+    padding:0;
+    border:0;
+    border-spacing:0px;
+    border-collapse:collapse;
+}
+
+table{
+    margin: 15px 0 0 0;
+    border-top: 2px solid #666;
+    background: #fff;
+}
+table tr th{
+    background: #ddd;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+table tr td{
+    padding: 10px;
+    border-bottom: 1px solid #333;
 }
