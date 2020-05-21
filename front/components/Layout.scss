@@ -9,7 +9,7 @@ body{
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: normal;
-    background: #f7f7f7;
+    background: #f9f9f9;
 }
 
 h1, h2, h3, h4, h5, h6, p, a{
@@ -41,6 +41,7 @@ h4{font-size: 1.1rem;}
     border-bottom: 2px solid #dddddd;
     font-weight: 500;
     padding: 0 0 5px 0;
+    margin-bottom: 20px;
 }
 .tit_02{
     width: 100%;
@@ -57,12 +58,11 @@ form, table{
 
 // 테이블스타일
 table{
-    margin: 15px 0 0 0;
     border-top: 2px solid #666;
     background: #fff;
 }
 table tr th{
-    background: #ddd;
+    background: #f2f2f2;
     padding: 10px;
     border-bottom: 1px solid #333;
 }
@@ -80,6 +80,11 @@ table tr td{
 .tb_01 tr td{
     width: 39%;
 }
+.tb_01 tr td p{
+    margin-top: 3px;
+    font-size: 0.7rem;
+    color: red;
+}
 
 .tb_02{
     width: 100%;
@@ -87,3 +92,23 @@ table tr td{
 }
 
 // input 스타일
+input[type=text]{
+    width: 350px;
+}
+input[type=number]{
+    width: 350px;
+}
+input[type=password]{
+    width: 350px;
+}
+input[type=email]{
+    width: 10%;
+}
+input[type=button]{
+    margin-left: 5px;
+    height: 32px;
+}
+select{
+    width: 120px;
+    height: 32px;
+}
