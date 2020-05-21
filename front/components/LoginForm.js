@@ -23,19 +23,23 @@ const LoginForm = () => {
 
   return (
     <Form onSubmit={onSubmitForm} style={{ padding: '10px' }}>
-      <div>
+      <div className="login_form">
         <label htmlFor="user-id">아이디</label>
         <br />
-        <Input name="user-id" value={id} onChange={onChangeId} required />
+        <Input name="user-id" value={id} onChange={onChangeId} required placeholder="아이디를 입력하세요" />
       </div>
-      <div>
+      <div className="login_form">
         <label htmlFor="user-password">비밀번호</label>
         <br />
-        <Input name="user-password" value={password} onChange={onChangePassword} type="password" required />
+        <Input name="user-password" value={password} onChange={onChangePassword} type="password" required placeholder="비밀번호를 입력하세요" />
       </div>
-      <div style={{ marginTop: '10px' }}>
+      <div className="btn_div">
         <Button type="primary" htmlType="submit" loading={isLoggingIn}>로그인</Button>
-        <Link href="/signup"><a><Button>회원가입</Button></a></Link>
+      </div>
+      <div className="join_btn_div">
+        <Link href="#"><a>아이디찾기</a></Link><span></span>
+        <Link href="#"><a>비밀번호찾기</a></Link><span></span>
+        <Link href="#"><a>회원가입</a></Link>
       </div>
     </Form>
   );

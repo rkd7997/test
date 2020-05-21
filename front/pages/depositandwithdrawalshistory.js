@@ -15,49 +15,32 @@ const DepositAndWithdrawalsHistory = () => {
       </div>
       <div className="sub_page">
         <h3 className="tit_01">입출금내역</h3>
-        <table className="tb_01" width="100%" >
+        <div className="top_btn_div">
+          <div className="btn_div_left">
+            <input type="button" value="캘린더"/>
+          </div>
+          <div className="btn_div_right">
+            <input type="button" value="전체"/>
+            <input type="button" value="입금"/>
+            <input type="button" value="출금"/>
+          </div>
+        </div>
+        <table className="tb_02" width="100%" >
             <tr>
-              <th>입금계좌</th>
-              <td>1. 국민은행 920301-01-706349 주식회사에프엑스시티플래티넘</td>
+              <th width="120px">번호</th>
+              <th>요청일시</th>
+              <th width="200px">종류</th>
+              <th width="200px">금액</th>
+              <th width="120px">처리내용</th>
             </tr>
             <tr>
-              <th>예금주</th>
-              <td>
-                <p>홍길동</p>
-                <span>가입시 등록된 예금주 명의로만 입금 가능하며 변경 시 필히 고객센터에 문의 바랍니다.</span>
-              </td>
-            </tr>
-            <tr>
-              <th>신청금액</th>
-              <td>
-                <p>
-                  <Input name="user-num" type="number" required placeholder="0" />
-                  <span>원</span>
-                </p>
-                <span>* 최소 10,000원부터 입금 가능합니다.</span>
-                <p>
-                  <input type="button" value="10,000"/>
-                  <input type="button" value="50,000"/>
-                  <input type="button" value="100,000"/>
-                  <input type="button" value="500,000"/>
-                  <input type="button" value="정정"/>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <th>신청후 금액</th>
-              <td>500,000원</td>
+              <td>1</td>
+              <td>2020-05-15 11:04:51.297</td>
+              <td>입금</td>
+              <td>10,000</td>
+              <td>완료</td>
             </tr>
           </table>
-          <div className="info_txt">
-            <p>[입금 시 주의 사항] 반드시 읽어주세요!</p>
-            <ul>
-              <li>입금 전 반드시 입금하실 계좌번호 및 입금자명을 확인하시기 바랍니다.</li>
-            </ul>
-          </div>
-          <div className="btn_div">
-            <input type="button" value="입금신청"/>
-          </div>
       </div>
     </div>
   );

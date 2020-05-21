@@ -8,7 +8,11 @@ import LoginForm from '../components/LoginForm';
 
 const Login = () => {
   return (
-    <LoginForm></LoginForm>
+    <div className="login_div">
+      <div className="login_div_inner">
+        <LoginForm></LoginForm>
+      </div>
+    </div>
   );
 };
 
