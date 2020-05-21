@@ -1,9 +1,12 @@
+.wrapper{
+    display: flex; min-height: 100vh; flex-direction: column;
+}
 
 .contents{
     width: 100%;
-    min-height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
+    flex: 1;
 
     .contents_inner{
         width: 1200px;
@@ -79,6 +82,10 @@
                 background: #ffffff;
                 border: 1px solid #ddd;
 
+                .page_div{
+                    margin: 0 0 30px 0;
+                }
+
                 .info_txt{
                     margin-top: 20px;
 
@@ -134,6 +141,11 @@
         .btn_div{
             margin-top: 20px;
             text-align: center;
+        }
+        .top_btn_div{
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
         }
 
     }
