@@ -112,7 +112,7 @@ const Signup = () => {
       <div className="signup_div">
       <h4 className="tit_02">회원정보입력</h4>
         <Form onSubmit={onSubmit}>
-          <table width="100%" >
+          <table className="tb_01" width="100%" >
             <tr>
               <th><label htmlFor="user-id">아이디</label></th>
               <td colSpan="3">
@@ -186,42 +186,140 @@ const Signup = () => {
       </div>
       {/* <!-- // 회원정보입력 --> */}
 
-      {/* <!-- 회원가입약관 --> */}
+      {/* <!-- 전체동의 --> */}
       <div className="signup_div">
       <h4 className="tit_02">회원가입약관</h4>
         <Form onSubmit={onSubmit}>
-        <div className="agree_content">
-            <p>회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
-          </div>
           <div className="agree_content">
-            <p>개인정보수집 및 이용동의서 (필수)</p>
-            <div className="agree_txt">
-              <p>
-                정보통신망법 및 개인정보보호법, 관계법령에 따라 fxcity 서비스 이용을 위한 회원가입을 신청하시는 고객님께 수집하는 개인정보의 항목, 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내드리오니 자세히 확인 후 동의하여 주시기 바랍니다.
-
-
-                1. 개인정보 수집.
-                회원가입 시점에 fxcity이(가) 이용자로부터 수집하는 개인정보는 아래와 같습니다.
-                1) 개인식별정보 : 고객의 성명, 생년월일, 연락처, 성별, 국적, CI(고유식별변호), DI, IP주소 등
-                2) 금융정보 : 은행명, 계좌번호 등
-                3) 선택항목 : 이메일, 주소 등
-
-                서비스 이용과정에서 이용자로부터 수집하는 개인정보는 아래와 같습니다.
-                1) 거래정보 : 개설정보, 예탁금, 거래내역 등
-                2) 이용정보 : 접속 IP 및 쿠키, 서비스 이용기록, 기기정보, OS정보 등
-                3) 투자자정보 :  투자권유준칙 등에 따른 투자자정보 및 투자성향 등
-
-                기타 고객상담, fxcity 내의 개별 서비스 이용,
-                고객의 문의사항에 대한 응답, 이벤트 응모 및 경품 신청 과정에서
-                해당 서비스의 이용자에 한해 추가 개인정보 수집이 발생할 수 있습니다.
-                추가로 개인정보를 수집할 경우에는 해당 개인정보의 수집 시점에서 이용자에게 수집하는 개인정보 항목 및 이용목적 등에 대해 안내 드리고 동의를 받습니다.
-              </p>
-            </div>
-            <p>회원가입약관의 내용에 동의합니다</p>
+            <label><input type="checkbox" />전체동의</label>
+            <p>회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
           </div>
         </Form>
       </div>
-      {/* <!-- // 회원가입약관 --> */}
+      {/* <!-- // 전체동의 --> */}
+      
+      {/* <!-- 개인정보수집 및 이용동의서 --> */}
+      <div className="signup_div">
+        <Form onSubmit={onSubmit}>
+          <div className="agree_content">
+            <p>개인정보수집 및 이용동의서 (필수)</p>
+            <div className="agree_txt">
+              <div>
+                <p>정보통신망법 및 개인정보보호법, 관계법령에 따라 fxcity 서비스 이용을 위한 회원가입을 신청하시는 고객님께 수집하는 개인정보의 항목, 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내드리오니 자세히 확인 후 동의하여 주시기 바랍니다.</p>
+                <ul>
+                  <li>1. 개인정보 수집.</li>
+                  <li>회원가입 시점에 fxcity이(가) 이용자로부터 수집하는 개인정보는 아래와 같습니다.</li>
+                  <li>1) 개인식별정보 : 고객의 성명, 생년월일, 연락처, 성별, 국적, CI(고유식별변호), DI, IP주소 등</li>
+                  <li>2) 금융정보 : 은행명, 계좌번호 등</li>
+                  <li>3) 선택항목 : 이메일, 주소 등</li>
+                </ul>
+                <ul>
+                  <li>1. 개인정보 수집.</li>
+                  <li>회원가입 시점에 fxcity이(가) 이용자로부터 수집하는 개인정보는 아래와 같습니다.</li>
+                  <li>1) 개인식별정보 : 고객의 성명, 생년월일, 연락처, 성별, 국적, CI(고유식별변호), DI, IP주소 등</li>
+                  <li>2) 금융정보 : 은행명, 계좌번호 등</li>
+                  <li>3) 선택항목 : 이메일, 주소 등</li>
+                </ul>
+                <ul>
+                  <li>1. 개인정보 수집.</li>
+                  <li>회원가입 시점에 fxcity이(가) 이용자로부터 수집하는 개인정보는 아래와 같습니다.</li>
+                  <li>1) 개인식별정보 : 고객의 성명, 생년월일, 연락처, 성별, 국적, CI(고유식별변호), DI, IP주소 등</li>
+                  <li>2) 금융정보 : 은행명, 계좌번호 등</li>
+                  <li>3) 선택항목 : 이메일, 주소 등</li>
+                </ul>
+              </div>
+            </div>
+            <label><input type="checkbox" />회원가입약관의 내용에 동의합니다</label>
+          </div>
+        </Form>
+      </div>
+      {/* <!-- // 개인정보수집 및 이용동의서 --> */}
+
+      {/* <!-- 서비스이용약관 --> */}
+      <div className="signup_div">
+        <Form onSubmit={onSubmit}>
+          <div className="agree_content">
+            <p>서비스이용약관(필수)</p>
+            <div className="agree_txt">
+              <div>
+                <p>정보통신망법 및 개인정보보호법, 관계법령에 따라 fxcity 서비스 이용을 위한 회원가입을 신청하시는 고객님께 수집하는 개인정보의 항목, 수집 및 이용목적, 개인정보의 보유 및 이용기간을 안내드리오니 자세히 확인 후 동의하여 주시기 바랍니다.</p>
+                <ul>
+                  <li>1. 개인정보 수집.</li>
+                  <li>회원가입 시점에 fxcity이(가) 이용자로부터 수집하는 개인정보는 아래와 같습니다.</li>
+                  <li>1) 개인식별정보 : 고객의 성명, 생년월일, 연락처, 성별, 국적, CI(고유식별변호), DI, IP주소 등</li>
+                  <li>2) 금융정보 : 은행명, 계좌번호 등</li>
+                  <li>3) 선택항목 : 이메일, 주소 등</li>
+                </ul>
+                <ul>
+                  <li>1. 개인정보 수집.</li>
+                  <li>회원가입 시점에 fxcity이(가) 이용자로부터 수집하는 개인정보는 아래와 같습니다.</li>
+                  <li>1) 개인식별정보 : 고객의 성명, 생년월일, 연락처, 성별, 국적, CI(고유식별변호), DI, IP주소 등</li>
+                  <li>2) 금융정보 : 은행명, 계좌번호 등</li>
+                  <li>3) 선택항목 : 이메일, 주소 등</li>
+                </ul>
+                <ul>
+                  <li>1. 개인정보 수집.</li>
+                  <li>회원가입 시점에 fxcity이(가) 이용자로부터 수집하는 개인정보는 아래와 같습니다.</li>
+                  <li>1) 개인식별정보 : 고객의 성명, 생년월일, 연락처, 성별, 국적, CI(고유식별변호), DI, IP주소 등</li>
+                  <li>2) 금융정보 : 은행명, 계좌번호 등</li>
+                  <li>3) 선택항목 : 이메일, 주소 등</li>
+                </ul>
+              </div>
+            </div>
+            <label><input type="checkbox" />서비스 이용약관 내용에 동의합니다</label>
+          </div>
+        </Form>
+      </div>
+      {/* <!-- // 서비스이용약관 --> */}
+
+      {/* <!-- 서비스이용약관 --> */}
+      <div className="signup_div">
+        <Form onSubmit={onSubmit}>
+          <div className="agree_content">
+            <div className="agree_element">
+              <span>메일링서비스(선택)</span>
+              <label><input type="checkbox" />정보 메일을 받겠습니다.</label>
+            </div>
+            <div className="agree_element">
+              <p>SMS 수신여부(선택)</p>
+              <label><input type="checkbox" />휴대폰 문자메세지를 받겠습니다.</label>
+            </div>
+          </div>
+        </Form>
+      </div>
+      {/* <!-- // 서비스이용약관 --> */}
+
+      {/* <!-- 개인정보처리 방침안내(필수) --> */}
+      <div className="signup_div">
+      <h4 className="tit_02">개인정보처리 방침안내(필수)</h4>
+        <Form onSubmit={onSubmit}>
+          <table className="tb_02" width="100%" >
+            <tr>
+              <th width="33.3%">목적</th>
+              <th width="33.3%">항목</th>
+              <th width="33.3%">보유기간</th>
+            </tr>
+            <tr>
+              <td>본인인증, 식별</td>
+              <td>아이디, 비밀번호, 이름</td>
+              <td>회원탈퇴시까지</td>
+            </tr>
+            <tr>
+              <td>고객서비스 이용에 관한 통지, cs활용등</td>
+              <td>연락처(이메일, 휴대전화)</td>
+              <td>회원탈퇴시까지</td>
+            </tr>
+          </table>
+          <div className="agree_content">
+            <label><input type="checkbox" />개인정보처리방침안내의 내용에 동의합니다.</label>
+          </div>
+        </Form>
+      </div>
+      {/* <!-- // 개인정보처리 방침안내(필수) --> */}
+      <div className="btn_div">
+        <input type="button" value="회원가입"/>
+        <input type="button" value="취소"/>
+      </div>
     </>
   );
 };
