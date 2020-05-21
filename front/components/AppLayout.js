@@ -37,6 +37,10 @@ const AppLayout = ({ children }) => {
         {children}
       </div>
     </div>
+
+    <div className="footer">
+      <div class="footer_inner">푸터영역</div>
+    </div>
     </>
   );
 };
