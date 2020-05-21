@@ -3,18 +3,18 @@ import { Button, List, Card, Icon, Input } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import Link from 'next/link';
 
-const Deposit = () => {
+const Withdrawals = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
         <ul>
-          <li className="active"><Link href='deposit'>입금신청</Link></li>
-          <li ><Link href='withdrawals'>출금신청</Link></li>
+          <li><Link href='deposit'>입금신청</Link></li>
+          <li className="active"><Link href='withdrawals'>출금신청</Link></li>
           <li ><Link href='depositandwithdrawalshistory'>입출금내역</Link></li>
         </ul>
       </div>
       <div className="sub_page">
-        <h3 className="tit_01">입금신청</h3>
+        <h3 className="tit_01">출금신청</h3>
         <table className="tb_01" width="100%" >
             <tr>
               <th>입금계좌</th>
@@ -63,4 +63,4 @@ const Deposit = () => {
   );
 };
 
-export default Deposit;
+export default Withdrawals;
