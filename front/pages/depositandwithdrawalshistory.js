@@ -7,6 +7,7 @@ const DepositAndWithdrawalsHistory = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
+      <h5 className="lnb_tit">입출금신청</h5>
         <ul>
           <li><Link href='deposit'>입금신청</Link></li>
           <li ><Link href='withdrawals'>출금신청</Link></li>

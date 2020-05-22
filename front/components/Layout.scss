@@ -1,5 +1,4 @@
 @import './contents.scss';
-@import './header.scss';
 
 html{
     font-size: 1rem;
@@ -9,7 +8,7 @@ body{
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-style: normal;
-    background: #f9f9f9;
+    background: #f8fbfe;
 }
 
 h1, h2, h3, h4, h5, h6, p, a{
@@ -35,6 +34,7 @@ h1{font-size: 1rem;}
 h2{font-size: 0.8rem;}
 h3{font-size: 1.4rem;}
 h4{font-size: 1.1rem;}
+em{font-style: normal;}
 
 .tit_01{
     width: 100%;
@@ -75,15 +75,19 @@ table tr td{
     width: 100%;
 }
 .tb_01 tr th{
-    width: 11%;
+    width: 14%;
 }
 .tb_01 tr td{
-    width: 39%;
+    width: 36%;
 }
-.tb_01 tr td p{
+.tb_01 tr td .signup_info{
     margin-top: 3px;
     font-size: 0.7rem;
     color: red;
+}
+.tb_01 tr td em{
+    display: inline-block;
+    margin: 0 3px;
 }
 
 .tb_02{
@@ -91,24 +95,55 @@ table tr td{
     text-align: center;
 }
 
+.tab_tb{
+    margin-top: 0;
+    border-top: none;
+    font-size: 0.8rem;
+    .tb_r{
+        text-align: right;
+    }
+}
+
 // input 스타일
 input[type=text]{
-    width: 350px;
+    width: 300px;
 }
 input[type=number]{
-    width: 350px;
+    width: 250px;
 }
 input[type=password]{
-    width: 350px;
+    width: 300px;
 }
 input[type=email]{
-    width: 10%;
+    width: 150px;
+}
+.ip_email{
+    margin-right: 5px;
 }
 input[type=button]{
     margin-left: 5px;
     height: 32px;
 }
 select{
-    width: 120px;
+    width: 150px;
     height: 32px;
 }
+
+//tab
+.ant-tabs-bar{
+    margin-bottom: 0;
+}
+.ant-tabs-nav{
+    width: 100%;
+    margin: 0;
+}
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+    width: 49.999%;
+    margin: 0;
+    border-radius: 0px;
+}
+
+// 폰트컬러
+.green_txt{color: #23a700;}
+.blue_txt{color: #0052f3;}
+.red_txt{color: #f72b38;}
