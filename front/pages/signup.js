@@ -22,18 +22,18 @@ export const useInput = (initValue = null) => {
 };
 
 const Signup = () => {
+  const [idDuplicated] = useState(false);
   const [passwordCheck, setPasswordCheck] = useState('');
-  const [term, setTerm] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [term, setTerm] = useState(false);
   const [termError, setTermError] = useState(false);
+  const dispatch = useDispatch();
+  const { isSignedUp, signUpErrorReason, isSigningUp, me } = useSelector(state => state.user);
 
   const [id, onChangeId] = useInput('');
   const [mobile, onChangeMobile] = useInput('');
-
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
-  const dispatch = useDispatch();
-  const { isSigningUp, me } = useSelector(state => state.user);
 
   // useEffect(() => {
   //   if (me) {
