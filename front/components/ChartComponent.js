@@ -81,8 +81,8 @@ const  Graph = () => {
   React.useEffect(()=> {
     if(chartRef.current){
       const chart = createChart(chartRef.current, {
-        width: 800,
-        height: 280,
+        width: 845,
+        height: 400,
         crosshair: {
           mode: "normal"
         }

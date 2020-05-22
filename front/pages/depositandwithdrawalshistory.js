@@ -35,9 +35,9 @@ const DepositAndWithdrawalsHistory = () => {
             {/* <input type="button" value="캘린더"/> */}
           </div>
           <div className="btn_div_right">
-            <input type="button" value="전체"/>
-            <input type="button" value="입금"/>
-            <input type="button" value="출금"/>
+            <Button size={'small'} value="전체" className="won_btn all" >전체</Button>
+            <Button type="primary" ghost size={'small'} value="입금" className="won_btn deposit" >입금</Button>
+            <Button type="danger" ghost size={'small'} value="출금" className="won_btn withdrawals" >출금</Button>
           </div>
         </div>
         <table className="tb_02" width="100%" >

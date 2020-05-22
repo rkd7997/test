@@ -149,7 +149,8 @@ const Signup = () => {
             <tr>
               <th><label htmlFor="user-id">아이디</label></th>
               <td colSpan="3">
-                <Input name="user-id" value={id} required onChange={onChangeId} /><input type="button" value="중복체크" onClick={() => setModal1Visible(true)}/>
+                <Input name="user-id" value={id} required onChange={onChangeId} />
+                <Button value="중복체크" onClick={() => setModal1Visible(true)} type="primary" >중복체크</Button>
                 <Modal
                 title="Vertically centered modal dialog"
                 centered
@@ -168,7 +169,10 @@ const Signup = () => {
             </tr>
             <tr>
               <th><label htmlFor="user-name">이름</label></th>
-              <td><Input name="user-name" required onChange={onChangeId} disabled /><input onClick={OnMobileVerification}  type="button" value="본인인증"/></td>
+              <td>
+                <Input name="user-name" required onChange={onChangeId} disabled />
+                <Button value="본인인증" onClick={OnMobileVerification} type="primary" >본인인증</Button>
+              </td>
               <th><label htmlFor="user-phon">휴대폰번호</label></th>
               <td><Input name="user-phon" required onChange={onChangeMobile}  /></td>
             </tr>
@@ -201,7 +205,10 @@ const Signup = () => {
                 </select>
               </td>
               <th><label htmlFor="user-bank-num">계좌번호</label></th>
-              <td><Input name="user-bank-num" type="number" required onChange={onChangePasswordCheck} placeholder="계좌번호 입력" /><input type="button" value="확인"/></td>
+              <td>
+                <Input name="user-bank-num" type="number" required onChange={onChangePasswordCheck} placeholder="계좌번호 입력" />
+                <Button value="확인" type="primary" >확인</Button>
+              </td>
             </tr>
             <tr>
               <th><label htmlFor="user-mail">이메일</label></th>
@@ -237,7 +244,7 @@ const Signup = () => {
       <h4 className="tit_02">회원가입약관</h4>
         <Form onSubmit={onSubmit}>
           <div className="agree_content">
-            <label><input type="checkbox" />전체동의</label>
+            <label><input type="checkbox" /><span className="big_txt">전체동의</span></label>
             <p>회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
           </div>
         </Form>
@@ -323,11 +330,11 @@ const Signup = () => {
         <Form onSubmit={onSubmit}>
           <div className="agree_content">
             <div className="agree_element">
-              <span>메일링서비스(선택)</span>
+              <span className="big_txt">메일링서비스(선택)</span>
               <label><input type="checkbox" />정보 메일을 받겠습니다.</label>
             </div>
             <div className="agree_element">
-              <p>SMS 수신여부(선택)</p>
+              <p className="big_txt">SMS 수신여부(선택)</p>
               <label><input type="checkbox" />휴대폰 문자메세지를 받겠습니다.</label>
             </div>
           </div>
@@ -363,8 +370,8 @@ const Signup = () => {
       </div>
       {/* <!-- // 개인정보처리 방침안내(필수) --> */}
       <div className="btn_div">
-      <Button type="primary" size={'large'} > 회원가입 </Button>
-      <Button type="primary" size={'large'} > 취소 </Button>
+        <Button type="primary" size={'large'} > 회원가입 </Button>
+        <Button size={'large'} > 취소 </Button>
       </div>
     </>
   );

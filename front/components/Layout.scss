@@ -106,12 +106,34 @@ table tr td{
     }
 }
 
+// 매수매도테이블
+.tb_03{
+    width: 100%;
+    text-align: center;
+}
+.tb_03 tr th{
+    background: none;
+    border-bottom: 2px solid #666;
+}
+.buy_color{
+    color: #f72b38;
+}
+.sell_color{
+    color: #0052f3;
+}
+.bottom_tr td{
+    background: #f7f7f7;
+    font-weight: 700;
+}
+
 // input 스타일
 input[type=text]{
     width: 300px;
+    margin-right: 5px;
 }
 input[type=number]{
     width: 250px;
+    margin-right: 5px;
 }
 input[type=password]{
     width: 300px;
@@ -122,16 +144,15 @@ input[type=email]{
 .ip_email{
     margin-right: 5px;
 }
-input[type=button]{
-    margin-left: 5px;
-    height: 32px;
-}
 select{
     width: 150px;
     height: 32px;
 }
+input[type=checkbox]{
+    margin-right: 3px;
+}
 
-//tab
+//거래내역tab
 .ant-tabs-bar{
     margin-bottom: 0;
 }
@@ -143,9 +164,70 @@ select{
     width: 49.999%;
     margin: 0;
     border-radius: 0px;
+    border: none;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    color: #0042b7;
+    border-left: 1px solid #0042b7;
+    border-top: 1px solid #0042b7;
+    border-right: 1px solid #0042b7;
+    border-bottom: none;
 }
 
-// 폰트컬러
+//매수매도tab
+.buy_box .ant-tabs-bar{
+    margin-bottom: 0;
+}
+.buy_box .ant-tabs-nav{
+    width: 100%;
+    margin: 0;
+}
+.buy_box .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+    width: 33.33333%;
+    margin: 0;
+    border-radius: 0px;
+    border: none;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.buy_box .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    color: #0042b7;
+    border-left: 1px solid #0042b7;
+    border-top: 1px solid #0042b7;
+    border-right: 1px solid #0042b7;
+    border-bottom: none;
+}
+
+// 공통스타일 //
+
+// 폰트
 .green_txt{color: #23a700;}
 .blue_txt{color: #0052f3;}
 .red_txt{color: #f72b38;}
+
+.big_txt{
+    font-size: 1.1rem;
+}
+
+//버튼
+button:nth-child(2){
+    margin-left: 10px;
+}
+
+.won_btn{
+    margin-right: 5px;
+}
+.won_btn:nth-child(2){
+    margin-left: 5px;
+}
+.ant-btn-sm{
+    height: 30px;
+    padding: 3px 10px;
+}
+

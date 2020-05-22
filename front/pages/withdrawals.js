@@ -32,11 +32,11 @@ const Withdrawals = () => {
                     </p>
                     <span className="deposit_info">* 최소 10,000원부터 입금 가능합니다.</span>
                     <p className="deposit_btn">
-                      <input type="button" value="10,000"/>
-                      <input type="button" value="50,000"/>
-                      <input type="button" value="100,000"/>
-                      <input type="button" value="500,000"/>
-                      <input type="button" value="정정"/>
+                      <Button type="primary" ghost size={'small'} value="10,000" className="won_btn" >10,000</Button>
+                      <Button type="primary" ghost size={'small'} value="50,000" className="won_btn" >50,000</Button>
+                      <Button type="primary" ghost size={'small'} value="100,000" className="won_btn" >100,000</Button>
+                      <Button type="primary" ghost size={'small'} value="500,000" className="won_btn" >500,000</Button>
+                      <Button type="primary" ghost size={'small'} value="정정" className="won_btn" >정정</Button>
                     </p>
                   </td>
                 </tr>
@@ -66,7 +66,7 @@ const Withdrawals = () => {
             </ul>
           </div>
           <div className="btn_div">
-            <input type="button" value="출금신청" className="ok_btn" />
+            <Button type="primary" size={'large'} value="출금신청" >출금신청</Button>
           </div>
       </div>
     </div>
