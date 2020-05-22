@@ -11,7 +11,21 @@ const Exchange = () => {
 
     <div className="left_div">
       <div className="trad_box"><ChartComponent/></div>
-      <div className="buy_box">매수매도영역</div>
+      <div className="buy_box">
+        <div className="card-container">
+          <Tabs type="card">
+            <TabPane tab="1분거래" key="1">
+              1분거래
+            </TabPane>
+            <TabPane tab="2분거래" key="2">
+              2분거래
+            </TabPane>
+            <TabPane tab="5분거래" key="3">
+              5분거래
+            </TabPane>
+          </Tabs>
+        </div>
+      </div>
     </div>
 
     <div className="right_div">
