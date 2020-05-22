@@ -22,7 +22,6 @@ export const useInput = (initValue = null) => {
 };
 
 const Signup = () => {
-  const [passwordCheck, setPasswordCheck] = useState('');
   const [term, setTerm] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [termError, setTermError] = useState(false);
@@ -31,10 +30,13 @@ const Signup = () => {
 
 
   const [id, onChangeId] = useInput('');
+  const [name, onChangeName] = useInput('');
   const [mobile, onChangeMobile] = useInput('');
-
-  const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
+  const [passwordCheck, setPasswordCheck] = useState('');
+  
+  // const []
+  // const [nick, onChangeNick] = useInput('');
   const dispatch = useDispatch();
   const { isSigningUp, me } = useSelector(state => state.user);
 
@@ -76,9 +78,6 @@ const Signup = () => {
   const OnMobileVerification = useCallback((e) => {
     e.preventDefault();
     fnPopup();
-
-
-
   }, [mobile]);
 
   const onChangePasswordCheck = useCallback((e) => {
@@ -171,10 +170,11 @@ const Signup = () => {
               <th><label htmlFor="user-name">이름</label></th>
               <td>
                 <Input name="user-name" required onChange={onChangeId} disabled />
-                <Button value="본인인증" onClick={OnMobileVerification} type="primary" >본인인증</Button>
               </td>
               <th><label htmlFor="user-phon">휴대폰번호</label></th>
-              <td><Input name="user-phon" required onChange={onChangeMobile}  /></td>
+              <td><Input name="user-phon" required onChange={onChangeMobile}  />
+              <Button value="본인인증" onClick={OnMobileVerification} type="primary" >본인인증</Button>
+              </td>
             </tr>
             <tr>
               <th><label htmlFor="user-password">비밀번호</label></th>
