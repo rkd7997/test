@@ -7,6 +7,7 @@ const Withdrawals = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
+      <h5 className="lnb_tit">입출금신청</h5>
         <ul>
           <li><Link href='deposit'>입금신청</Link></li>
           <li className="active"><Link href='withdrawals'>출금신청</Link></li>
@@ -27,10 +28,10 @@ const Withdrawals = () => {
                   <td>
                     <p>
                       <Input name="user-num" type="number" required placeholder="0" />
-                      <span>원</span>
+                      <em>원</em>
                     </p>
-                    <span>* 최소 10,000원부터 입금 가능합니다.</span>
-                    <p>
+                    <span className="deposit_info">* 최소 10,000원부터 입금 가능합니다.</span>
+                    <p className="deposit_btn">
                       <input type="button" value="10,000"/>
                       <input type="button" value="50,000"/>
                       <input type="button" value="100,000"/>
@@ -65,7 +66,7 @@ const Withdrawals = () => {
             </ul>
           </div>
           <div className="btn_div">
-            <input type="button" value="출금신청"/>
+            <input type="button" value="출금신청" className="ok_btn" />
           </div>
       </div>
     </div>

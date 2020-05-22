@@ -138,7 +138,7 @@ const Signup = () => {
               <th><label htmlFor="user-id">아이디</label></th>
               <td colSpan="3">
                 <Input name="user-id" value={id} required onChange={onChangeId} /><input type="button" value="중복체크"/>
-                <p>영문자로 시작하는 7~20자 영문자 또는 숫자이어야 합니다. 아이디 중복체크 필수</p>
+                <p className="signup_info">영문자로 시작하는 7~20자 영문자 또는 숫자이어야 합니다. 아이디 중복체크 필수</p>
               </td>
             </tr>
             <tr>
@@ -151,12 +151,12 @@ const Signup = () => {
               <th><label htmlFor="user-password">비밀번호</label></th>
               <td>
                 <Input name="user-password" type="password" value={password} required onChange={onChangePassword} placeholder="비밀번호 입력" />
-                <p>영문,특수문자,숫자를 조합하여 8~20자리의 패스워드를 입력해주세요</p>
+                <p className="signup_info">영문,특수문자,숫자를 조합하여 8~20자리의 패스워드를 입력해주세요</p>
               </td>
               <th><label htmlFor="user-password-check">비밀번호체크</label></th>
               <td>
                 <Input name="user-password-check" type="password" value={passwordCheck} required onChange={onChangePasswordCheck} placeholder="비밀번호 확인" />
-                {/* {passwordError && <div style={{ color: 'red' }}>비밀번호가 일치하지 않습니다. */}
+                {passwordError && <p className="signup_info">비밀번호가 일치하지 않습니다.</p>}
               </td>
             </tr>
             <tr>
@@ -181,7 +181,7 @@ const Signup = () => {
             <tr>
               <th><label htmlFor="user-mail">이메일</label></th>
               <td colSpan="3">
-                <Input name="user-mail"  type="email" required onChange={onChangeId} />@<Input name="user-mail"  type="email" required onChange={onChangeId} />
+                <Input name="user-mail"  type="email" required onChange={onChangeId} /><em>@</em><Input name="user-mail"  type="email" required onChange={onChangeId} className="ip_email" />
                 <select name="user-mail">
                     <option value="">-- 직접입력 --</option>
                     <option value="naver.com">naver.com</option>
@@ -199,7 +199,7 @@ const Signup = () => {
                     <option value="종로점">종로점</option>
                     <option value="건대점">건대점</option>
                 </select>
-                <p>보고 오신 지점명을 작성해주세요. 다른지점명으로 적을시 추후에 변경이 안됩니다. 보고 오신 지점이 없으시거나 해당지점이 없으시면 고객센터로 전화주세요.</p>
+                <p className="signup_info">보고 오신 지점명을 작성해주세요. 다른지점명으로 적을시 추후에 변경이 안됩니다. 보고 오신 지점이 없으시거나 해당지점이 없으시면 고객센터로 전화주세요.</p>
               </td>
             </tr>
           </table>
@@ -338,8 +338,8 @@ const Signup = () => {
       </div>
       {/* <!-- // 개인정보처리 방침안내(필수) --> */}
       <div className="btn_div">
-        <input type="button" value="회원가입"/>
-        <input type="button" value="취소"/>
+        <input type="button" value="회원가입" className="ok_btn" />
+        <input type="button" value="취소" className="cancel_btn" />
       </div>
     </>
   );

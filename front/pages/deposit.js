@@ -7,6 +7,7 @@ const Deposit = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
+        <h5 className="lnb_tit">입출금신청</h5>
         <ul>
           <li className="active"><Link href='deposit'>입금신청</Link></li>
           <li ><Link href='withdrawals'>출금신청</Link></li>
@@ -24,7 +25,7 @@ const Deposit = () => {
               <th>예금주</th>
               <td>
                 <p>홍길동</p>
-                <span>가입시 등록된 예금주 명의로만 입금 가능하며 변경 시 필히 고객센터에 문의 바랍니다.</span>
+                <span className="deposit_info">가입시 등록된 예금주 명의로만 입금 가능하며 변경 시 필히 고객센터에 문의 바랍니다.</span>
               </td>
             </tr>
             <tr>
@@ -32,10 +33,10 @@ const Deposit = () => {
               <td>
                 <p>
                   <Input name="user-num" type="number" required placeholder="0" />
-                  <span>원</span>
+                  <em>원</em>
                 </p>
-                <span>* 최소 10,000원부터 입금 가능합니다.</span>
-                <p>
+                <span className="deposit_info">* 최소 10,000원부터 입금 가능합니다.</span>
+                <p className="deposit_btn">
                   <input type="button" value="10,000"/>
                   <input type="button" value="50,000"/>
                   <input type="button" value="100,000"/>
@@ -56,7 +57,7 @@ const Deposit = () => {
             </ul>
           </div>
           <div className="btn_div">
-            <input type="button" value="입금신청"/>
+            <input type="button" value="입금신청" className="ok_btn" />
           </div>
       </div>
     </div>
