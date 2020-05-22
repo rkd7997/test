@@ -20,7 +20,7 @@ const LoginForm = () => {
       },
     });
   }, [id, password]);
-
+  // console.log(state.user,'뱀')
   return (
     <Form onSubmit={onSubmitForm} style={{ padding: '10px' }}>
       <div className="login_form">

@@ -1,9 +1,11 @@
 const dummyUser = {
-  nickname: '제로초',
-  Post: [],
-  Followings: [],
-  Followers: [],
-  id: 1,
+  nickname: '강준호',
+  money: 5000000,
+  location: '삼성점',
+  // Post: [],
+  // Followings: [],
+  // Followers: [],
+  // id: 1,
 };
 
 export const initialState = {
