@@ -29,7 +29,7 @@ const AppLayout = ({ children }) => {
           <div className="header_user">
             <Link href="/profile"><a><i className="ri-user-line"></i>홍길동님</a></Link>
             <Link href="/profile"><a><i className="ri-store-2-line"></i>삼성점</a></Link>
-            <Link href=""><a><i className="ri-money-dollar-circle-line"></i>10,000</a></Link>
+            <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>10,000</a></Link>
             <Link href=""><a><i className="ri-logout-circle-r-line"></i>로그아웃</a></Link>
           </div>
         </div>
@@ -43,8 +43,19 @@ const AppLayout = ({ children }) => {
 
       <div className="footer">
         <div class="footer_inner">
-        <Link href="/user-term"><a>서비스이용약관</a></Link>
-        <Link href="/private-term"><a>개인정보처리방침</a></Link>
+          <div className="footer_left">
+            <div className="fotter_logo">로고영역</div>
+            <ul>
+              <li>주식회사<span></span>대표 홍길동<span></span>우주 깐따삐야</li>
+              <li>
+              <Link href="/user-term"><a>서비스이용약관</a></Link><span></span>
+              <Link href="/private-term"><a>개인정보처리방침</a></Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer_right">
+            <Link href="/user-term"><a>고객센터</a></Link>
+          </div>
         </div>
       </div>
     </div>

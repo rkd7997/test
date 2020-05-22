@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Checkbox, Form, Input,Modal } from 'antd';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import Router from 'next/router';
@@ -26,6 +26,9 @@ const Signup = () => {
   const [term, setTerm] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [termError, setTermError] = useState(false);
+  const [Modal1Visible, setModal1Visible] = useState(false);
+
+
 
   const [id, onChangeId] = useInput('');
   const [mobile, onChangeMobile] = useInput('');
@@ -89,6 +92,15 @@ const Signup = () => {
   }, []);
 
 
+  const onClickDuplicate = useCallback((e) => {
+    e.preventDefault();
+
+
+
+  }, []);
+
+
+  console.log('모달',Modal1Visible)
   return (
     <>
       {/* <Form onSubmit={onSubmit} style={{ padding: 10 }}>
@@ -137,7 +149,20 @@ const Signup = () => {
             <tr>
               <th><label htmlFor="user-id">아이디</label></th>
               <td colSpan="3">
-                <Input name="user-id" value={id} required onChange={onChangeId} /><input type="button" value="중복체크"/>
+                <Input name="user-id" value={id} required onChange={onChangeId} /><input type="button" value="중복체크" onClick={() => setModal1Visible(true)}/>
+                <Modal
+                title="Vertically centered modal dialog"
+                centered
+                visible={Modal1Visible}
+                onOk={() => setModal1Visible(false)}
+                onCancel={() => setModal1Visible(false)}
+                mask={true}
+                action={false}
+                style={{animationDuration:'0s'}}
+                >
+                <p>안녕하세요</p>
+                <p>앤트디 모달입니다.</p>
+              </Modal>
                 <p className="signup_info">영문자로 시작하는 7~20자 영문자 또는 숫자이어야 합니다. 아이디 중복체크 필수</p>
               </td>
             </tr>
@@ -338,8 +363,8 @@ const Signup = () => {
       </div>
       {/* <!-- // 개인정보처리 방침안내(필수) --> */}
       <div className="btn_div">
-        <input type="button" value="회원가입" className="ok_btn" />
-        <input type="button" value="취소" className="cancel_btn" />
+      <Button type="primary" size={'large'} > 회원가입 </Button>
+      <Button type="primary" size={'large'} > 취소 </Button>
       </div>
     </>
   );
