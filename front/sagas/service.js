@@ -16,7 +16,7 @@ function announcementsAPI() {
 function* announcements() {
   try {
     // yield call(announcementsAPI);
-    yield delay(500);
+    yield delay(100);
     yield put({
       type: LOAD_ANNOUNCEMENTS_SUCCESS,
     });
@@ -39,7 +39,7 @@ function newsAPI() {
 function* news() {
   try {
     // yield call(newsAPI);
-    yield delay(500);
+    yield delay(100);
     yield put({
       type: LOAD_NEWS_SUCCESS,
     });

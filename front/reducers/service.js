@@ -6,6 +6,14 @@ const dummyAnnouncements = {
     hit: 9997,
 };
 
+const dummyNews = {
+    id: 1,
+    subject: '뉴스입니다.',
+    content: '뉴스입니다. 뉴스입니다.',
+    regDate: '2020-05-21',
+    hit: 995,
+};
+
 export const initialState = {
     announcementsList: [],
     isLoadingAnnouncements: false,
@@ -64,6 +72,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 isLoadingNews: false,
+                newsList: [dummyNews, ...state.newsList],
                 isLoadedNews: true,
             };
         }
