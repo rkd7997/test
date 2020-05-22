@@ -106,6 +106,26 @@ table tr td{
     }
 }
 
+// 매수매도테이블
+.tb_03{
+    width: 100%;
+    text-align: center;
+}
+.tb_03 tr th{
+    background: none;
+    border-bottom: 2px solid #666;
+}
+.buy_color{
+    color: #f72b38;
+}
+.sell_color{
+    color: #0052f3;
+}
+.bottom_tr td{
+    background: #f7f7f7;
+    font-weight: 700;
+}
+
 // input 스타일
 input[type=text]{
     width: 300px;
@@ -146,7 +166,9 @@ input[type=checkbox]{
     border-radius: 0px;
     border: none;
     text-align: center;
-    border-bottom: 2px solid #0042b7;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
 }
 .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
     color: #0042b7;
@@ -170,8 +192,8 @@ input[type=checkbox]{
     border-radius: 0px;
     border: none;
     text-align: center;
-    border-bottom: 2px solid #0042b7;
     border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
 .buy_box .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
