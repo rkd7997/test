@@ -7,6 +7,7 @@ const Profile = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
+      <h5 className="lnb_tit">마이페이지</h5>
         <ul>
           <li className="active"><Link href='#'>회원정보</Link></li>
           <li ><Link href='#'>1:1문의</Link></li>
@@ -21,7 +22,7 @@ const Profile = () => {
               <th><label htmlFor="user-name">이름</label></th>
               <td><Input name="user-name" required disabled /></td>
               <th><label htmlFor="user-phon">휴대폰번호</label></th>
-              <td><Input name="user-phon" type="number" required /><input  type="button" value="인증"/></td>
+              <td><Input name="user-phon" type="number" required disabled /><input  type="button" value="인증"/></td>
             </tr>
             <tr>
               <th><label htmlFor="nickname-phon">닉네임</label></th>

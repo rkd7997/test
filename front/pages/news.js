@@ -7,6 +7,7 @@ const News = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
+        <h5 className="lnb_tit">공지사항</h5>
         <ul>
           <li><Link href="/announcements">공지사항</Link></li>
           <li className="active"><Link href="/news">소식</Link></li>
