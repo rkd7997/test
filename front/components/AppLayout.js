@@ -44,7 +44,9 @@ const AppLayout = ({ children }) => {
             <a onClick={onClickLogout}><i className="ri-logout-circle-r-line"></i>로그아웃</a>
           </div>
           :
+          <div className="header_user">
           <Link href="login"><a><i className="ri-logout-circle-r-line"></i>로그인</a></Link> 
+          </div>
             }
         </div>
       </div>
