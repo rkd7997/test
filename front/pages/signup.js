@@ -362,8 +362,8 @@ const Signup = () => {
       </div>
       {/* <!-- // 개인정보처리 방침안내(필수) --> */}
       <div className="btn_div">
-        <input type="button" value="회원가입" className="ok_btn" />
-        <input type="button" value="취소" className="cancel_btn" />
+      <Button type="primary" size={'large'} > 회원가입 </Button>
+      <Button type="primary" size={'large'} > 취소 </Button>
       </div>
     </>
   );
