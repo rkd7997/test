@@ -3,20 +3,20 @@ import { Button, List, Card, Icon, Input } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import Link from 'next/link';
 
-const Profile = () => {
+const Branchmove = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
       <h5 className="lnb_tit">마이페이지</h5>
         <ul>
-          <li className="active"><Link href='profile'>회원정보</Link></li>
+        <li ><Link href='profile'>회원정보</Link></li>
           <li ><Link href='customerinquiry'>1:1문의</Link></li>
-          <li ><Link href='branchmove'>지점이동신청</Link></li>
-          <li ><Link href='transactionhistory'>나의거래내역</Link></li>        
+          <li className="active"><Link href='branchmove'>지점이동신청</Link></li>
+          <li ><Link href='transactionhistory'>나의거래내역</Link></li>
         </ul>
       </div>
       <div className="sub_page">
-        <h3 className="tit_01">회원정보</h3>
+        <h3 className="tit_01">지점이동신청</h3>
         <table className="tb_01" width="100%" >
             <tr>
               <th><label htmlFor="user-name">이름</label></th>
@@ -83,4 +83,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Branchmove;
