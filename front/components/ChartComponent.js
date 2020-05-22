@@ -82,7 +82,7 @@ const  Graph = () => {
     if(chartRef.current){
       const chart = createChart(chartRef.current, {
         width: 845,
-        height: 450,
+        height: 400,
         crosshair: {
           mode: "normal"
         }
