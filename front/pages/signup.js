@@ -157,6 +157,7 @@ const Signup = () => {
                 onOk={() => setModal1Visible(false)}
                 onCancel={() => setModal1Visible(false)}
                 mask={true}
+                action={false}
                 style={{animationDuration:'0s'}}
                 >
                 <p>안녕하세요</p>
