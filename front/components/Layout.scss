@@ -132,7 +132,7 @@ input[type=checkbox]{
     margin-right: 3px;
 }
 
-//tab
+//거래내역tab
 .ant-tabs-bar{
     margin-bottom: 0;
 }
@@ -145,6 +145,41 @@ input[type=checkbox]{
     margin: 0;
     border-radius: 0px;
     border: none;
+    text-align: center;
+    border-bottom: 2px solid #0042b7;
+}
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    color: #0042b7;
+    border-left: 1px solid #0042b7;
+    border-top: 1px solid #0042b7;
+    border-right: 1px solid #0042b7;
+    border-bottom: none;
+}
+
+//매수매도tab
+.buy_box .ant-tabs-bar{
+    margin-bottom: 0;
+}
+.buy_box .ant-tabs-nav{
+    width: 100%;
+    margin: 0;
+}
+.buy_box .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+    width: 33.33333%;
+    margin: 0;
+    border-radius: 0px;
+    border: none;
+    text-align: center;
+    border-bottom: 2px solid #0042b7;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.buy_box .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    color: #0042b7;
+    border-left: 1px solid #0042b7;
+    border-top: 1px solid #0042b7;
+    border-right: 1px solid #0042b7;
+    border-bottom: none;
 }
 
 // 공통스타일 //
@@ -160,14 +195,14 @@ input[type=checkbox]{
 
 //버튼
 button:nth-child(2){
-    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .won_btn{
     margin-right: 5px;
 }
 .won_btn:nth-child(2){
-    margin-right: 5px;
+    margin-left: 5px;
 }
 .ant-btn-sm{
     height: 30px;

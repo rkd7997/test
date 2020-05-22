@@ -370,8 +370,8 @@ const Signup = () => {
       </div>
       {/* <!-- // 개인정보처리 방침안내(필수) --> */}
       <div className="btn_div">
-      <Button type="primary" size={'large'} > 회원가입 </Button>
-      <Button size={'large'} > 취소 </Button>
+        <Button type="primary" size={'large'} > 회원가입 </Button>
+        <Button size={'large'} > 취소 </Button>
       </div>
     </>
   );
