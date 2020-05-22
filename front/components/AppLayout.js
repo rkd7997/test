@@ -29,7 +29,7 @@ const AppLayout = ({ children }) => {
           <div className="header_user">
             <Link href="/profile"><a><i className="ri-user-line"></i>홍길동님</a></Link>
             <Link href="/profile"><a><i className="ri-store-2-line"></i>삼성점</a></Link>
-            <Link href=""><a><i className="ri-money-dollar-circle-line"></i>10,000</a></Link>
+            <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>10,000</a></Link>
             <Link href=""><a><i className="ri-logout-circle-r-line"></i>로그아웃</a></Link>
           </div>
         </div>
