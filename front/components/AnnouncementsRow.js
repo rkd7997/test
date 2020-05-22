@@ -21,7 +21,7 @@ const AnnouncementsRow = ({ announcements }) => {
 AnnouncementsRow.propTypes = {
   announcements: PropTypes.shape({
     id: PropTypes.number,
-    subject: PropTypes.subject,
+    subject: PropTypes.string,
     content: PropTypes.string,
     hit: PropTypes.number,
     regDate: PropTypes.object,
