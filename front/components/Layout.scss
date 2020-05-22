@@ -1,4 +1,5 @@
 @import './contents.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
 html{
     font-size: 1rem;
@@ -6,7 +7,8 @@ html{
 body{
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Noto Sans KR', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
     font-style: normal;
     background: #f8fbfe;
 }
@@ -63,11 +65,11 @@ table{
 }
 table tr th{
     background: #f2f2f2;
-    padding: 10px;
+    padding: 15px 10px;
     border-bottom: 1px solid #333;
 }
 table tr td{
-    padding: 10px;
+    padding: 15px 10px;
     border-bottom: 1px solid #333;
 }
 
