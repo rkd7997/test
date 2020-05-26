@@ -22,7 +22,7 @@ const AppLayout = ({ children }) => {
               <Link href=""><a>FX소개</a></Link>
               <Link href="/deposit"><a>입출금신청</a></Link>
               <Link href="/announcements"><a>공지사항</a></Link>
-              <Link href=""><a>마이페이지</a></Link>
+              <Link href="/profile"><a>마이페이지</a></Link>
               {/* <Link href="/login"><a>로그인</a></Link>
               <Link href="/signup"><a>회원가입</a></Link> */}
               {/* 서브메뉴영역 */}
@@ -37,16 +37,16 @@ const AppLayout = ({ children }) => {
                       <Link href=""><a>FX투자방법</a></Link>
                     </div>
                     <div class="column">
-                      <Link href=""><a>입금신청</a></Link>
-                      <Link href=""><a>출금신청</a></Link>
-                      <Link href=""><a>입출금내역</a></Link>
+                      <Link href="deposit"><a>입금신청</a></Link>
+                      <Link href="withdrawals"><a>출금신청</a></Link>
+                      <Link href="depositandwithdrawalshistory"><a>입출금내역</a></Link>
                     </div>
                     <div class="column">
-                      <Link href=""><a>공지사항</a></Link>
-                      <Link href=""><a>소식</a></Link>
+                      <Link href="announcements"><a>공지사항</a></Link>
+                      <Link href="news"><a>소식</a></Link>
                     </div>
                     <div class="column">
-                      <Link href=""><a>회원정보</a></Link>
+                      <Link href="/profile"><a>회원정보</a></Link>
                       <Link href=""><a>1:1문의</a></Link>
                       <Link href=""><a>지점이동신청</a></Link>
                       <Link href=""><a>나의거래내역</a></Link>
