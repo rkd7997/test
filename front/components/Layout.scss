@@ -116,10 +116,10 @@ table tr td{
     border-bottom: 2px solid #666;
 }
 .buy_color{
-    color: #f72b38;
+    color: #d60000;
 }
 .sell_color{
-    color: #0052f3;
+    color: #0042b7;
 }
 .bottom_tr td{
     background: #f7f7f7;
@@ -207,9 +207,9 @@ input[type=checkbox]{
 // 공통스타일 //
 
 // 폰트
-.green_txt{color: #23a700;}
-.blue_txt{color: #0052f3;}
-.red_txt{color: #f72b38;}
+.green_txt{color: #48b07c;}
+.blue_txt{color: #0042b7;}
+.red_txt{color: #d60000;}
 
 .big_txt{
     font-size: 1.1rem;
@@ -220,11 +220,17 @@ button:nth-child(2){
     margin-left: 10px;
 }
 
-.won_btn{
-    margin-right: 5px;
+//회원가입버튼
+.signup_div .tb_01 tr td button{
+    margin-left: 0;
 }
-.won_btn:nth-child(2){
+
+button.won_btn{
     margin-left: 5px;
+}
+button.won_btn:nth-child(1){
+    margin-left: 0;
+    margin-right: 0;
 }
 .ant-btn-sm{
     height: 30px;
