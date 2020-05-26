@@ -30,7 +30,7 @@
                 .dropdown-content {
                     display: none;
                     position: absolute;
-                    border-top: 1px solid #ddd;
+                    border-top: 1px solid #506b8c;
                     background-color: #10325c;
                     width: 100%;
                     left: 0;
@@ -62,7 +62,7 @@
                 .dropdown-content .column {
                     display: inline-block;
                     width: 80px;
-                    margin-right: 40px;
+                    margin-right: 45px;
                 }
                 
                 /* Style links inside the columns */
@@ -76,6 +76,7 @@
                     padding: 5px 0 5px 0;
                     margin-right: 0;
                     width: 100%;
+                    text-align: center;
                 }
                 .dropdown-content .column a:first-child{
                     padding-top: 20px;
@@ -89,10 +90,9 @@
                 }
 
                 .header_menu{
-                    width: 70%;
+                    width: 75%;
                     display: flex;
                     align-items: center;
-                    flex: 2;
                     text-align: left;
 
                     h1{
@@ -104,9 +104,10 @@
                     a{
                         color: #ffffff;
                         display: inline-block;
-                        width: 75px;
+                        width: 80px;
                         margin-right: 45px;
                         padding: 20px 0;
+                        text-align: center;
                     }
                     a:hover{
                         color: #00fff0;
@@ -118,9 +119,8 @@
                 }
 
             .header_user{
-                width: 30%;
+                width: 25%;
                 display: flex;
-                flex: 1;
                 justify-content: flex-end;
                 text-align: right;
 

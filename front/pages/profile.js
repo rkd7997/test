@@ -75,8 +75,8 @@ const Profile = () => {
             </tr>
           </table>
           <div className="btn_div">
-            <input type="button" value="수정하기" className="ok_btn" />
-            <input type="button" value="취소" className="cancel_btn" />
+            <Button type="primary" size={'large'} > 수정하기 </Button>
+            <Button size={'large'} > 취소 </Button>
           </div>
       </div>
     </div>
