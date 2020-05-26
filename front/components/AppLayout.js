@@ -31,7 +31,7 @@ const AppLayout = ({ children }) => {
             <Link href="/"><h1>홈(FX 시티)</h1></Link>
             <div className="nav_btn">
               <Link href="/exchange"><a>거래하기</a></Link>
-              <Link href=""><a>FX소개</a></Link>
+              <Link href="introduce"><a>FX소개</a></Link>
               <Link href="/deposit"><a>입출금신청</a></Link>
               <Link href="/announcements"><a>공지사항</a></Link>
               <Link href="/profile"><a>마이페이지</a></Link>
@@ -45,8 +45,8 @@ const AppLayout = ({ children }) => {
                       <Link href="/results"><a>거래결과</a></Link>
                     </div>
                     <div class="column">
-                      <Link href=""><a>FX마진거래</a></Link>
-                      <Link href=""><a>FX투자방법</a></Link>
+                      <Link href="introduce"><a>FX마진거래</a></Link>
+                      <Link href="howtoinvestment"><a>FX투자방법</a></Link>
                     </div>
                     <div class="column">
                       <Link href="deposit"><a>입금신청</a></Link>
@@ -59,9 +59,9 @@ const AppLayout = ({ children }) => {
                     </div>
                     <div class="column">
                       <Link href="/profile"><a>회원정보</a></Link>
-                      <Link href=""><a>1:1문의</a></Link>
-                      <Link href=""><a>지점이동신청</a></Link>
-                      <Link href=""><a>나의거래내역</a></Link>
+                      <Link href="/customerinquiry"><a>1:1문의</a></Link>
+                      <Link href="/branchmove"><a>지점이동신청</a></Link>
+                      <Link href="/transactionhistory"><a>나의거래내역</a></Link>
                     </div>
                   </div>
                 </div>
