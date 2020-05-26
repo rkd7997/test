@@ -1,0 +1,60 @@
+@media (max-width: 1024px) {
+    //헤더영역
+    .header{
+
+        .header_inner{
+            width: 980px;
+
+            .header_menu{
+                width: 70%;
+
+                h1{
+                    margin-right: 80px;
+                }
+
+                a{
+                    margin-right: 25px;
+                }
+
+            }
+
+            .header_user{
+                width: 30%;
+            }
+
+            // 하위메뉴
+            .row_div{
+                width: 980px;
+                margin-left: 180px;
+            }
+            .dropdown-content .column{
+                margin-right: 25px;
+            }
+            
+
+        }
+
+    }
+
+    //contents
+    .contents .contents_inner{
+        width: 980px;
+
+        .sub_div .sub_menu{
+            width: 17%;
+        }
+        .sub_div .sub_page{
+            width: 83%;
+        }
+    }
+
+    // footer
+    .footer{
+
+        .footer_inner{
+            width: 980px;
+        }
+
+    }
+    
+}

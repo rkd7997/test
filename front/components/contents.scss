@@ -22,7 +22,6 @@
                     
                 /* Dropdown content (hidden by default) */
                 .dropdown-content {
-                    display: none;
                     position: absolute;
                     border-top: 1px solid #506b8c;
                     background-color: #10325c;
@@ -30,11 +29,16 @@
                     left: 0;
                     top: 63px;
                     z-index: 5;
+                    height: 0;
+                    overflow: hidden;
+                    transition: 1s; /* transition 효과 3초 */
                 }
                 
                 /* Show the dropdown menu on hover */
                 .nav_btn:hover .dropdown-content {
                     display: block;
+                    height: 200px;
+                    transition-duration: 0.7s;
                 }
 
                 .row{
