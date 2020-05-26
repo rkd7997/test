@@ -262,7 +262,7 @@
                     .buy_ui span{
                         height: 30px;
                         line-height: 28px;
-                        padding: 0 8px;
+                        padding: 0 5px;
                         border-radius: 3px;
                         color: #f72b38;
                         font-weight: 700;
@@ -270,6 +270,7 @@
                     }
                     .buy_ui button{
                         width: 30px;
+                        height: 30px;
                         line-height: 26px;
                         font-size: 1rem;
                         font-weight: 700;
@@ -278,8 +279,8 @@
                         background: #f72b38;
                     }
                     .buy_ui p{
-                        margin: 0 25px;
-                        font-size: 1.1rem;
+                        width: 120px;
+                        font-size: 1rem;
                         color: #ffffff;
                     }
                     .deal_buy_max{
@@ -311,7 +312,7 @@
                     .sell_ui span{
                         height: 30px;
                         line-height: 28px;
-                        padding: 0 8px;
+                        padding: 0 5px;
                         border-radius: 3px;
                         color: #0052f3;
                         font-weight: 700;
@@ -319,6 +320,7 @@
                     }
                     .sell_ui button{
                         width: 30px;
+                        height: 30px;
                         line-height: 26px;
                         font-size: 1rem;
                         font-weight: 700;
@@ -327,8 +329,8 @@
                         background: #0052f3;
                     }
                     .sell_ui p{
-                        margin: 0 25px;
-                        font-size: 1.2rem;
+                        width: 120px;
+                        font-size: 1rem;
                         color: #ffffff;
                     }
                     .deal_sell_max{
