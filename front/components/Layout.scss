@@ -220,11 +220,17 @@ button:nth-child(2){
     margin-left: 10px;
 }
 
-.won_btn{
-    margin-right: 5px;
+//회원가입버튼
+.signup_div .tb_01 tr td button{
+    margin-left: 0;
 }
-.won_btn:nth-child(2){
+
+button.won_btn{
     margin-left: 5px;
+}
+button.won_btn:nth-child(1){
+    margin-left: 0;
+    margin-right: 0;
 }
 .ant-btn-sm{
     height: 30px;

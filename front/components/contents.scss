@@ -30,13 +30,16 @@
                 h1{
                     color: #ffffff;
                     font-size: 1rem;
-                    margin-right: 100px;
+                    margin-right: 120px;
                 }
 
                 a{
                     color: #ffffff;
                     display: inline-block;
-                    margin-right: 15px;
+                    margin-right: 45px;
+                }
+                a:last-child{
+                    margin-right: 0;
                 }
             }
 
@@ -93,22 +96,50 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        .login_form{
-            margin-top: 20px;
+        .login_form_div{
+            padding: 10px;
 
-            input[type=text]{
+            .login_logo{
                 width: 100%;
-                height: 38px;
-                padding: 10px 11px;
+                padding: 30px 0;
+                text-align: center;
+                font-size: 2.5rem;
             }
-            input[type=password]{
+
+            .login_form{
+                position: relative;
+                margin-top: 10px;
+
+                label{
+                    position: absolute;
+                    z-index: 1;
+                    height: 40px;
+                    line-height: 1.2rem;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    padding: 10px 11px;
+                }
+    
+                input[type=text]{
+                    width: 100%;
+                    height: 40px;
+                    padding: 10px 11px 10px 40px;
+                }
+                input[type=password]{
+                    width: 100%;
+                    height: 40px;
+                    padding: 10px 11px 10px 40px;
+                }
+            }
+
+            .btn_div .login_btn{
                 width: 100%;
-                height: 38px;
-                padding: 10px 11px;
+                border-radius: 30px;
             }
         }
+    
         .join_btn_div{
-            margin-top: 30px;
+            margin-top: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -491,7 +522,7 @@
         }
 
         .btn_div{
-            margin-top: 20px;
+            margin-top: 30px;
             text-align: center;
         }
         .top_btn_div{
