@@ -67,9 +67,6 @@ const Signup = () => {
 
   function fnPopup(){
     window.open('https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
-                //  https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main
-                //  https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main
-    console.log(document,'폼체크')
     // document.form_chk.action = "https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb";
     // document.form_chk.target = "popupChk";
     // document.form_chk.submit();
@@ -99,7 +96,6 @@ const Signup = () => {
   }, []);
 
 
-  console.log('모달',Modal1Visible)
   return (
     <>
       {/* <Form onSubmit={onSubmit} style={{ padding: 10 }}>
