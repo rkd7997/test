@@ -20,7 +20,6 @@ const LoginForm = () => {
       },
     });
   }, [id, password]);
-
   return (
     <Form onSubmit={onSubmitForm} className="login_form_div">
       <div className="login_logo">FX시티(로고영역)</div>
