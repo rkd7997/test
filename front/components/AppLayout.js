@@ -79,7 +79,7 @@ const AppLayout = ({ children }) => {
           </div>
           :
           <div className="header_user">
-          <Link href="login"><a><i className="ri-logout-circle-r-line"></i>로그인</a></Link> 
+          <Link href="login"><a><i class="ri-login-circle-line"></i>로그인</a></Link> 
           </div>
             }
         </div>
