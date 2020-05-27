@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
 html{
-    
+    margin: 0;
+    padding: 0;
 }
 body{
     margin: 0;
@@ -13,7 +14,6 @@ body{
     font-style: normal;
     background: #f8fbfe;
     color: #333;
-    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6, p, a{
@@ -22,6 +22,7 @@ h1, h2, h3, h4, h5, h6, p, a{
 
 a{
     text-decoration: none;
+    font-size: 1.1em;
 }
 
 ul{
@@ -41,11 +42,16 @@ ol{
     margin: 0;
 }
 
-h1{font-size: 1rem;}
-h2{font-size: 0.8rem;}
-h3{font-size: 1.4rem;}
-h4{font-size: 1.1rem;}
-h5{font-size: 0.9rem; font-weight: 400;}
+label{
+    font-size: 1em !important;
+}
+
+h1{font-size: 1.2em;}
+h2{font-size: 0.8em;}
+h3{font-size: 1.35em;}
+h4{font-size: 1.4em;}
+h5{font-size: 0.9em; font-weight: 400;}
+p{font-size: 1em;}
 em{font-style: normal;}
 
 .tit_01{
@@ -100,7 +106,7 @@ form, table{
 table{
     border-top: 2px solid #666;
     background: #fff;
-    font-size: 0.9rem;
+    font-size: 0.95em;
 }
 table tr th{
     background: #f2f2f2;
@@ -125,8 +131,8 @@ table tr td{
     margin-left: 0px;
 }
 .tb_01 tr td .signup_info{
-    margin-top: 3px;
-    font-size: 0.7rem;
+    margin-top: 5px;
+    font-size: 0.9em;
     color: red;
 }
 .tb_01 tr td em{
@@ -145,7 +151,7 @@ table tr td{
 .tab_tb{
     margin-top: 0;
     border-top: none;
-    font-size: 0.8rem;
+    font-size: 0.8em;
     .tb_r{
         text-align: right;
     }
@@ -257,7 +263,7 @@ input[type=checkbox]{
 .red_txt{color: #d60000;}
 
 .big_txt{
-    font-size: 1.1rem;
+    font-size: 1.1em;
 }
 
 //버튼
