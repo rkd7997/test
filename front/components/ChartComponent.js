@@ -87,7 +87,6 @@ const  Graph = () => {
           mode: "normal"
         }
       });
-      console.log(chart,'차트')
       prepareChart(chart);
     }
   }, [])
@@ -106,7 +105,6 @@ const  Graph = () => {
 
   candleSeries.setData(data);
 
-  console.log(candleSeries,'시리즈')
   var lastClose = data[data.length - 1].close;
   var lastIndex = data.length - 1;
 

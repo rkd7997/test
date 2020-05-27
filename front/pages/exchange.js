@@ -1,11 +1,47 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Button, List, Card, Icon, Tabs } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import ChartComponent from '../components/ChartComponent'
 
 const { TabPane } = Tabs;
 
+
+
+var times =59;
+
 const Exchange = () => {
+  // const [time, settime] = useState(times);
+  const [smallsec, setsmallsec] = useState(times%10);
+  const [bigsec, setbigsec] = useState(parseInt(times/10));
+  const [First, setFirst] = useState(false);
+  const next_hours = new Date().getHours();
+  const next_minutes = new Date().getMinutes()+1;
+  const smallHours = next_hours%10;
+  const bigHours = parseInt(next_hours/10); 
+  const smallMinutes = next_minutes%10;
+  const bigMinutes = parseInt(next_minutes/10); 
+
+
+  
+  if(!First){
+    setFirst(true);
+    setInterval(function() {
+      // var i = times;
+      // i = times -1;
+      if(times === 0){
+        times = 59;
+      }
+      else{
+      times --;
+      }
+      // settime(times);
+      setsmallsec(times%10);
+      setbigsec(parseInt(times/10));
+      // console.log(smallsec,bigsec,time,i)
+    }, 1000);
+
+  }
+
   return (
   <div className="exchange_div">
 
@@ -22,20 +58,20 @@ const Exchange = () => {
                     <p>남은 계약 시간</p>
                     <ul>
                       <li><span>0</span></li>
-                      <li><span>2</span></li>
-                      <li>:</li>
                       <li><span>0</span></li>
-                      <li><span>5</span></li>
+                      <li>:</li>
+                      <li><span>{bigsec}</span></li>
+                      <li><span>{smallsec}</span></li>
                     </ul>
                   </div>
                   <div className="next_deal">
                     <p>다음 계약 시간</p>
                     <ul>
-                      <li><span>0</span></li>
-                      <li><span>2</span></li>
+                      <li><span>{bigHours}</span></li>
+                      <li><span>{smallHours}</span></li>
                       <li>:</li>
-                      <li><span>0</span></li>
-                      <li><span>5</span></li>
+                      <li><span>{bigMinutes}</span></li>
+                      <li><span>{smallMinutes}</span></li>
                     </ul>
                   </div>
                 </div>
@@ -57,7 +93,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>5,000(0)</p>
+                            <p>5,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -68,7 +104,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>5,000(0)</p>
+                            <p>5,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -83,7 +119,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>10,000(0)</p>
+                            <p>10,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -94,7 +130,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>10,000(0)</p>
+                            <p>10,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -109,7 +145,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>50,000(0)</p>
+                            <p>50,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -120,7 +156,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>50,000(0)</p>
+                            <p>50,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -135,7 +171,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>100,000(0)</p>
+                            <p>100,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -146,7 +182,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>100,000(0)</p>
+                            <p>100,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -221,7 +257,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>5,000(0)</p>
+                            <p>5,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -232,7 +268,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>5,000(0)</p>
+                            <p>5,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -247,7 +283,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>10,000(0)</p>
+                            <p>10,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -258,7 +294,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>10,000(0)</p>
+                            <p>10,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -273,7 +309,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>50,000(0)</p>
+                            <p>50,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -284,7 +320,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>50,000(0)</p>
+                            <p>50,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -299,7 +335,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>100,000(0)</p>
+                            <p>100,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -310,7 +346,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>100,000(0)</p>
+                            <p>100,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -385,7 +421,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>5,000(0)</p>
+                            <p>5,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -396,7 +432,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>5,000(0)</p>
+                            <p>5,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -411,7 +447,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>10,000(0)</p>
+                            <p>10,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -422,7 +458,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>10,000(0)</p>
+                            <p>10,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -437,7 +473,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>50,000(0)</p>
+                            <p>50,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -448,7 +484,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>50,000(0)</p>
+                            <p>50,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>
@@ -463,7 +499,7 @@ const Exchange = () => {
                           <div className="buy_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>100,000(0)</p>
+                            <p>100,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_buy_max">MAX</button>
@@ -474,7 +510,7 @@ const Exchange = () => {
                           <div className="sell_ui">
                             <span>350</span>
                             <button>-</button>
-                            <p>100,000(0)</p>
+                            <p>100,000(<em>0</em>)</p>
                             <button>+</button>
                           </div>
                           <button className="deal_sell_max">MAX</button>

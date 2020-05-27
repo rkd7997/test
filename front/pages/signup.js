@@ -22,7 +22,6 @@ export const useInput = (initValue = null) => {
 };
 
 const Signup = () => {
-  const [passwordCheck, setPasswordCheck] = useState('');
   const [term, setTerm] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const [termError, setTermError] = useState(false);
@@ -31,10 +30,13 @@ const Signup = () => {
 
 
   const [id, onChangeId] = useInput('');
+  const [name, onChangeName] = useInput('');
   const [mobile, onChangeMobile] = useInput('');
-
-  const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
+  const [passwordCheck, setPasswordCheck] = useState('');
+  
+  // const []
+  // const [nick, onChangeNick] = useInput('');
   const dispatch = useDispatch();
   const { isSigningUp, me } = useSelector(state => state.user);
 
@@ -65,9 +67,6 @@ const Signup = () => {
 
   function fnPopup(){
     window.open('https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main', 'popupChk', 'width=500, height=550, top=100, left=100, fullscreen=no, menubar=no, status=no, toolbar=no, titlebar=yes, location=no, scrollbar=no');
-                //  https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main
-                //  https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb?m=auth_mobile_main
-    console.log(document,'폼체크')
     // document.form_chk.action = "https://nice.checkplus.co.kr/CheckPlusSafeModel/checkplus.cb";
     // document.form_chk.target = "popupChk";
     // document.form_chk.submit();
@@ -76,9 +75,6 @@ const Signup = () => {
   const OnMobileVerification = useCallback((e) => {
     e.preventDefault();
     fnPopup();
-
-
-
   }, [mobile]);
 
   const onChangePasswordCheck = useCallback((e) => {
@@ -100,7 +96,6 @@ const Signup = () => {
   }, []);
 
 
-  console.log('모달',Modal1Visible)
   return (
     <>
       {/* <Form onSubmit={onSubmit} style={{ padding: 10 }}>
@@ -171,10 +166,11 @@ const Signup = () => {
               <th><label htmlFor="user-name">이름</label></th>
               <td>
                 <Input name="user-name" required onChange={onChangeId} disabled />
-                <Button value="본인인증" onClick={OnMobileVerification} type="primary" >본인인증</Button>
               </td>
               <th><label htmlFor="user-phon">휴대폰번호</label></th>
-              <td><Input name="user-phon" required onChange={onChangeMobile}  /></td>
+              <td><Input name="user-phon" required onChange={onChangeMobile}  />
+              <Button value="본인인증" onClick={OnMobileVerification} type="primary" >본인인증</Button>
+              </td>
             </tr>
             <tr>
               <th><label htmlFor="user-password">비밀번호</label></th>
