@@ -147,7 +147,6 @@ const  Graph = () => {
       high: Number(chart_data.high),
       low: Number(chart_data.low),
   })
-    console.log(bar,'바')
 
   
   }

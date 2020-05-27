@@ -1,4 +1,3 @@
-import agent from '../../../agent';
 import axios from 'axios';
 
 const API_ROOT = `${process.env.RAZZLE_API_ENDPOINT}/api/${process.env.RAZZLE_API_VERSION}`;

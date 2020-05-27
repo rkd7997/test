@@ -51,8 +51,8 @@ const Exchange = () => {
     <div className="left_div">
       
       <div className="trad_box">
-        {/* <TVChartContainer/> */}
-        <ChartComponent/>
+        <TVChartContainer/>
+        {/* <ChartComponent/> */}
         
         </div>
       <div className="buy_box">
