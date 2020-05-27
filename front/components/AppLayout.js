@@ -72,6 +72,7 @@ const AppLayout = ({ children }) => {
   return (
    <>
     <div className="wrapper">
+      {/* web_menu */}
       <div className="header">
         <div className="header_inner">
           <div className="header_menu">
@@ -126,11 +127,71 @@ const AppLayout = ({ children }) => {
           </div>
           :
           <div className="header_user">
-          <Link href="login"><a><i className="ri-logout-circle-r-line"></i>로그인</a></Link> 
+          <Link href="login"><a><i class="ri-login-circle-line"></i>로그인</a></Link> 
           </div>
             }
         </div>
       </div>
+      {/* web_menu */}
+      
+      {/* mobile_menu */}
+      <div className="mobile_menu">
+        <h1><Link href="/">FX로고영역</Link></h1>
+        <input type="checkbox" className="toggler" />
+        <div className="hamburger"><div></div></div>
+        <div className="menu_bg"></div>
+        <div className="menu">
+            <div>
+                <ul>
+                    <li className="mb_user">
+                      <span>
+                      <Link href="/profile"><a><i className="ri-user-line"></i><span>준호강님</span></a></Link>
+                      <Link href="/profile"><a><i className="ri-store-2-line"></i><span>삼성점</span></a></Link>
+                      <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i><span>100,000,000</span></a></Link>
+                      </span>
+                    </li>
+                    <li>
+                      거래하기
+                      <ol className="mb_sub">
+                        <li><Link href="/results"><a>거래결과</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      FX소개
+                      <ol className="mb_sub">
+                        <li><Link href=""><a>FX마진거래</a></Link></li>
+                        <li><Link href=""><a>FX투자방법</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      입출금신청
+                      <ol className="mb_sub">
+                        <li><Link href="deposit"><a>입금신청</a></Link></li>
+                        <li><Link href="withdrawals"><a>출금신청</a></Link></li>
+                        <li><Link href="depositandwithdrawalshistory"><a>입출금내역</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      공지사항
+                      <ol className="mb_sub">
+                        <li><Link href="announcements"><a>공지사항</a></Link></li>
+                        <li><Link href="news"><a>소식</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      마이페이지
+                      <ol className="mb_sub">
+                        <li><Link href="/profile"><a>회원정보</a></Link></li>
+                        <li><Link href=""><a>1:1문의</a></Link></li>
+                        <li><Link href=""><a>지점이동신청</a></Link></li>
+                        <li><Link href=""><a>나의거래내역</a></Link></li>
+                      </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+      {/* mobile_menu */}
 
       <div className="contents">
         <div className="contents_inner">

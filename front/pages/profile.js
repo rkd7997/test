@@ -22,7 +22,7 @@ const Profile = () => {
               <th><label htmlFor="user-name">이름</label></th>
               <td><Input name="user-name" required disabled /></td>
               <th><label htmlFor="user-phon">휴대폰번호</label></th>
-              <td><Input name="user-phon" type="number" required disabled /><input  type="button" value="인증"/></td>
+              <td><Input name="user-phon" type="number" required disabled /><Button value="확인" type="primary" >인증</Button></td>
             </tr>
             <tr>
               <th><label htmlFor="nickname-phon">닉네임</label></th>
@@ -59,7 +59,7 @@ const Profile = () => {
                 </select>
               </td>
               <th><label htmlFor="user-bank-num">계좌번호</label></th>
-              <td><Input name="user-bank-num" type="number" required placeholder="계좌번호 입력" /><input type="button" value="확인"/></td>
+              <td><Input name="user-bank-num" type="number" required placeholder="계좌번호 입력" /><Button value="확인" type="primary" >확인</Button></td>
             </tr>
             <tr>
               <th><label htmlFor="user-mail">이메일</label></th>
