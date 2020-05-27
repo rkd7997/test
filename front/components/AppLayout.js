@@ -9,14 +9,14 @@ import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
 import { CHART_DATA_UPDATE } from '../reducers/chart';
 
-import { slide as Menus }  from 'react-burger-menu'
+import { slide as Menus } from 'react-burger-menu'
 
 
 const { Header, Content, Footer } = Layout;
 
 const AppLayout = ({ children }) => {
   const { me } = useSelector(state => state.user);
- 
+
   const dispatch = useDispatch();
 
   const onClickLogout = useCallback((e) => {
@@ -29,29 +29,29 @@ const AppLayout = ({ children }) => {
   function subscribe(io) {
     console.log('clickSubscribe');
 
-    io.socket.get('/api/v1/price/subscribe?channel=EUR', function(resData) {
-        console.log(resData);
+    io.socket.get('/api/v1/price/subscribe?channel=EUR', function (resData) {
+      console.log(resData);
     });
 
-    io.socket.on('PriceAdd', function(msg) {
-        // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
-        let d =Number(msg.time); // unix time
-        dispatch({
-          type: CHART_DATA_UPDATE,
-          data:msg
-        });
+    io.socket.on('PriceAdd', function (msg) {
+      // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+      let d = Number(msg.time); // unix time
+      dispatch({
+        type: CHART_DATA_UPDATE,
+        data: msg
+      });
 
-        // let r = dataSeries.update({
-        //     time: d,
-        //     open: Number(msg.open),
-        //     close: Number(msg.close),
-        //     high: Number(msg.high),
-        //     low: Number(msg.low),
-        // })
+      // let r = dataSeries.update({
+      //     time: d,
+      //     open: Number(msg.open),
+      //     close: Number(msg.close),
+      //     high: Number(msg.high),
+      //     low: Number(msg.low),
+      // })
     });
 
 
-}
+  }
 
 
   React.useEffect(() => {
@@ -60,220 +60,139 @@ const AppLayout = ({ children }) => {
     var io = sailsIOClient(socketIOClient);
     io.sails.url = 'http://211.62.107.211:1340';
     console.log('subscribing..');
-    subscribe(io);  
+    subscribe(io);
 
-  return () => {
-    console.log('unsubscirbin..',io.socket);
-    io.socket.disconnect();
-  }
-}, [])
+    return () => {
+      console.log('unsubscirbin..', io.socket);
+      io.socket.disconnect();
+    }
+  }, [])
 
-var styles = {
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '36px',
-    height: '30px',
-    left: '36px',
-    top: '36px'
-  },
-  bmBurgerBars: {
-    background: '#373a47'
-  },
-  bmBurgerBarsHover: {
-    background: '#a90000'
-  },
-  bmCrossButton: {
-    height: '24px',
-    width: '24px'
-  },
-  bmCross: {
-    background: '#bdc3c7'
-  },
-  bmMenuWrap: {
-    position: 'fixed',
-    height: '100%'
-  },
-  bmMenu: {
-    background: '#373a47',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
-  },
-  bmMorphShape: {
-    fill: '#373a47'
-  },
-  bmItemList: {
-    color: '#b8b7ad',
-    padding: '0.8em'
-  },
-  bmItem: {
-    display: 'inline-block'
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
-  }
-}
-
-  
 
   return (
-   <>
-    <div className="wrapper">
-      {/* web_menu */}
-      <div className="header">
-        <div className="header_inner">
-          <div className="header_menu">
-            <Link href="/"><h1>홈(FX 시티)</h1></Link>
-            <div className="nav_btn">
-              <Link href="/exchange"><a>거래하기</a></Link>
-              <Link href="introduce"><a>FX소개</a></Link>
-              <Link href="/deposit"><a>입출금신청</a></Link>
-              <Link href="/announcements"><a>공지사항</a></Link>
-              <Link href="/profile"><a>마이페이지</a></Link>
-              {/* <Link href="/login"><a>로그인</a></Link>
+    <>
+      <div className="wrapper">
+        {/* web_menu */}
+        <div className="header">
+          <div className="header_inner">
+            <div className="header_menu">
+              <Link href="/"><h1>홈(FX 시티)</h1></Link>
+              <div className="nav_btn">
+                <Link href="/exchange"><a>거래하기</a></Link>
+                <Link href="introduce"><a>FX소개</a></Link>
+                <Link href="/deposit"><a>입출금신청</a></Link>
+                <Link href="/announcements"><a>공지사항</a></Link>
+                <Link href="/profile"><a>마이페이지</a></Link>
+                {/* <Link href="/login"><a>로그인</a></Link>
               <Link href="/signup"><a>회원가입</a></Link> */}
-              {/* 서브메뉴영역 */}
-              <div class="dropdown-content">
-                <div class="row">
-                  <div className="row_div">
-                    <div class="column">
-                      <Link href="/results"><a>거래결과</a></Link>
-                    </div>
-                    <div class="column">
-                      <Link href="introduce"><a>FX마진거래</a></Link>
-                      <Link href="howtoinvestment"><a>FX투자방법</a></Link>
-                    </div>
-                    <div class="column">
-                      <Link href="deposit"><a>입금신청</a></Link>
-                      <Link href="withdrawals"><a>출금신청</a></Link>
-                      <Link href="depositandwithdrawalshistory"><a>입출금내역</a></Link>
-                    </div>
-                    <div class="column">
-                      <Link href="announcements"><a>공지사항</a></Link>
-                      <Link href="news"><a>소식</a></Link>
-                    </div>
-                    <div class="column">
-                      <Link href="/profile"><a>회원정보</a></Link>
-                      <Link href="/customerinquiry"><a>1:1문의</a></Link>
-                      <Link href="/branchmove"><a>지점이동신청</a></Link>
-                      <Link href="/transactionhistory"><a>나의거래내역</a></Link>
+                {/* 서브메뉴영역 */}
+                <div class="dropdown-content">
+                  <div class="row">
+                    <div className="row_div">
+                      <div class="column">
+                        <Link href="/results"><a>거래결과</a></Link>
+                      </div>
+                      <div class="column">
+                        <Link href="introduce"><a>FX마진거래</a></Link>
+                        <Link href="howtoinvestment"><a>FX투자방법</a></Link>
+                      </div>
+                      <div class="column">
+                        <Link href="deposit"><a>입금신청</a></Link>
+                        <Link href="withdrawals"><a>출금신청</a></Link>
+                        <Link href="depositandwithdrawalshistory"><a>입출금내역</a></Link>
+                      </div>
+                      <div class="column">
+                        <Link href="announcements"><a>공지사항</a></Link>
+                        <Link href="news"><a>소식</a></Link>
+                      </div>
+                      <div class="column">
+                        <Link href="/profile"><a>회원정보</a></Link>
+                        <Link href="/customerinquiry"><a>1:1문의</a></Link>
+                        <Link href="/branchmove"><a>지점이동신청</a></Link>
+                        <Link href="/transactionhistory"><a>나의거래내역</a></Link>
+                      </div>
                     </div>
                   </div>
                 </div>
+                {/* 서브메뉴영역 */}
               </div>
-              {/* 서브메뉴영역 */}
-          </div>
-          
-          </div>
-          {me?
-          <div className="header_user">
-            <Link href="/profile"><a><i className="ri-user-line"></i>{me.nickname}</a></Link>
-            <Link href="/profile"><a><i className="ri-store-2-line"></i>{me.location}</a></Link>
-            <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>{me.money}</a></Link>
-            <a onClick={onClickLogout}><i className="ri-logout-circle-r-line"></i>로그아웃</a>
-          </div>
-          :
-          <div className="header_user">
-          <Link href="login"><a><i class="ri-login-circle-line"></i>로그인</a></Link> 
-          </div>
-            }
-        </div>
-      </div>
-      {/* web_menu */}
-      
-      {/* mobile_menu */}
 
-
-      {/* <div className="mobile_menu">
-        <h1><Link href="/">FX로고영역</Link></h1>
-        <input type="checkbox" className="toggler" />
-        <div className="hamburger"><div></div></div>
-        <div className="menu_bg"></div>
-        <div className="menu">
-            <div>
-                <ul>
-                    <li className="mb_user">
-                      <span>
-                      <Link href="/profile"><a><i className="ri-user-line"></i><span>준호강님</span></a></Link>
-                      <Link href="/profile"><a><i className="ri-store-2-line"></i><span>삼성점</span></a></Link>
-                      <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i><span>100,000,000</span></a></Link>
-                      </span>
-                    </li>
-                    <li>
-                      거래하기
-                      <ol className="mb_sub">
-                        <li><Link href="/results"><a>거래결과</a></Link></li>
-                      </ol>
-                    </li>
-                    <li>
-                      FX소개
-                      <ol className="mb_sub">
-                        <li><Link href=""><a>FX마진거래</a></Link></li>
-                        <li><Link href=""><a>FX투자방법</a></Link></li>
-                      </ol>
-                    </li>
-                    <li>
-                      입출금신청
-                      <ol className="mb_sub">
-                        <li><Link href="deposit"><a>입금신청</a></Link></li>
-                        <li><Link href="withdrawals"><a>출금신청</a></Link></li>
-                        <li><Link href="depositandwithdrawalshistory"><a>입출금내역</a></Link></li>
-                      </ol>
-                    </li>
-                    <li>
-                      공지사항
-                      <ol className="mb_sub">
-                        <li><Link href="announcements"><a>공지사항</a></Link></li>
-                        <li><Link href="news"><a>소식</a></Link></li>
-                      </ol>
-                    </li>
-                    <li>
-                      마이페이지
-                      <ol className="mb_sub">
-                        <li><Link href="/profile"><a>회원정보</a></Link></li>
-                        <li><Link href="/customerinquiry"><a>1:1문의</a></Link></li>
-                        <li><Link href="/branchmove"><a>지점이동신청</a></Link></li>
-                        <li><Link href="/transactionhistory"><a>나의거래내역</a></Link></li>
-                      </ol>
-                    </li>
-                </ul>
             </div>
-        </div>
-      </div> */}
-
-        <Menus styles={ styles }>
-        <a id="home" className="menu-item" href="/">Home</a>
-        <a id="about" className="menu-item" href="/about">About</a>
-        <a id="contact" className="menu-item" href="/contact">Contact</a>
-        <a  className="menu-item--small" href="">Settings</a>
-      </Menus>
-
-
-      {/* mobile_menu */}
-
-      <div className="contents">
-        <div className="contents_inner">
-          {children}
-        </div>
-      </div>
-
-      <div className="footer">
-        <div class="footer_inner">
-          <div className="footer_left">
-            <div className="fotter_logo">로고영역</div>
-            <ul>
-              <li>주식회사<span></span>대표 홍길동<span></span>우주 깐따삐야</li>
-              <li>
-              <Link href="/user-term"><a>서비스이용약관</a></Link><span></span>
-              <Link href="/private-term"><a>개인정보처리방침</a></Link>
-              </li>
-            </ul>
-          </div>
-          <div className="footer_right">
-            <Link href="/user-term"><a>고객센터</a></Link>
+            {me ?
+              <div className="header_user">
+                <Link href="/profile"><a><i className="ri-user-line"></i>{me.nickname}</a></Link>
+                <Link href="/profile"><a><i className="ri-store-2-line"></i>{me.location}</a></Link>
+                <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>{me.money}</a></Link>
+                <a onClick={onClickLogout}><i className="ri-logout-circle-r-line"></i>로그아웃</a>
+              </div>
+              :
+              <div className="header_user">
+                <Link href="login"><a><i class="ri-login-circle-line"></i>로그인</a></Link>
+              </div>
+            }
           </div>
         </div>
+        {/* web_menu */}
+
+        {/* mobile_menu */}
+        <div className="mobile_menu">
+          <h1><Link href="/">FX로고영역</Link></h1>
+        </div>
+        <Menus right disableAutoFocus>
+          <div>
+            <h5>거래하기</h5>
+            <a className="menu-item" href="/results">거래결과</a>
+          </div>
+          <div>
+          <h5>FX소개</h5>
+            <a className="menu-item" href="">FX마진거래</a>
+            <a className="menu-item" href="">FX투자방법</a>
+          </div>
+          <div>
+          <h5>입출금</h5>
+            <a className="menu-item" href="/deposit">입금신청</a>
+            <a className="menu-item" href="/withdrawals">출금신청</a>
+            <a className="menu-item" href="/depositandwithdrawalshistory">입출금내역</a>
+          </div>
+          <div>
+          <h5>공지사항</h5>
+            <a className="menu-item" href="/announcements">공지사항</a>
+            <a className="menu-item" href="/news">소식</a>
+          </div>
+          <div>
+          <h5>마이페이지</h5>
+            <a className="menu-item" href="/profile">회원정보</a>
+            <a className="menu-item" href="/customerinquiry">1:1문의</a>
+            <a className="menu-item" href="/branchmove">지점이동신청</a>
+            <a className="menu-item" href="/transactionhistory">나의거래내역</a>
+          </div>
+        </Menus>
+        {/* mobile_menu */}
+
+        <div className="contents">
+          <div className="contents_inner">
+            {children}
+          </div>
+        </div>
+
+        <div className="footer">
+          <div class="footer_inner">
+            <div className="footer_left">
+              <div className="fotter_logo">로고영역</div>
+              <ul>
+                <li>주식회사<span></span>대표 홍길동<span></span>우주 깐따삐야</li>
+                <li>
+                  <Link href="/user-term"><a>서비스이용약관</a></Link><span></span>
+                  <Link href="/private-term"><a>개인정보처리방침</a></Link>
+                </li>
+              </ul>
+            </div>
+            <div className="footer_right">
+              <Link href="/user-term"><a>고객센터</a></Link>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </>
   );
 };
