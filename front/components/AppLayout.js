@@ -9,6 +9,8 @@ import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
 import { CHART_DATA_UPDATE } from '../reducers/chart';
 
+import { slide as Menus }  from 'react-burger-menu'
+
 
 const { Header, Content, Footer } = Layout;
 
@@ -66,6 +68,50 @@ const AppLayout = ({ children }) => {
   }
 }, [])
 
+var styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    left: '36px',
+    top: '36px'
+  },
+  bmBurgerBars: {
+    background: '#373a47'
+  },
+  bmBurgerBarsHover: {
+    background: '#a90000'
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenuWrap: {
+    position: 'fixed',
+    height: '100%'
+  },
+  bmMenu: {
+    background: '#373a47',
+    padding: '2.5em 1.5em 0',
+    fontSize: '1.15em'
+  },
+  bmMorphShape: {
+    fill: '#373a47'
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+    padding: '0.8em'
+  },
+  bmItem: {
+    display: 'inline-block'
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)'
+  }
+}
 
   
 
@@ -135,7 +181,9 @@ const AppLayout = ({ children }) => {
       {/* web_menu */}
       
       {/* mobile_menu */}
-      <div className="mobile_menu">
+
+
+      {/* <div className="mobile_menu">
         <h1><Link href="/">FX로고영역</Link></h1>
         <input type="checkbox" className="toggler" />
         <div className="hamburger"><div></div></div>
@@ -190,7 +238,16 @@ const AppLayout = ({ children }) => {
                 </ul>
             </div>
         </div>
-      </div>
+      </div> */}
+
+        <Menus styles={ styles }>
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+        <a  className="menu-item--small" href="">Settings</a>
+      </Menus>
+
+
       {/* mobile_menu */}
 
       <div className="contents">

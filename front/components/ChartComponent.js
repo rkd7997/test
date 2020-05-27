@@ -80,27 +80,81 @@ import { useDispatch, useSelector } from 'react-redux';
 // var sailsIOClient = require('sails.io.js');
 // var io = sailsIOClient(socketIOClient);
 const dataSeries = [];
+let chart_on = true;
+let chart = null;
 
 const  Graph = () => {
   const chartRef = React.useRef(null);
+  
   const { chart_data } = useSelector(state => state.chart);
-  React.useEffect(() => {
-    console.log(chart_data,'차트데이토')
+  
 
-  }, [chart_data]);
 
+   
   React.useEffect(()=> {
-    if(chartRef.current){
-      const chart = LightweightCharts.createChart(chartRef.current, {
+    
+    if(chartRef.current && chart_on){
+      chart_on = false;
+      chart = LightweightCharts.createChart(chartRef.current, {
         width: 845,
         height: 400,
         crosshair: {
           mode: "normal"
         }
       });
-      prepareChart(chart);
     }
+      if(chart_data === null){return;}
+      if(chart === null){return;}
+      socketChart(chart,chart_data);
+  }, [chart_data])
+
+  React.useEffect(()=> {    
+      const charts = LightweightCharts.createChart(chartRef.current, {
+        width: 845,
+        height: 400,
+        crosshair: {
+          mode: "normal"
+        }
+      });
+      prepareChart(charts);
   }, [])
+
+  
+  function socketChart(chart,chart_data) {
+    const dataSeries = chart.addCandlestickSeries();
+    dataSeries.setData([ ]);
+    dataSeries.applyOptions({
+      priceFormat: {
+          type: 'price',
+          precision: 5,
+          minMove: 0.0001,
+      },
+  });
+
+    let d =Number(chart_data.time); // unix time
+    console.log(chart_data);
+    let r = dataSeries.update({
+        time: d,
+        open: Number(chart_data.open),
+        close: Number(chart_data.close),
+        high: Number(chart_data.high),
+        low: Number(chart_data.low),
+    })
+    let bar = ({
+      time: d,
+      open: Number(chart_data.open),
+      close: Number(chart_data.close),
+      high: Number(chart_data.high),
+      low: Number(chart_data.low),
+  })
+    console.log(bar,'바')
+
+  
+  }
+
+
+
+
 
   function prepareChart(chart) {
 
@@ -177,7 +231,7 @@ const  Graph = () => {
     };
   }
 
-  // setInterval(function() {
+  setInterval(function() {
     var deltaY = targetPrice - lastClose;
     var deltaX = targetIndex - lastIndex;
     var angle = deltaY / deltaX;
@@ -209,60 +263,10 @@ const  Graph = () => {
         targetPrice = getRandomPrice();
       }
     }
-  // }, 200);
+  }, 200);
 
 }
 
-function subscribe() {
-    console.log('clickSubscribe');
-
-    io.socket.get('/api/v1/price/subscribe?channel=EUR', function(resData) {
-        console.log(resData);
-    });
-
-    io.socket.on('PriceAdd', function(msg) {
-        // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
-        let d =Number(msg.time); // unix time
-        console.log(msg.id, d);
-        // let r = dataSeries.update({
-        //     time: d,
-        //     open: Number(msg.open),
-        //     close: Number(msg.close),
-        //     high: Number(msg.high),
-        //     low: Number(msg.low),
-        // })
-   
-      });
-
-
-}
-
-// React.useEffect(() => {
-//   io.sails.url = 'http://192.168.23.20:1337';
-// // io.sails.url = 'http://localhost:1337';
-
-//   console.log('subscribing..');
-//   subscribe();  
-// }
-
-// return () =>{
-//   io.socket.disconnect();
-// }
-
-// , []);
-
-// React.useEffect(() => {
-//     io.sails.url = 'http://211.62.107.211:1340';
-//   console.log('subscribing..');
-//     subscribe();  
-
-
-//   // returned function will be called on component unmount 
-//   return () => {
-//     console.log('unsubscirbin..',io.socket);
-//       // io.socket.disconnect();
-//   }
-// }, [])
 
   return (
     // <div style={{paddingTop:'300px'}}>

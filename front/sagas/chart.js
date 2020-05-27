@@ -8,7 +8,6 @@ import {
 
 function* Update(action) {
   try {
-    console.log(action.data,'액션')
     // yield call(loginAPI);
     // yield delay(2000);
     yield put({ // put은 dispatch 동일
