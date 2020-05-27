@@ -42,6 +42,10 @@ ol{
     margin: 0;
 }
 
+label{
+    font-size: 1em !important;
+}
+
 h1{font-size: 1.2em;}
 h2{font-size: 0.8em;}
 h3{font-size: 1.35em;}
@@ -127,8 +131,8 @@ table tr td{
     margin-left: 0px;
 }
 .tb_01 tr td .signup_info{
-    margin-top: 3px;
-    font-size: 0.7em;
+    margin-top: 5px;
+    font-size: 0.9em;
     color: red;
 }
 .tb_01 tr td em{
