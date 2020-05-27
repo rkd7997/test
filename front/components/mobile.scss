@@ -1,60 +1,150 @@
 @media (max-width: 1024px) {
-    //헤더영역
+    // 헤더영역
     .header{
-
-        .header_inner{
-            width: 980px;
-
-            .header_menu{
-                width: 70%;
-
-                h1{
-                    margin-right: 80px;
-                }
-
-                a{
-                    margin-right: 25px;
-                }
-
-            }
-
-            .header_user{
-                width: 30%;
-            }
-
-            // 하위메뉴
-            .row_div{
-                width: 980px;
-                margin-left: 180px;
-            }
-            .dropdown-content .column{
-                margin-right: 25px;
-            }
-            
-
-        }
-
+        display: none;
     }
 
-    //contents
-    .contents .contents_inner{
-        width: 980px;
+    // 모바일메뉴
+    .mobile_menu{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 50px;
+        background: #10325c;
 
-        .sub_div .sub_menu{
-            width: 17%;
+        //로고
+        h1 a{
+            color: #fff;
         }
-        .sub_div .sub_page{
-            width: 83%;
+        
+        // 메뉴버튼
+        .toggler{
+              z-index:10;
+              height: 50px;
+              width: 50px;
+              position: absolute;
+              top: 0;
+              right: 0;
+              cursor: pointer;
+              opacity: 0;
+              margin-right: 0 !important;
+            }
+        
+        .hamburger{
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 50px;
+            width: 50px;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-    }
-
-    // footer
-    .footer{
-
-        .footer_inner{
-            width: 980px;
+        
+        .hamburger > div{
+            position: relative;
+            top: 0;
+            right: 0;
+            background: white;
+            height: 2px;
+            width: 60%;
+            transition: all  0.4s ease;
+        }
+        
+        .hamburger > div::before,
+        .hamburger > div::after{
+            content: '';
+            position: absolute;
+            top: -10px;
+            background: white;
+            width: 100%;
+            height: 2px;
+            transition: all  0.4s ease;
+        }
+        
+        .hamburger > div::after{
+            top: 10px;
+        }
+        
+        .toggler:checked + .hamburger > div{
+            background: rgba(0,0,0,0);
+        }
+        
+        .toggler:checked + .hamburger > div::before{
+            top: 0;
+            transform: rotate(45deg);
+            background: black;
+        }
+        
+        .toggler:checked + .hamburger > div::after{
+            top: 0;
+            transform: rotate(135deg);
+            background: black;
         }
 
-    }
-    
+        // 메뉴목록
+        .menu{
+            background: white;
+            width: 0%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+        
+        .toggler:checked ~ .menu{
+            width: 60%;
+        }
+        
+        .menu >  div > ul{
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 70px;
+            padding-left: 10px;
+            visibility: hidden;
+        }
+        
+        .menu > div > ul > li{
+            list-style: none;
+            padding: 0.5rem;
+        }
+        
+        .menu > div > ul > li > a{
+            color: black;
+        }
+  
+        .menu_bg{
+            background: black;
+            width: 0%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 2;
+            opacity: 0.5;
+            transition: all 0.4s ease;
+        }
+        
+        .toggler:checked ~ .menu_bg{
+            width: 100%;
+        }
+        
+        .toggler:checked ~ .menu > div > ul{
+            transition: visibility 0.4s ease;
+            transition-delay: 0.1s;
+            visibility: visible;
+        }
+
+        // 마우스오버
+        .toggler:checked ~ .menu > div > ul > li > a:hover{
+            color: orange;
+        }   
+    } 
+
 }

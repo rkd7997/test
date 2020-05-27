@@ -25,6 +25,7 @@ const AppLayout = ({ children }) => {
   return (
    <>
     <div className="wrapper">
+      {/* web_menu */}
       <div className="header">
         <div className="header_inner">
           <div className="header_menu">
@@ -84,6 +85,26 @@ const AppLayout = ({ children }) => {
             }
         </div>
       </div>
+      {/* web_menu */}
+      
+      {/* mobile_menu */}
+      <div className="mobile_menu">
+        <h1><Link href="/">FX로고영역</Link></h1>
+        <input type="checkbox" className="toggler" />
+        <div className="hamburger"><div></div></div>
+        <div className="menu_bg"></div>
+        <div className="menu">
+            <div>
+                <ul>
+                    <li><a href='#'>Home</a></li>
+                    <li><a href='#'>About</a></li>
+                    <li><a href='#'>Services</a></li>
+                    <li><a href='#'>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+      </div>
+      {/* mobile_menu */}
 
       <div className="contents">
         <div className="contents_inner">
