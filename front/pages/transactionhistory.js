@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, List, Card, Icon, Input, DatePicker } from 'antd';
+import { Button, List, Card, Icon, Input, DatePicker, Pagination } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import Link from 'next/link';
 
@@ -67,6 +67,9 @@ const TransactionHistory = () => {
               <td><Button value="보기" size={'small'} type="primary" >보기</Button></td>
             </tr>
           </table>
+          <div className="btn_div">
+            <Pagination defaultCurrent={1} total={50} />
+          </div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, List, Card, Icon, Input } from 'antd';
+import { Button, List, Card, Icon, Input, Pagination } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import Link from 'next/link';
 
@@ -64,6 +64,9 @@ const Branchmove = () => {
               <td>대기</td>
             </tr>
           </table>
+          <div className="btn_div">
+            <Pagination defaultCurrent={1} total={50} />
+          </div>
         </div>
       </div>
     </div>

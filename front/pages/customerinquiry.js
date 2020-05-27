@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, List, Card, Icon, Input } from 'antd';
+import { Button, List, Card, Icon, Input, Pagination } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import Link from 'next/link';
 
@@ -50,6 +50,9 @@ const CustomerInquiry = () => {
             <td colSpan="5">문의내역이 없습니다.</td>
           </tr>
         </table>
+        <div className="btn_div">
+          <Pagination defaultCurrent={1} total={50} />
+        </div>
       </div>
     </div>
   );
