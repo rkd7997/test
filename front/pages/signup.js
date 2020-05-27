@@ -165,30 +165,30 @@ const Signup = () => {
             <tr>
               <th><label htmlFor="user-name">이름</label></th>
               <td>
-                <Input name="user-name" required onChange={onChangeId} disabled />
+                <Input name="user-name" required onChange={onChangeId} disabled className="wd_100" />
               </td>
               <th><label htmlFor="user-phon">휴대폰번호</label></th>
-              <td><Input name="user-phon" required onChange={onChangeMobile}  />
+              <td><Input name="user-phon" required onChange={onChangeMobile}  className="wd_75" />
               <Button value="본인인증" onClick={OnMobileVerification} type="primary" >본인인증</Button>
               </td>
             </tr>
             <tr>
               <th><label htmlFor="user-password">비밀번호</label></th>
               <td>
-                <Input name="user-password" type="password" value={password} required onChange={onChangePassword} placeholder="비밀번호 입력" />
+                <Input name="user-password" type="password" value={password} required onChange={onChangePassword} placeholder="비밀번호 입력" className="wd_100" />
                 <p className="signup_info">영문,특수문자,숫자를 조합하여 8~20자리의 패스워드를 입력해주세요</p>
               </td>
               <th><label htmlFor="user-password-check">비밀번호체크</label></th>
               <td>
-                <Input name="user-password-check" type="password" value={passwordCheck} required onChange={onChangePasswordCheck} placeholder="비밀번호 확인" />
+                <Input name="user-password-check" type="password" value={passwordCheck} required onChange={onChangePasswordCheck} placeholder="비밀번호 확인" className="wd_100" />
                 {passwordError && <p className="signup_info">비밀번호가 일치하지 않습니다.</p>}
               </td>
             </tr>
             <tr>
               <th><label htmlFor="user-bank-name">예금주</label></th>
-              <td><Input name="user-bank-name" type="password" required onChange={onChangePassword} disabled placeholder="예금주" /></td>
+              <td><Input name="user-bank-name" type="password" required onChange={onChangePassword} disabled placeholder="예금주" className="wd_100" /></td>
               <th><label htmlFor="user-num">주민번호 앞자리</label></th>
-              <td><Input name="user-num" type="number" required onChange={onChangePasswordCheck} disabled placeholder="주민번호 앞 6자리" /></td>
+              <td><Input name="user-num" type="number" required onChange={onChangePasswordCheck} disabled placeholder="주민번호 앞 6자리" className="wd_100" /></td>
             </tr>
             <tr>
               <th><label htmlFor="user-bank">은행</label></th>
@@ -202,7 +202,7 @@ const Signup = () => {
               </td>
               <th><label htmlFor="user-bank-num">계좌번호</label></th>
               <td>
-                <Input name="user-bank-num" type="number" required onChange={onChangePasswordCheck} placeholder="계좌번호 입력" />
+                <Input name="user-bank-num" type="number" required onChange={onChangePasswordCheck} placeholder="계좌번호 입력" className="wd_82" />
                 <Button value="확인" type="primary" >확인</Button>
               </td>
             </tr>

@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
 html{
-    font-size: 1rem;
+    
 }
 body{
     margin: 0;
@@ -13,6 +13,7 @@ body{
     font-style: normal;
     background: #f8fbfe;
     color: #333;
+    font-size: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6, p, a{
@@ -44,6 +45,7 @@ h1{font-size: 1rem;}
 h2{font-size: 0.8rem;}
 h3{font-size: 1.4rem;}
 h4{font-size: 1.1rem;}
+h5{font-size: 0.9rem; font-weight: 400;}
 em{font-style: normal;}
 
 .tit_01{
@@ -58,6 +60,14 @@ em{font-style: normal;}
     margin-bottom: 10px;
 }
 
+.con_txt01{
+    width: 100%;
+    margin-bottom: 10px;
+    .point{
+        color: red;
+    }
+}
+
 form, table{
     width: 100%;
     padding:0;
@@ -66,10 +76,31 @@ form, table{
     border-collapse:collapse;
 }
 
+// 공통사이즈
+.wd_70{
+    width: 70% !important;
+}
+.wd_75{
+    width: 75% !important;
+}
+.wd_80{
+    width: 80% !important;
+}
+.wd_82{
+    width: 82% !important;
+}
+.wd_90{
+    width: 90% !important;
+}
+.wd_100{
+    width: 100% !important;
+}
+
 // 테이블스타일
 table{
     border-top: 2px solid #666;
     background: #fff;
+    font-size: 0.9rem;
 }
 table tr th{
     background: #f2f2f2;
