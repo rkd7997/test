@@ -7,12 +7,14 @@ import LoginForm from './LoginForm';
 import UserProfile from './UserProfile';
 import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
+import { CHART_DATA_UPDATE } from '../reducers/chart';
 
 
 const { Header, Content, Footer } = Layout;
 
 const AppLayout = ({ children }) => {
   const { me } = useSelector(state => state.user);
+ 
   const dispatch = useDispatch();
 
   const onClickLogout = useCallback((e) => {
@@ -21,6 +23,51 @@ const AppLayout = ({ children }) => {
       type: LOG_OUT_REQUEST,
     });
   }, []);
+
+  function subscribe(io) {
+    console.log('clickSubscribe');
+
+    io.socket.get('/api/v1/price/subscribe?channel=EUR', function(resData) {
+        console.log(resData);
+    });
+
+    io.socket.on('PriceAdd', function(msg) {
+        // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+        let d =Number(msg.time); // unix time
+        dispatch({
+          type: CHART_DATA_UPDATE,
+          data:msg
+        });
+
+        // let r = dataSeries.update({
+        //     time: d,
+        //     open: Number(msg.open),
+        //     close: Number(msg.close),
+        //     high: Number(msg.high),
+        //     low: Number(msg.low),
+        // })
+    });
+
+
+}
+
+
+  React.useEffect(() => {
+    var socketIOClient = require('socket.io-client');
+    var sailsIOClient = require('sails.io.js');
+    var io = sailsIOClient(socketIOClient);
+    io.sails.url = 'http://211.62.107.211:1340';
+    console.log('subscribing..');
+    subscribe(io);  
+
+  return () => {
+    console.log('unsubscirbin..',io.socket);
+    io.socket.disconnect();
+  }
+}, [])
+
+
+  
 
   return (
    <>

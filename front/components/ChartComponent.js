@@ -72,15 +72,26 @@
 // export default ChartComponent;
 
 
-import { createChart } from "lightweight-charts";
+// import { createChart } from "lightweight-charts";
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+// var socketIOClient = require('socket.io-client');
+// var sailsIOClient = require('sails.io.js');
+// var io = sailsIOClient(socketIOClient);
+const dataSeries = [];
 
 const  Graph = () => {
   const chartRef = React.useRef(null);
+  const { chart_data } = useSelector(state => state.chart);
+  React.useEffect(() => {
+    console.log(chart_data,'차트데이토')
+
+  }, [chart_data]);
 
   React.useEffect(()=> {
     if(chartRef.current){
-      const chart = createChart(chartRef.current, {
+      const chart = LightweightCharts.createChart(chartRef.current, {
         width: 845,
         height: 400,
         crosshair: {
@@ -166,7 +177,7 @@ const  Graph = () => {
     };
   }
 
-  setInterval(function() {
+  // setInterval(function() {
     var deltaY = targetPrice - lastClose;
     var deltaX = targetIndex - lastIndex;
     var angle = deltaY / deltaX;
@@ -198,9 +209,61 @@ const  Graph = () => {
         targetPrice = getRandomPrice();
       }
     }
-  }, 200);
+  // }, 200);
 
 }
+
+function subscribe() {
+    console.log('clickSubscribe');
+
+    io.socket.get('/api/v1/price/subscribe?channel=EUR', function(resData) {
+        console.log(resData);
+    });
+
+    io.socket.on('PriceAdd', function(msg) {
+        // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+        let d =Number(msg.time); // unix time
+        console.log(msg.id, d);
+        // let r = dataSeries.update({
+        //     time: d,
+        //     open: Number(msg.open),
+        //     close: Number(msg.close),
+        //     high: Number(msg.high),
+        //     low: Number(msg.low),
+        // })
+   
+      });
+
+
+}
+
+// React.useEffect(() => {
+//   io.sails.url = 'http://192.168.23.20:1337';
+// // io.sails.url = 'http://localhost:1337';
+
+//   console.log('subscribing..');
+//   subscribe();  
+// }
+
+// return () =>{
+//   io.socket.disconnect();
+// }
+
+// , []);
+
+// React.useEffect(() => {
+//     io.sails.url = 'http://211.62.107.211:1340';
+//   console.log('subscribing..');
+//     subscribe();  
+
+
+//   // returned function will be called on component unmount 
+//   return () => {
+//     console.log('unsubscirbin..',io.socket);
+//       // io.socket.disconnect();
+//   }
+// }, [])
+
   return (
     // <div style={{paddingTop:'300px'}}>
   <div ref={chartRef} />
