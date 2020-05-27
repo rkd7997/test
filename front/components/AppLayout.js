@@ -7,12 +7,16 @@ import LoginForm from './LoginForm';
 import UserProfile from './UserProfile';
 import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
+import { CHART_DATA_UPDATE } from '../reducers/chart';
+
+import { slide as Menus }  from 'react-burger-menu'
 
 
 const { Header, Content, Footer } = Layout;
 
 const AppLayout = ({ children }) => {
   const { me } = useSelector(state => state.user);
+ 
   const dispatch = useDispatch();
 
   const onClickLogout = useCallback((e) => {
@@ -21,6 +25,95 @@ const AppLayout = ({ children }) => {
       type: LOG_OUT_REQUEST,
     });
   }, []);
+
+  function subscribe(io) {
+    console.log('clickSubscribe');
+
+    io.socket.get('/api/v1/price/subscribe?channel=EUR', function(resData) {
+        console.log(resData);
+    });
+
+    io.socket.on('PriceAdd', function(msg) {
+        // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+        let d =Number(msg.time); // unix time
+        dispatch({
+          type: CHART_DATA_UPDATE,
+          data:msg
+        });
+
+        // let r = dataSeries.update({
+        //     time: d,
+        //     open: Number(msg.open),
+        //     close: Number(msg.close),
+        //     high: Number(msg.high),
+        //     low: Number(msg.low),
+        // })
+    });
+
+
+}
+
+
+  React.useEffect(() => {
+    var socketIOClient = require('socket.io-client');
+    var sailsIOClient = require('sails.io.js');
+    var io = sailsIOClient(socketIOClient);
+    io.sails.url = 'http://211.62.107.211:1340';
+    console.log('subscribing..');
+    subscribe(io);  
+
+  return () => {
+    console.log('unsubscirbin..',io.socket);
+    io.socket.disconnect();
+  }
+}, [])
+
+var styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    left: '36px',
+    top: '36px'
+  },
+  bmBurgerBars: {
+    background: '#373a47'
+  },
+  bmBurgerBarsHover: {
+    background: '#a90000'
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenuWrap: {
+    position: 'fixed',
+    height: '100%'
+  },
+  bmMenu: {
+    background: '#373a47',
+    padding: '2.5em 1.5em 0',
+    fontSize: '1.15em'
+  },
+  bmMorphShape: {
+    fill: '#373a47'
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+    padding: '0.8em'
+  },
+  bmItem: {
+    display: 'inline-block'
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)'
+  }
+}
+
+  
 
   return (
    <>
@@ -32,7 +125,7 @@ const AppLayout = ({ children }) => {
             <Link href="/"><h1>홈(FX 시티)</h1></Link>
             <div className="nav_btn">
               <Link href="/exchange"><a>거래하기</a></Link>
-              <Link href=""><a>FX소개</a></Link>
+              <Link href="introduce"><a>FX소개</a></Link>
               <Link href="/deposit"><a>입출금신청</a></Link>
               <Link href="/announcements"><a>공지사항</a></Link>
               <Link href="/profile"><a>마이페이지</a></Link>
@@ -46,8 +139,8 @@ const AppLayout = ({ children }) => {
                       <Link href="/results"><a>거래결과</a></Link>
                     </div>
                     <div class="column">
-                      <Link href=""><a>FX마진거래</a></Link>
-                      <Link href=""><a>FX투자방법</a></Link>
+                      <Link href="introduce"><a>FX마진거래</a></Link>
+                      <Link href="howtoinvestment"><a>FX투자방법</a></Link>
                     </div>
                     <div class="column">
                       <Link href="deposit"><a>입금신청</a></Link>
@@ -88,7 +181,9 @@ const AppLayout = ({ children }) => {
       {/* web_menu */}
       
       {/* mobile_menu */}
-      <div className="mobile_menu">
+
+
+      {/* <div className="mobile_menu">
         <h1><Link href="/">FX로고영역</Link></h1>
         <input type="checkbox" className="toggler" />
         <div className="hamburger"><div></div></div>
@@ -143,7 +238,16 @@ const AppLayout = ({ children }) => {
                 </ul>
             </div>
         </div>
-      </div>
+      </div> */}
+
+        <Menus styles={ styles }>
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+        <a  className="menu-item--small" href="">Settings</a>
+      </Menus>
+
+
       {/* mobile_menu */}
 
       <div className="contents">

@@ -72,24 +72,89 @@
 // export default ChartComponent;
 
 
-import { createChart } from "lightweight-charts";
+// import { createChart } from "lightweight-charts";
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+// var socketIOClient = require('socket.io-client');
+// var sailsIOClient = require('sails.io.js');
+// var io = sailsIOClient(socketIOClient);
+const dataSeries = [];
+let chart_on = true;
+let chart = null;
 
 const  Graph = () => {
   const chartRef = React.useRef(null);
+  
+  const { chart_data } = useSelector(state => state.chart);
+  
 
+
+   
   React.useEffect(()=> {
-    if(chartRef.current){
-      const chart = createChart(chartRef.current, {
+    
+    if(chartRef.current && chart_on){
+      chart_on = false;
+      chart = LightweightCharts.createChart(chartRef.current, {
         width: 845,
         height: 400,
         crosshair: {
           mode: "normal"
         }
       });
-      prepareChart(chart);
     }
+      if(chart_data === null){return;}
+      if(chart === null){return;}
+      socketChart(chart,chart_data);
+  }, [chart_data])
+
+  React.useEffect(()=> {    
+      const charts = LightweightCharts.createChart(chartRef.current, {
+        width: 845,
+        height: 400,
+        crosshair: {
+          mode: "normal"
+        }
+      });
+      prepareChart(charts);
   }, [])
+
+  
+  function socketChart(chart,chart_data) {
+    const dataSeries = chart.addCandlestickSeries();
+    dataSeries.setData([ ]);
+    dataSeries.applyOptions({
+      priceFormat: {
+          type: 'price',
+          precision: 5,
+          minMove: 0.0001,
+      },
+  });
+
+    let d =Number(chart_data.time); // unix time
+    console.log(chart_data);
+    let r = dataSeries.update({
+        time: d,
+        open: Number(chart_data.open),
+        close: Number(chart_data.close),
+        high: Number(chart_data.high),
+        low: Number(chart_data.low),
+    })
+    let bar = ({
+      time: d,
+      open: Number(chart_data.open),
+      close: Number(chart_data.close),
+      high: Number(chart_data.high),
+      low: Number(chart_data.low),
+  })
+    console.log(bar,'바')
+
+  
+  }
+
+
+
+
 
   function prepareChart(chart) {
 
@@ -201,6 +266,8 @@ const  Graph = () => {
   }, 200);
 
 }
+
+
   return (
     // <div style={{paddingTop:'300px'}}>
   <div ref={chartRef} />

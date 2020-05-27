@@ -2,6 +2,8 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Button, List, Card, Icon, Tabs } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import ChartComponent from '../components/ChartComponent'
+import TVChartContainer from '../components/TVChartContainer'
+
 
 const { TabPane } = Tabs;
 
@@ -28,6 +30,7 @@ const Exchange = () => {
     setInterval(function() {
       // var i = times;
       // i = times -1;
+
       if(times === 0){
         times = 59;
       }
@@ -46,7 +49,12 @@ const Exchange = () => {
   <div className="exchange_div">
 
     <div className="left_div">
-      <div className="trad_box"><ChartComponent/></div>
+      
+      <div className="trad_box">
+        {/* <TVChartContainer/> */}
+        <ChartComponent/>
+        
+        </div>
       <div className="buy_box">
         <div className="card-container">
           <Tabs type="card">
