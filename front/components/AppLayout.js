@@ -7,12 +7,16 @@ import LoginForm from './LoginForm';
 import UserProfile from './UserProfile';
 import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
+import { CHART_DATA_UPDATE } from '../reducers/chart';
+
+import { slide as Menus }  from 'react-burger-menu'
 
 
 const { Header, Content, Footer } = Layout;
 
 const AppLayout = ({ children }) => {
   const { me } = useSelector(state => state.user);
+ 
   const dispatch = useDispatch();
 
   const onClickLogout = useCallback((e) => {
@@ -22,9 +26,99 @@ const AppLayout = ({ children }) => {
     });
   }, []);
 
+  function subscribe(io) {
+    console.log('clickSubscribe');
+
+    io.socket.get('/api/v1/price/subscribe?channel=EUR', function(resData) {
+        console.log(resData);
+    });
+
+    io.socket.on('PriceAdd', function(msg) {
+        // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+        let d =Number(msg.time); // unix time
+        dispatch({
+          type: CHART_DATA_UPDATE,
+          data:msg
+        });
+
+        // let r = dataSeries.update({
+        //     time: d,
+        //     open: Number(msg.open),
+        //     close: Number(msg.close),
+        //     high: Number(msg.high),
+        //     low: Number(msg.low),
+        // })
+    });
+
+
+}
+
+
+  React.useEffect(() => {
+    var socketIOClient = require('socket.io-client');
+    var sailsIOClient = require('sails.io.js');
+    var io = sailsIOClient(socketIOClient);
+    io.sails.url = 'http://211.62.107.211:1340';
+    console.log('subscribing..');
+    subscribe(io);  
+
+  return () => {
+    console.log('unsubscirbin..',io.socket);
+    io.socket.disconnect();
+  }
+}, [])
+
+var styles = {
+  bmBurgerButton: {
+    position: 'fixed',
+    width: '36px',
+    height: '30px',
+    left: '36px',
+    top: '36px'
+  },
+  bmBurgerBars: {
+    background: '#373a47'
+  },
+  bmBurgerBarsHover: {
+    background: '#a90000'
+  },
+  bmCrossButton: {
+    height: '24px',
+    width: '24px'
+  },
+  bmCross: {
+    background: '#bdc3c7'
+  },
+  bmMenuWrap: {
+    position: 'fixed',
+    height: '100%'
+  },
+  bmMenu: {
+    background: '#373a47',
+    padding: '2.5em 1.5em 0',
+    fontSize: '1.15em'
+  },
+  bmMorphShape: {
+    fill: '#373a47'
+  },
+  bmItemList: {
+    color: '#b8b7ad',
+    padding: '0.8em'
+  },
+  bmItem: {
+    display: 'inline-block'
+  },
+  bmOverlay: {
+    background: 'rgba(0, 0, 0, 0.3)'
+  }
+}
+
+  
+
   return (
    <>
     <div className="wrapper">
+      {/* web_menu */}
       <div className="header">
         <div className="header_inner">
           <div className="header_menu">
@@ -79,11 +173,82 @@ const AppLayout = ({ children }) => {
           </div>
           :
           <div className="header_user">
-          <Link href="login"><a><i className="ri-logout-circle-r-line"></i>로그인</a></Link> 
+          <Link href="login"><a><i class="ri-login-circle-line"></i>로그인</a></Link> 
           </div>
             }
         </div>
       </div>
+      {/* web_menu */}
+      
+      {/* mobile_menu */}
+
+
+      {/* <div className="mobile_menu">
+        <h1><Link href="/">FX로고영역</Link></h1>
+        <input type="checkbox" className="toggler" />
+        <div className="hamburger"><div></div></div>
+        <div className="menu_bg"></div>
+        <div className="menu">
+            <div>
+                <ul>
+                    <li className="mb_user">
+                      <span>
+                      <Link href="/profile"><a><i className="ri-user-line"></i><span>준호강님</span></a></Link>
+                      <Link href="/profile"><a><i className="ri-store-2-line"></i><span>삼성점</span></a></Link>
+                      <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i><span>100,000,000</span></a></Link>
+                      </span>
+                    </li>
+                    <li>
+                      거래하기
+                      <ol className="mb_sub">
+                        <li><Link href="/results"><a>거래결과</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      FX소개
+                      <ol className="mb_sub">
+                        <li><Link href=""><a>FX마진거래</a></Link></li>
+                        <li><Link href=""><a>FX투자방법</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      입출금신청
+                      <ol className="mb_sub">
+                        <li><Link href="deposit"><a>입금신청</a></Link></li>
+                        <li><Link href="withdrawals"><a>출금신청</a></Link></li>
+                        <li><Link href="depositandwithdrawalshistory"><a>입출금내역</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      공지사항
+                      <ol className="mb_sub">
+                        <li><Link href="announcements"><a>공지사항</a></Link></li>
+                        <li><Link href="news"><a>소식</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      마이페이지
+                      <ol className="mb_sub">
+                        <li><Link href="/profile"><a>회원정보</a></Link></li>
+                        <li><Link href="/customerinquiry"><a>1:1문의</a></Link></li>
+                        <li><Link href="/branchmove"><a>지점이동신청</a></Link></li>
+                        <li><Link href="/transactionhistory"><a>나의거래내역</a></Link></li>
+                      </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div> */}
+
+        <Menus styles={ styles }>
+        <a id="home" className="menu-item" href="/">Home</a>
+        <a id="about" className="menu-item" href="/about">About</a>
+        <a id="contact" className="menu-item" href="/contact">Contact</a>
+        <a  className="menu-item--small" href="">Settings</a>
+      </Menus>
+
+
+      {/* mobile_menu */}
 
       <div className="contents">
         <div className="contents_inner">
