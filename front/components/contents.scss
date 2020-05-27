@@ -19,16 +19,9 @@
             font-size: 1rem;
             text-align: center;
 
-    
-
-                /* Add a red background color to navbar links on hover */
-                .nav_btn a:hover .dropbtn {
-                    background-color: red;
-                }
-                
+                    
                 /* Dropdown content (hidden by default) */
                 .dropdown-content {
-                    display: none;
                     position: absolute;
                     border-top: 1px solid #506b8c;
                     background-color: #10325c;
@@ -36,11 +29,16 @@
                     left: 0;
                     top: 63px;
                     z-index: 5;
+                    height: 0;
+                    overflow: hidden;
+                    transition: 1s; /* transition 효과 3초 */
                 }
                 
                 /* Show the dropdown menu on hover */
                 .nav_btn:hover .dropdown-content {
                     display: block;
+                    height: 200px;
+                    transition-duration: 0.7s;
                 }
 
                 .row{
@@ -142,6 +140,11 @@
 
         }
 
+}
+
+// 모바일메뉴
+.mobile_menu{
+    display: none;
 }
 
 // 컨텐츠
@@ -481,6 +484,10 @@
         }
         .deposit_btn{
             margin-top: 10px;
+
+            button{
+                margin-right: 5px;
+            }
         }
         // 입출금안내
         .info_txt{
