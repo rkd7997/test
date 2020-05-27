@@ -237,7 +237,9 @@ fabric.properties
 
 .idea
 
-/package-lock.json
+# package-lock.json
+package-lock.json
+./front/package-lock.json
 
 # next.js build output
 /front/.next/

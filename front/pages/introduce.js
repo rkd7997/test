@@ -7,15 +7,14 @@ const Deposit = () => {
   return (
     <div className="sub_div">
       <div className="sub_menu">
-        <h5 className="lnb_tit">입출금신청</h5>
+        <h5 className="lnb_tit">FX소개</h5>
         <ul>
-          <li className="active"><Link href='deposit'>입금신청</Link></li>
-          <li ><Link href='withdrawals'>출금신청</Link></li>
-          <li ><Link href='depositandwithdrawalshistory'>입출금내역</Link></li>
+          <li className="active"><Link href='introduce'>FX마진거래</Link></li>
+          <li ><Link href='howtoinvestment'>FX투자방법</Link></li>
         </ul>
       </div>
       <div className="sub_page">
-        <h3 className="tit_01">입금신청</h3>
+        <h3 className="tit_01">FX마진거래</h3>
         <table className="tb_01" width="100%" >
             <tr>
               <th>입금계좌</th>

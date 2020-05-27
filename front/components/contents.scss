@@ -1,11 +1,675 @@
+.wrapper{
+    display: flex; min-height: 100vh; flex-direction: column;
+}
 
+// 헤더영역
+.header {
+    width: 100%;
+    background: #10325c;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        
+        .header_inner {
+            display: flex;
+            align-items: center;
+            width: 1200px;
+            color: black;
+            font-size: 1rem;
+            text-align: center;
+
+                    
+                /* Dropdown content (hidden by default) */
+                .dropdown-content {
+                    position: absolute;
+                    border-top: 1px solid #506b8c;
+                    background-color: #10325c;
+                    width: 100%;
+                    left: 0;
+                    top: 63px;
+                    z-index: 5;
+                    height: 0;
+                    overflow: hidden;
+                    transition: 1s; /* transition 효과 3초 */
+                }
+                
+                /* Show the dropdown menu on hover */
+                .nav_btn:hover .dropdown-content {
+                    display: block;
+                    height: 200px;
+                    transition-duration: 0.7s;
+                }
+
+                .row{
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .row_div{
+                    margin-left: 200px;
+                    width: 1000px;
+                    padding-bottom: 30px;
+                    display: flex;
+                    align-items: flex-start;
+                }
+                
+                /* Create three equal columns that floats next to each other */
+                .dropdown-content .column {
+                    display: inline-block;
+                    width: 80px;
+                    margin-right: 45px;
+                }
+                
+                /* Style links inside the columns */
+                .dropdown-content .column a{
+                    float: none;
+                    color: #fff;
+                    text-decoration: none;
+                    display: block;
+                    text-align: left;
+                    font-size: 0.9rem;
+                    padding: 5px 0 5px 0;
+                    margin-right: 0;
+                    width: 100%;
+                    text-align: center;
+                }
+                .dropdown-content .column a:first-child{
+                    padding-top: 20px;
+                }
+                
+                /* Clear floats after the columns */
+                .row:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                .header_menu{
+                    width: 75%;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+
+                    h1{
+                        color: #ffffff;
+                        font-size: 1rem;
+                        margin-right: 120px;
+                    }
+
+                    a{
+                        color: #ffffff;
+                        display: inline-block;
+                        width: 80px;
+                        margin-right: 45px;
+                        padding: 20px 0;
+                        text-align: center;
+                    }
+                    a:hover{
+                        color: #00fff0;
+                    }
+                    a:last-child{
+                        margin-right: 0;
+                    }
+
+                }
+
+            .header_user{
+                width: 25%;
+                display: flex;
+                justify-content: flex-end;
+                text-align: right;
+
+                a{
+                    display: flex;
+                    font-size: 0.8rem;
+                    color: #ffffff;
+                    margin-right: 15px;
+                    
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+                i{
+                    margin-right: 3px;
+                    color: #00fff0;
+                }
+            }
+
+        }
+
+}
+
+// 모바일메뉴
+.mobile_menu{
+    display: none;
+}
+
+// 컨텐츠
 .contents{
     width: 100%;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
-    
+    flex: 1;
+
     .contents_inner{
         width: 1200px;
+        padding: 30px 0 50px 0;
+
+        // 로그인
+        .login_div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .login_div_inner{
+            width: 40%;
+            padding: 80px 40px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .login_form_div{
+            padding: 10px;
+
+            .login_logo{
+                width: 100%;
+                padding: 30px 0;
+                text-align: center;
+                font-size: 2.5rem;
+            }
+
+            .login_form{
+                position: relative;
+                margin-top: 10px;
+
+                label{
+                    position: absolute;
+                    z-index: 1;
+                    height: 40px;
+                    line-height: 1.2rem;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                    padding: 10px 11px;
+                }
+    
+                input[type=text]{
+                    width: 100%;
+                    height: 40px;
+                    padding: 10px 11px 10px 40px;
+                }
+                input[type=password]{
+                    width: 100%;
+                    height: 40px;
+                    padding: 10px 11px 10px 40px;
+                }
+            }
+
+            .btn_div .login_btn{
+                width: 100%;
+                border-radius: 30px;
+            }
+        }
+    
+        .join_btn_div{
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            a{
+                color: #333;
+            }
+
+            span{
+                width: 1px;
+                height: 12px;
+                background: #ddd;
+                display: inline-block;
+                margin: 0 8px;
+            }
+        }
+        
+        // 거래하기
+        .exchange_div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .left_div{
+                width: 70.5%;
+                margin-right: 1.5%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+
+                .trad_box{
+                    margin-bottom: 15px;
+                    background: #ffffff;
+                    border: 1px solid #f2f2f2;
+                }
+                .buy_box{
+                    background: #ffffff;
+                    border: 1px solid #f2f2f2;
+
+                    .deal_div{
+                        padding: 10px;
+                    }
+                    // 계약시간
+                    .timer{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        padding: 10px 20px 30px 20px;
+
+                        // 남은계약시간
+                        .ing_deal{
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .ing_deal p{
+                            text-align: center;
+                            margin-bottom: 5px;
+                            font-size: 1.2rem;
+                        }
+                        .ing_deal ul li{
+                            display: inline-block;
+                            margin-right: 8px;
+                            font-size: 2.5rem;
+                            color: #878787;
+                        }
+                        .ing_deal ul li span{
+                            padding: 0 12px;
+                            border-radius: 5px;
+                            font-weight: 700;
+                            color: #ffffff;
+                            background: #878787;
+                        }
+                        .ing_deal ul li:last-child{
+                            margin-right: 0;
+                        }
+
+                        // 다음계약시간
+                        .next_deal{
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .next_deal p{
+                            text-align: center;
+                            margin-bottom: 5px;
+                            font-size: 1.2rem;
+                        }
+                        .next_deal ul li{
+                            display: inline-block;
+                            margin-right: 8px;
+                            font-size: 2.5rem;
+                            color: #23a700;
+                        }
+                        .next_deal ul li span{
+                            padding: 0 12px;
+                            border-radius: 5px;
+                            font-weight: 700;
+                            color: #ffffff;
+                            background: #23a700;
+                        }
+                        .next_deal ul li:last-child{
+                            margin-right: 0;
+                        }
+                    }
+                    // 매수매도
+                    //매수
+                    .deal_buy{
+                        display: flex;
+                        align-items: stretch;
+                        justify-content: center;
+                    }
+                    .buy_ui{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 245px;
+                        padding: 6px 10px;
+                        border-radius: 4px;
+                        background: #d60000;
+                    }
+                    .buy_ui span{
+                        height: 30px;
+                        line-height: 28px;
+                        padding: 0 5px;
+                        border-radius: 3px;
+                        color: #d60000;
+                        font-weight: 700;
+                        background: #ffffff;
+                    }
+                    .buy_ui button{
+                        width: 30px;
+                        height: 30px;
+                        line-height: 26px;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: #ffffff;
+                        border: 1px solid #ffffff;
+                        background: #d60000;
+                    }
+                    .buy_ui p{
+                        width: 120px;
+                        font-size: 1rem;
+                        color: #ffffff;
+                    }
+                    .deal_buy_max{
+                        display: flex;
+                        flex: 1;
+                        margin-left: 5px;
+                        padding: 8px 10px;
+                        color: #d60000;
+                        border: 1px solid #d60000;
+                        border-radius: 4px;
+                        background: none;
+                        font-weight: 700;
+                    }
+                    //매도
+                    .deal_sell{
+                        display: flex;
+                        align-items: stretch;
+                        justify-content: center;
+                    }
+                    .sell_ui{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 245px;
+                        padding: 6px 10px;
+                        border-radius: 4px;
+                        background: #0042b7;
+                    }
+                    .sell_ui span{
+                        height: 30px;
+                        line-height: 28px;
+                        padding: 0 5px;
+                        border-radius: 3px;
+                        color: #0042b7;
+                        font-weight: 700;
+                        background: #ffffff;
+                    }
+                    .sell_ui button{
+                        width: 30px;
+                        height: 30px;
+                        line-height: 26px;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: #ffffff;
+                        border: 1px solid #ffffff;
+                        background: #0042b7;
+                    }
+                    .sell_ui p{
+                        width: 120px;
+                        font-size: 1rem;
+                        color: #ffffff;
+                    }
+                    .deal_sell_max{
+                        display: flex;
+                        flex: 1;
+                        margin-left: 5px;
+                        padding: 8px 10px;
+                        color: #0042b7;
+                        border: 1px solid #0042b7;
+                        border-radius: 4px;
+                        background: none;
+                        font-weight: 700;
+                    }
+                    //버튼
+                    .sell_del{
+                        padding: 8px 20px;
+                        font-size: 0.9rem;
+                        border: 1px solid #666;
+                        color: #666666;
+                        background: #ffffff;
+                        border-radius: 4px;
+                    }
+                    .buy_ok{
+                        padding: 8px 20px;
+                        font-size: 0.9rem;
+                        border: 1px solid #d60000;
+                        color: #ffffff;
+                        background: #d60000;
+                        border-radius: 4px;
+                    }
+                    .buy_max{
+                        padding: 8px 20px;
+                        font-size: 0.9rem;
+                        border: 1px solid #d60000;
+                        color: #d60000;
+                        background: #ffffff;
+                        border-radius: 4px;
+                    }
+                    .sell_ok{
+                        padding: 8px 20px;
+                        font-size: 0.9rem;
+                        border: 1px solid #0042b7;
+                        color: #ffffff;
+                        background: #0042b7;
+                        border-radius: 4px;
+                    }
+                    .sell_max{
+                        padding: 8px 20px;
+                        font-size: 0.9rem;
+                        border: 1px solid #0042b7;
+                        color: #0042b7;
+                        background: #ffffff;
+                        border-radius: 4px;
+                    }
+                }
+            }
+            .right_div{
+                width: 28%;
+                display: flex;
+                border: 1px solid #f2f2f2;
+
+                .list_box{
+                    width: 100%;
+                    background: #ffffff;
+                }
+            }
+        }
+
+        // 입출금
+        .deposit_info{
+            margin-top: 3px;
+            font-size: 0.7rem;
+            color:#0463c5;
+        }
+        .deposit_btn{
+            margin-top: 10px;
+
+            button{
+                margin-right: 5px;
+            }
+        }
+        // 입출금안내
+        .info_txt{
+            margin-top: 20px;
+
+            p{
+                color: red;
+                font-weight: bold;
+            }
+        }
+
+        // 서브페이지
+        .sub_div{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            .sub_menu{
+                width: 15%;
+                margin-right: 15px;
+                display: flex;
+                flex-direction: column;
+                background: #ffffff;
+                border: 1px solid #f2f2f2;
+
+                .lnb_tit{
+                    padding: 20px 15px;
+                    font-size: 1.1rem;
+                    // border-bottom: 2px solid #10325c;
+                    // color: #10325c;
+                    background: #5d718a;
+                    color: #ffffff;
+                }
+
+                ul{
+                }
+                ul li{
+                    padding: 15px 15px;
+                    color: #4c4948;
+                }
+                ul li.active{
+                    background-color: #f5f6fa;
+                }
+                ul li:hover{
+                    background-color: #f5f6fa;
+                }
+                ul li.active a{
+                    color: #0051c7;
+                    font-weight: bold;
+                }
+                ul li:hover a{
+                    color: #0051c7;
+                    font-weight: bold;
+                }
+                ul li a{
+                    font-size: 1rem;
+                    display: block;
+                    color: #4c4948;
+                }
+        
+            }
+            .sub_page{
+                width: 85%;
+                padding: 30px 30px 50px 30px;
+                background: #ffffff;
+                border: 1px solid #f2f2f2;
+
+                .page_div{
+                    margin: 0 0 30px 0;
+                }
+            }
+
+        }
+
+        // 회원가입
+        .signup_div{
+            margin: 30px 0 0 0;
+
+            // 약관내용
+            .agree_content{
+                background: #ffffff;
+                border: 1px solid #ddd;
+                padding: 20px;
+
+                .agree_txt{
+                    padding: 5px;
+                    height: 120px;
+                    border: 1px solid #ddd;
+                    overflow-y: scroll;
+                    background: #f5f5f5;
+                    margin: 5px 0;
+
+                    ul{
+                        margin-top: 10px;
+                    }
+                }
+
+                .agree_element{
+                    padding-bottom: 10px;
+                    margin-bottom: 10px;
+                    border-bottom: 1px solid #ddd;
+                }
+                .agree_element:last-child{
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    border-bottom: none;
+                }
+
+                label{
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .btn_div{
+            margin-top: 30px;
+            text-align: center;
+        }
+        .top_btn_div{
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
     }
 
+}
+
+// 푸터영역
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #4c4948;
+
+    .footer_inner{
+        width: 1200px;
+        padding: 30px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: #ddd;
+        font-size: 0.8rem;
+
+        a{
+            color: #ddd;
+        }
+
+        .footer_left{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .fotter_logo{
+                margin-right: 100px;
+            }
+
+            ul{}
+
+            ul li{
+                margin-bottom: 5px;
+            }
+            ul li:last-child{
+                margin-bottom: 0;
+            }
+            ul li span{
+                width: 1px;
+                height: 12px;
+                background: #ddd;
+                display: inline-block;
+                margin: 0 8px;
+            }
+            ul li a{
+                font-size: 0.9rem;
+                color: #ffffff;
+            }
+        }
+
+        .footer_right{
+            display: flex;
+        }
+    }
 }

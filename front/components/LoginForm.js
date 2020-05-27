@@ -20,22 +20,24 @@ const LoginForm = () => {
       },
     });
   }, [id, password]);
-
   return (
-    <Form onSubmit={onSubmitForm} style={{ padding: '10px' }}>
-      <div>
-        <label htmlFor="user-id">아이디</label>
-        <br />
-        <Input name="user-id" value={id} onChange={onChangeId} required />
+    <Form onSubmit={onSubmitForm} className="login_form_div">
+      <div className="login_logo">FX시티(로고영역)</div>
+      <div className="login_form">
+        <label htmlFor="user-id"><i className="ri-user-line"></i></label>
+        <Input name="user-id" value={id} onChange={onChangeId} required placeholder="아이디를 입력하세요" />
       </div>
-      <div>
-        <label htmlFor="user-password">비밀번호</label>
-        <br />
-        <Input name="user-password" value={password} onChange={onChangePassword} type="password" required />
+      <div className="login_form">
+        <label htmlFor="user-password"><i class="ri-lock-password-line"></i></label>
+        <Input name="user-password" value={password} onChange={onChangePassword} type="password" required placeholder="비밀번호를 입력하세요" />
       </div>
-      <div style={{ marginTop: '10px' }}>
-        <Button type="primary" htmlType="submit" loading={isLoggingIn}>로그인</Button>
-        <Link href="/signup"><a><Button>회원가입</Button></a></Link>
+      <div className="btn_div">
+        <Button type="primary" size={'large'} htmlType="submit" loading={isLoggingIn} className="login_btn">로그인</Button>
+      </div>
+      <div className="join_btn_div">
+        <Link href="#"><a>아이디찾기</a></Link><span></span>
+        <Link href="#"><a>비밀번호찾기</a></Link><span></span>
+        <Link href="#"><a>회원가입</a></Link>
       </div>
     </Form>
   );

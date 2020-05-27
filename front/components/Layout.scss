@@ -1,14 +1,284 @@
 @import './contents.scss';
-@import './header.scss';
+@import './mobile.scss';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap');
 
 html{
-    font-size: 1rem;
+    
 }
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Noto Sans KR', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background: #f8fbfe;
+    color: #333;
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, a{
+    margin: 0;
 }
 
 a{
-    text-decoration: none;;
+    text-decoration: none;
 }
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+ul li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ol{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1{font-size: 1rem;}
+h2{font-size: 0.8rem;}
+h3{font-size: 1.4rem;}
+h4{font-size: 1.1rem;}
+h5{font-size: 0.9rem; font-weight: 400;}
+em{font-style: normal;}
+
+.tit_01{
+    width: 100%;
+    border-bottom: 2px solid #dddddd;
+    font-weight: 500;
+    padding: 0 0 5px 0;
+    margin-bottom: 20px;
+}
+.tit_02{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.con_txt01{
+    width: 100%;
+    margin-bottom: 10px;
+    .point{
+        color: red;
+    }
+}
+
+form, table{
+    width: 100%;
+    padding:0;
+    border:0;
+    border-spacing:0px;
+    border-collapse:collapse;
+}
+
+// 공통사이즈
+.wd_70{
+    width: 70% !important;
+}
+.wd_75{
+    width: 75% !important;
+}
+.wd_80{
+    width: 80% !important;
+}
+.wd_82{
+    width: 82% !important;
+}
+.wd_90{
+    width: 90% !important;
+}
+.wd_100{
+    width: 100% !important;
+}
+
+// 테이블스타일
+table{
+    border-top: 2px solid #666;
+    background: #fff;
+    font-size: 0.9rem;
+}
+table tr th{
+    background: #f2f2f2;
+    padding: 15px 10px;
+    border-bottom: 1px solid #333;
+}
+table tr td{
+    padding: 15px 10px;
+    border-bottom: 1px solid #333;
+}
+
+.tb_01{
+    width: 100%;
+}
+.tb_01 tr th{
+    width: 13%;
+}
+.tb_01 tr td{
+    width: 36%;
+}
+.tb_01 tr td button{
+    margin-left: 0px;
+}
+.tb_01 tr td .signup_info{
+    margin-top: 3px;
+    font-size: 0.7rem;
+    color: red;
+}
+.tb_01 tr td em{
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.tb_02{
+    width: 100%;
+    text-align: center;
+}
+.tb_02 tr td button{
+    margin-left: 0px;
+}
+
+.tab_tb{
+    margin-top: 0;
+    border-top: none;
+    font-size: 0.8rem;
+    .tb_r{
+        text-align: right;
+    }
+}
+
+// 매수매도테이블
+.tb_03{
+    width: 100%;
+    text-align: center;
+}
+.tb_03 tr th{
+    background: none;
+    border-bottom: 2px solid #666;
+}
+.buy_color{
+    color: #d60000;
+}
+.sell_color{
+    color: #0042b7;
+}
+.bottom_tr td{
+    background: #f7f7f7;
+    font-weight: 700;
+}
+
+// input 스타일
+input[type=text]{
+    width: 310px;
+    margin-right: 5px;
+}
+input[type=number]{
+    width: 250px;
+    margin-right: 5px;
+}
+input[type=password]{
+    width: 310px;
+}
+input[type=email]{
+    width: 150px;
+}
+.ip_email{
+    margin-right: 5px;
+}
+select{
+    width: 150px;
+    height: 32px;
+}
+input[type=checkbox]{
+    margin-right: 3px;
+}
+
+//거래내역tab
+.ant-tabs-bar{
+    margin-bottom: 0;
+}
+.ant-tabs-nav{
+    width: 100%;
+    margin: 0;
+}
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+    width: 49.999%;
+    margin: 0;
+    border-radius: 0px;
+    border: none;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    color: #0042b7;
+    border-left: 1px solid #0042b7;
+    border-top: 1px solid #0042b7;
+    border-right: 1px solid #0042b7;
+    border-bottom: none;
+}
+
+//매수매도tab
+.buy_box .ant-tabs-bar{
+    margin-bottom: 0;
+}
+.buy_box .ant-tabs-nav{
+    width: 100%;
+    margin: 0;
+}
+.buy_box .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab{
+    width: 33.33333%;
+    margin: 0;
+    border-radius: 0px;
+    border: none;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+.buy_box .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+    color: #0042b7;
+    border-left: 1px solid #0042b7;
+    border-top: 1px solid #0042b7;
+    border-right: 1px solid #0042b7;
+    border-bottom: none;
+}
+
+// 공통스타일 //
+
+// 폰트
+.green_txt{color: #48b07c;}
+.blue_txt{color: #0042b7;}
+.red_txt{color: #d60000;}
+
+.big_txt{
+    font-size: 1.1rem;
+}
+
+//버튼
+button:nth-child(2){
+    margin-left: 10px;
+}
+
+//회원가입버튼
+.signup_div .tb_01 tr td button{
+    margin-left: 0;
+}
+
+button.won_btn{
+    margin-left: 5px;
+}
+button.won_btn:nth-child(1){
+    margin-left: 0;
+    margin-right: 0;
+}
+.ant-btn-sm{
+    height: 30px;
+    padding: 3px 10px;
+}
+
