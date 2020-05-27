@@ -1,4 +1,9 @@
 @media (max-width: 1024px) {
+
+    html{
+        font-size: 1rem;
+    }
+
     // 헤더영역
     .header{
         display: none;
@@ -76,18 +81,18 @@
         .toggler:checked + .hamburger > div::before{
             top: 0;
             transform: rotate(45deg);
-            background: black;
+            background: white;
         }
         
         .toggler:checked + .hamburger > div::after{
             top: 0;
             transform: rotate(135deg);
-            background: black;
+            background: white;
         }
 
         // 메뉴목록
         .menu{
-            background: white;
+            background: #10325c;
             width: 0%;
             height: 100vh;
             position: absolute;
@@ -98,25 +103,50 @@
         }
         
         .toggler:checked ~ .menu{
-            width: 60%;
+            width: 40%;
         }
         
+        // 서브메뉴
         .menu >  div > ul{
             display: flex;
             flex-direction: column;
             position: fixed;
             top: 70px;
-            padding-left: 10px;
+            width: 40%;
+            padding: 0 10px;
             visibility: hidden;
         }
         
         .menu > div > ul > li{
             list-style: none;
-            padding: 0.5rem;
+            padding: 0.8rem 0;
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 500;
         }
-        
-        .menu > div > ul > li > a{
-            color: black;
+        // 회원정보
+        .menu .mb_user{
+            margin-bottom: 20px;
+            border-top: 2px solid #425771;
+            border-bottom: 2px solid #425771;
+        }
+        .menu .mb_user a{
+            margin-right: 20px;
+            color: #ffffff;
+        }
+        .menu .mb_user a i{
+            margin-right: 5px;
+            color: #00fff0;
+        }
+    
+        .menu .mb_sub li{
+            padding: 0.8rem 0;
+            font-size: 1rem;
+            border-bottom: 1px solid #425771;
+            font-weight: 300;
+        }
+        .menu .mb_sub a{
+            color: #f2f2f2;
         }
   
         .menu_bg{
@@ -146,5 +176,35 @@
             color: orange;
         }   
     } 
+
+    // 컨텐츠
+    .contents{
+
+        .contents_inner{
+            width: 95%;
+
+            .sub_div{
+
+                .sub_menu{
+                    display: none;
+                }
+                .sub_page{
+                    width: 100%;
+                    padding: 15px;
+                }
+
+            }
+
+        }
+    }
+
+    // 푸터영역
+    .footer{
+
+        .footer_inner{
+            width: 95%;
+        }
+
+    }
 
 }

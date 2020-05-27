@@ -96,10 +96,50 @@ const AppLayout = ({ children }) => {
         <div className="menu">
             <div>
                 <ul>
-                    <li><a href='#'>Home</a></li>
-                    <li><a href='#'>About</a></li>
-                    <li><a href='#'>Services</a></li>
-                    <li><a href='#'>Contact</a></li>
+                    <li className="mb_user">
+                      <span>
+                      <Link href="/profile"><a><i className="ri-user-line"></i><span>준호강님</span></a></Link>
+                      <Link href="/profile"><a><i className="ri-store-2-line"></i><span>삼성점</span></a></Link>
+                      <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i><span>100,000,000</span></a></Link>
+                      </span>
+                    </li>
+                    <li>
+                      거래하기
+                      <ol className="mb_sub">
+                        <li><Link href="/results"><a>거래결과</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      FX소개
+                      <ol className="mb_sub">
+                        <li><Link href=""><a>FX마진거래</a></Link></li>
+                        <li><Link href=""><a>FX투자방법</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      입출금신청
+                      <ol className="mb_sub">
+                        <li><Link href="deposit"><a>입금신청</a></Link></li>
+                        <li><Link href="withdrawals"><a>출금신청</a></Link></li>
+                        <li><Link href="depositandwithdrawalshistory"><a>입출금내역</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      공지사항
+                      <ol className="mb_sub">
+                        <li><Link href="announcements"><a>공지사항</a></Link></li>
+                        <li><Link href="news"><a>소식</a></Link></li>
+                      </ol>
+                    </li>
+                    <li>
+                      마이페이지
+                      <ol className="mb_sub">
+                        <li><Link href="/profile"><a>회원정보</a></Link></li>
+                        <li><Link href=""><a>1:1문의</a></Link></li>
+                        <li><Link href=""><a>지점이동신청</a></Link></li>
+                        <li><Link href=""><a>나의거래내역</a></Link></li>
+                      </ol>
+                    </li>
                 </ul>
             </div>
         </div>
