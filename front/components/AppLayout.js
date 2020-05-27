@@ -60,9 +60,9 @@ const AppLayout = ({ children }) => {
                     </div>
                     <div class="column">
                       <Link href="/profile"><a>회원정보</a></Link>
-                      <Link href=""><a>1:1문의</a></Link>
-                      <Link href=""><a>지점이동신청</a></Link>
-                      <Link href=""><a>나의거래내역</a></Link>
+                      <Link href="/customerinquiry"><a>1:1문의</a></Link>
+                      <Link href="/branchmove"><a>지점이동신청</a></Link>
+                      <Link href="/transactionhistory"><a>나의거래내역</a></Link>
                     </div>
                   </div>
                 </div>
@@ -135,9 +135,9 @@ const AppLayout = ({ children }) => {
                       마이페이지
                       <ol className="mb_sub">
                         <li><Link href="/profile"><a>회원정보</a></Link></li>
-                        <li><Link href=""><a>1:1문의</a></Link></li>
-                        <li><Link href=""><a>지점이동신청</a></Link></li>
-                        <li><Link href=""><a>나의거래내역</a></Link></li>
+                        <li><Link href="/customerinquiry"><a>1:1문의</a></Link></li>
+                        <li><Link href="/branchmove"><a>지점이동신청</a></Link></li>
+                        <li><Link href="/transactionhistory"><a>나의거래내역</a></Link></li>
                       </ol>
                     </li>
                 </ul>

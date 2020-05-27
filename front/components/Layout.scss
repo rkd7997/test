@@ -44,6 +44,7 @@ h1{font-size: 1rem;}
 h2{font-size: 0.8rem;}
 h3{font-size: 1.4rem;}
 h4{font-size: 1.1rem;}
+h5{font-size: 0.9rem; font-weight: 400;}
 em{font-style: normal;}
 
 .tit_01{
@@ -58,12 +59,34 @@ em{font-style: normal;}
     margin-bottom: 10px;
 }
 
+.con_txt01{
+    width: 100%;
+    margin-bottom: 10px;
+    .point{
+        color: red;
+    }
+}
+
 form, table{
     width: 100%;
     padding:0;
     border:0;
     border-spacing:0px;
     border-collapse:collapse;
+}
+
+// 공통사이즈
+.wd_70{
+    width: 70% !important;
+}
+.wd_80{
+    width: 80% !important;
+}
+.wd_90{
+    width: 90% !important;
+}
+.wd_100{
+    width: 100% !important;
 }
 
 // 테이블스타일
