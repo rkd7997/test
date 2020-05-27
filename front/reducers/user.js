@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 const dummyUser = {
   nickname: '강준호',
   money: 5000000,
@@ -6,20 +8,6 @@ const dummyUser = {
   // Followings: [],
   // Followers: [],
   // id: 1,
-};
-
-export const initialState = {
-  isLoggedIn: false, // 로그인 여부
-  isLoggingOut: false, // 로그아웃 시도중
-  isLoggingIn: false, // 로그인 시도중
-  logInErrorReason: '', // 로그인 실패 사유
-  isSignedUp: false, // 회원가입 성공
-  isSigningUp: false, // 회원가입 시도중
-  signUpErrorReason: '', // 회원가입 실패 사유
-  me: null, // 내 정보
-  followingList: [], // 팔로잉 리스트
-  followerList: [], // 팔로워 리스트
-  userInfo: null, // 남의 정보
 };
 
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
@@ -56,66 +44,68 @@ export const REMOVE_FOLLOWER_FAILURE = 'REMOVE_FOLLOWER_FAILURE';
 
 export const ADD_POST_TO_ME = 'ADD_POST_TO_ME';
 
+export const initialState = {
+  isLoggedIn: false, // 로그인 여부
+  isLoggingOut: false, // 로그아웃 시도중
+  isLoggingIn: false, // 로그인 시도중
+  logInErrorReason: '', // 로그인 실패 사유
+  isSignedUp: false, // 회원가입 성공
+  isSigningUp: false, // 회원가입 시도중
+  signUpErrorReason: '', // 회원가입 실패 사유
+  me: null, // 내 정보
+  followingList: [], // 팔로잉 리스트
+  followerList: [], // 팔로워 리스트
+  userInfo: null, // 남의 정보
+};
+
 export default (state = initialState, action) => {
-  switch (action.type) {
-    case LOG_IN_REQUEST: {
-      return {
-        ...state,
-        isLoggingIn: true,
-        logInErrorReason: '',
-      };
+  return produce(state, (draft) => {
+    switch (action.type) {
+      case LOG_IN_REQUEST: {
+        draft.isLoggingIn = true;
+        draft.logInErrorReason = '';
+        break;
+      }
+      case LOG_IN_SUCCESS: {
+        draft.isLoggingIn = false;
+        draft.isLoggedIn = true;
+        draft.me = dummyUser;
+        draft.isLoading = false;
+        break;
+      }
+      case LOG_IN_FAILURE: {
+        draft.isLoggingIn = false;
+        draft.isLoggedIn = false;
+        draft.logInErrorReason = action.error;
+        draft.me = null;
+        break;
+      }
+      case LOG_OUT_REQUEST: {
+        draft.isLoggedIn = false;
+        draft.me = null;
+        break;
+      }
+      case SIGN_UP_REQUEST: {
+        draft.isSigningUp = true;
+        draft.isSignedUp = false;
+        draft.signUpErrorReason = '';
+        break;
+      }
+      case SIGN_UP_SUCCESS: {
+        draft.isSigningUp = false;
+        draft.isSignedUp = true;
+        break;
+      }
+      case SIGN_UP_FAILURE: {
+        draft.isSigningUp = false;
+        draft.signUpErrorReason = action.error;
+        break;
+      }
+      default: {
+        return {
+          ...state,
+        };
+      }
     }
-    case LOG_IN_SUCCESS: {
-      return {
-        ...state,
-        isLoggingIn: false,
-        isLoggedIn: true,
-        me: dummyUser,
-        isLoading: false,
-      };
-    }
-    case LOG_IN_FAILURE: {
-      return {
-        ...state,
-        isLoggingIn: false,
-        isLoggedIn: false,
-        logInErrorReason: action.error,
-        me: null,
-      };
-    }
-    case LOG_OUT_REQUEST: {
-      return {
-        ...state,
-        isLoggedIn: false,
-        me: null,
-      };
-    }
-    case SIGN_UP_REQUEST: {
-      return {
-        ...state,
-        isSigningUp: true,
-        isSignedUp: false,
-        signUpErrorReason: '',
-      };
-    }
-    case SIGN_UP_SUCCESS: {
-      return {
-        ...state,
-        isSigningUp: false,
-        isSignedUp: true,
-      };
-    }
-    case SIGN_UP_FAILURE: {
-      return {
-        ...state,
-        isSigningUp: false,
-        signUpErrorReason: action.error,
-      };
-    }
-    default: {
-      return {
-        ...state,
-      };
-    }
-  }
+  });
 };
