@@ -1,3 +1,13 @@
+import produce from 'immer';
+
+export const LOAD_ANNOUNCEMENTS_REQUEST = 'LOAD_ANNOUNCEMENTS_REQUEST';
+export const LOAD_ANNOUNCEMENTS_SUCCESS = 'LOAD_ANNOUNCEMENTS_SUCCESS';
+export const LOAD_ANNOUNCEMENTS_FAILURE = 'LOAD_ANNOUNCEMENTS_FAILURE';
+
+export const LOAD_NEWS_REQUEST = 'LOAD_NEWS_REQUEST';
+export const LOAD_NEWS_SUCCESS = 'LOAD_NEWS_SUCCESS';
+export const LOAD_NEWS_FAILURE = 'LOAD_NEWS_FAILURE';
+
 const dummyAnnouncements = {
     id: 1,
     subject: '공지사항입니다.',
@@ -25,68 +35,49 @@ export const initialState = {
     newsLoadErrorReason: '',
 };
 
-export const LOAD_ANNOUNCEMENTS_REQUEST = 'LOAD_ANNOUNCEMENTS_REQUEST';
-export const LOAD_ANNOUNCEMENTS_SUCCESS = 'LOAD_ANNOUNCEMENTS_SUCCESS';
-export const LOAD_ANNOUNCEMENTS_FAILURE = 'LOAD_ANNOUNCEMENTS_FAILURE';
-
-export const LOAD_NEWS_REQUEST = 'LOAD_NEWS_REQUEST';
-export const LOAD_NEWS_SUCCESS = 'LOAD_NEWS_SUCCESS';
-export const LOAD_NEWS_FAILURE = 'LOAD_NEWS_FAILURE';
-
 export default (state = initialState, action) => {
-    switch (action.type) {
-        case LOAD_ANNOUNCEMENTS_REQUEST: {
-            return {
-                ...state,
-                isLoadingAnnouncements: true,
-                isLoadedAnnouncements: false,
-                announcementsLoadErrorReason: '',
-                announcementsList: [],
-            };
+    return produce(state, (draft) => {
+        switch (action.type) {
+            case LOAD_ANNOUNCEMENTS_REQUEST: {
+                draft.isLoadingAnnouncements = true;
+                draft.isLoadingAnnouncements = true;
+                draft.isLoadedAnnouncements = false;
+                draft.announcementsLoadErrorReason = '';
+                draft.announcementsList = [];
+                break;
+            }
+            case LOAD_ANNOUNCEMENTS_SUCCESS: {
+                draft.isLoadingAnnouncements = false;
+                draft.announcementsList = [dummyAnnouncements, ...state.announcementsList];
+                draft.isLoadedAnnouncements = true;
+                break;
+            }
+            case LOAD_ANNOUNCEMENTS_FAILURE: {
+                draft.isLoadingAnnouncements = false;
+                draft.announcementsLoadErrorReason = action.error;
+                break;
+            }
+            case LOAD_NEWS_REQUEST: {
+                draft.isLoadingNews = true;
+                draft.isLoadedNews = false;
+                draft.NEWSLoadErrorReason = '';
+                draft.newsList = [];
+                break;
+            }
+            case LOAD_NEWS_SUCCESS: {
+                draft.isLoadingNews = false;
+                draft.newsList = [dummyNews, ...state.newsList];
+                draft.isLoadedNews = true;
+                break;
+            }
+            case LOAD_NEWS_FAILURE: {
+                draft.isLoadingNews = false;
+                draft.newsLoadErrorReason = action.error;
+                break;
+            }
+            default: {
+                break;
+            }
         }
-        case LOAD_ANNOUNCEMENTS_SUCCESS: {
-            return {
-                ...state,
-                isLoadingAnnouncements: false,
-                announcementsList: [dummyAnnouncements, ...state.announcementsList],
-                isLoadedAnnouncements: true,
-            };
-        }
-        case LOAD_ANNOUNCEMENTS_FAILURE: {
-            return {
-                ...state,
-                isLoadingAnnouncements: false,
-                announcementsLoadErrorReason: action.error,
-            };
-        }
-        case LOAD_NEWS_REQUEST: {
-            return {
-                ...state,
-                isLoadingNews: true,
-                isLoadedNews: false,
-                NEWSLoadErrorReason: '',
-                newsList: [],
-            };
-        }
-        case LOAD_NEWS_SUCCESS: {
-            return {
-                ...state,
-                isLoadingNews: false,
-                newsList: [dummyNews, ...state.newsList],
-                isLoadedNews: true,
-            };
-        }
-        case LOAD_NEWS_FAILURE: {
-            return {
-                ...state,
-                isLoadingNews: false,
-                newsLoadErrorReason: action.error,
-            };
-        }
-        default: {
-            return {
-                ...state,
-            };
-        }
-    }
+    });
 };
