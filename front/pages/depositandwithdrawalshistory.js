@@ -1,9 +1,21 @@
-import React from 'react';
-import { Button, List, Card, Icon, Input, DatePicker} from 'antd';
+import React, {useEffect} from 'react';
+import { Button, List, Card, Icon, Input, DatePicker, Pagination} from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import Link from 'next/link';
+import {useDispatch, useSelector} from "react-redux";
+import { LOAD_USER_DEPOSIT_WITHDRAW_HISTORY_REQUEST } from "../reducers/investments";
+import DepositsAndWithdrawsHistoryRow from "../components/DepositsAndWithdrawsHistoryRow";
 
 const DepositAndWithdrawalsHistory = () => {
+  const { userDepositsAndWithdrawsHistory } = useSelector(state => state.investments);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: LOAD_USER_DEPOSIT_WITHDRAW_HISTORY_REQUEST,
+    });
+  }, []);
+
   return (
     <div className="sub_div">
       <div className="sub_menu">
@@ -36,13 +48,11 @@ const DepositAndWithdrawalsHistory = () => {
               <th width="200px">금액</th>
               <th width="120px">처리내용</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>2020-05-15 11:04:51.297</td>
-              <td>입금</td>
-              <td>10,000</td>
-              <td>완료</td>
-            </tr>
+          {userDepositsAndWithdrawsHistory.map(c => {
+            return (
+              <DepositsAndWithdrawsHistoryRow history={c} />
+            );
+          })}
           </table>
       </div>
     </div>

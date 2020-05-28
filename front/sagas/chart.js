@@ -15,9 +15,7 @@ function* Update(action) {
       data: action.data
     });
   } catch (e) { // loginAPI 실패
-    yield put({ // put은 dispatch 동일
-      type: CHART_DATA_FAILURE,
-    });
+    yield put({ e, type: CHART_DATA_FAILURE, reason: e.response && e.response.data.reason || 'Server Error' });
   }
 }
 

@@ -1,48 +1,33 @@
-const dummyUser = {
-  nickname: '강준호',
-  money: 5000000,
-  location: '삼성점',
-  // Post: [],
-  // Followings: [],
-  // Followers: [],
-  // id: 1,
-};
-
-export const initialState = {
-  chart_data :null,
-};
+import produce from "immer";
 
 export const CHART_DATA_UPDATE = 'CHART_DATA_UPDATE';
 export const CHART_DATA_SUCCESS = 'CHART_DATA_SUCCESS';
 export const CHART_DATA_FAILURE = 'CHART_DATA_UPDATE';
 
-
-
+export const initialState = {
+  chart_data :null,
+};
 
 export default (state = initialState, action) => {
-  switch (action.type) {
-     case CHART_DATA_UPDATE: {
-      return {
-        ...state,
-      };
-    }
-    case CHART_DATA_SUCCESS: {
-      return {
-        ...state,
-        chart_data:action.data
-      };
-    }
+  return produce(state, (draft) => {
+    switch (action.type) {
+      case CHART_DATA_UPDATE: {
+        // TODO
+        break;
+      }
+      case CHART_DATA_SUCCESS: {
+        draft.chart_data = action.data;
+        break;
+      }
 
-    case CHART_DATA_FAILURE: {
-      return {
-        ...state,
-      };
-    }
+      case CHART_DATA_FAILURE: {
+        // TODO
+        break;
+      }
 
-    default: {
-      return {
-        ...state,
-      };
+      default: {
+        break;
+      }
     }
-  }
+  });
 };
