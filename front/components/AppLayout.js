@@ -8,6 +8,8 @@ import UserProfile from './UserProfile';
 import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
 import { CHART_DATA_UPDATE } from '../reducers/chart';
+import { Accordion, AccordionItem } from 'react-sanfona';
+
 
 import { slide as Menus } from 'react-burger-menu'
 
@@ -147,10 +149,28 @@ const AppLayout = ({ children }) => {
             <Link href="/profile"><a><i className="ri-store-2-line"></i>강남점</a></Link>
             <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>100,000</a></Link>
           </div>
+
+          <Accordion>
+            <AccordionItem title={'거래하기'} >  
+            <a className="menu-item" href="/results">거래결과</a>
+
+
+            </AccordionItem>
+            <AccordionItem title={'아이템2'} >  
+              <div>
+                '아이템2'
+              </div>
+
+            </AccordionItem>
+
+          </Accordion>
           <div>
             <h5>거래하기</h5>
             <a className="menu-item" href="/results">거래결과</a>
           </div>
+         
+         
+         
           <div>
             <h5>FX소개</h5>
             <a className="menu-item" href="">FX마진거래</a>
