@@ -109,9 +109,30 @@ const MobileSignUpForm = () => {
     <div className="signup_div">
     <h4 className="tit_02">회원정보입력</h4>
       <Form onSubmit={onSubmit}>
+        <ul>
+          <li>
+            <label htmlFor="user-id">아이디</label>
+            <Input name="user-id" value={id} required onChange={onChangeId} />
+              <Button value="중복체크" onClick={() => setModal1Visible(true)} type="primary" >중복체크</Button>
+              <Modal
+              title="Vertically centered modal dialog"
+              centered
+              visible={Modal1Visible}
+              onOk={() => setModal1Visible(false)}
+              onCancel={() => setModal1Visible(false)}
+              mask={true}
+              action={false}
+              style={{animationDuration:'0s'}}
+              >
+              <p>안녕하세요</p>
+              <p>앤트디 모달입니다.</p>
+            </Modal>
+              <p className="signup_info">영문자로 시작하는 7~20자 영문자 또는 숫자이어야 합니다. 아이디 중복체크 필수</p>
+          </li>
+        </ul>
         <table className="tb_01" width="100%" >
           <tr>
-            <th><label htmlFor="user-id">아이디</label></th>
+            <th></th>
             <td colSpan="3">
               <Input name="user-id" value={id} required onChange={onChangeId} />
               <Button value="중복체크" onClick={() => setModal1Visible(true)} type="primary" >중복체크</Button>

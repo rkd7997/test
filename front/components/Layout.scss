@@ -130,11 +130,6 @@ table tr td{
 .tb_01 tr td button{
     margin-left: 0px;
 }
-.tb_01 tr td .signup_info{
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: red;
-}
 .tb_01 tr td em{
     display: inline-block;
     margin: 0 3px;
@@ -155,6 +150,12 @@ table tr td{
     .tb_r{
         text-align: right;
     }
+}
+
+.signup_info{
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: red;
 }
 
 // 매수매도테이블
