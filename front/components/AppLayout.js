@@ -78,7 +78,7 @@ const AppLayout = ({ children }) => {
         <div className="header">
           <div className="header_inner">
             <div className="header_menu">
-              <Link href="/"><a className="top_logo"><h1>홈(FX 시티)</h1></a></Link>
+              <Link href="/"><a className="top_logo"><h1><img src="/img/top_logo.png" /></h1></a></Link>
               <div className="nav_btn">
                 <Link href="/exchange"><a>거래하기</a></Link>
                 <Link href="introduce"><a>FX소개</a></Link>
@@ -138,7 +138,7 @@ const AppLayout = ({ children }) => {
 
         {/* mobile_menu */}
         <div className="mobile_menu">
-          <h1><Link href="/">FX로고영역</Link></h1>
+          <h1><Link href="/"><a className="mb_top_logo"></a></Link></h1>
         </div>
         <Menus right disableAutoFocus>
         <div className="user_info01">
