@@ -2,9 +2,6 @@ import React, { useCallback, useState,} from 'react';
 import PCSignUpForm from '../components/PCSignUpForm';
 import MobileSignUpForm from '../components/MobileSignUpForm';
 import {
-  BrowserView,
-  MobileView,
-  isBrowser,
   isMobile
 } from "react-device-detect";
 
