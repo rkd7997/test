@@ -41,9 +41,7 @@ const News = () => {
           })}
           </table>
           <div className="btn_div">
-
-
-          <Pagination defaultCurrent={1} total={50} />
+            <Pagination defaultCurrent={1} total={50} />
           </div>
       </div>
     </div>

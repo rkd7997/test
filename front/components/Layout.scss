@@ -48,8 +48,8 @@ label{
 
 h1{font-size: 1.2em;}
 h2{font-size: 0.8em;}
-h3{font-size: 1.35em;}
-h4{font-size: 1.4em;}
+h3{font-size: 1.5em;}
+h4{font-size: 1.2em;}
 h5{font-size: 0.9em; font-weight: 400;}
 p{font-size: 1em;}
 em{font-style: normal;}
@@ -130,11 +130,6 @@ table tr td{
 .tb_01 tr td button{
     margin-left: 0px;
 }
-.tb_01 tr td .signup_info{
-    margin-top: 5px;
-    font-size: 0.9em;
-    color: red;
-}
 .tb_01 tr td em{
     display: inline-block;
     margin: 0 3px;
@@ -151,10 +146,16 @@ table tr td{
 .tab_tb{
     margin-top: 0;
     border-top: none;
-    font-size: 0.8em;
+    font-size: 0.9em;
     .tb_r{
         text-align: right;
     }
+}
+
+.signup_info{
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: red;
 }
 
 // 매수매도테이블
@@ -198,9 +199,17 @@ input[type=email]{
 select{
     width: 150px;
     height: 32px;
+    border: 1px solid #bababa;
+    background: #ffffff;
 }
 input[type=checkbox]{
     margin-right: 3px;
+}
+input.ant-calendar-picker-input{
+    width: 150px;
+    border: 1px solid #bababa;
+    border-radius: 0;
+    margin-right: 5px;
 }
 
 //거래내역tab

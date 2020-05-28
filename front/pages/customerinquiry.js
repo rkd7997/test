@@ -26,28 +26,25 @@ const CustomerInquiry = () => {
         </div>
         <table className="tb_02" width="100%" >
           <tr>
-            <th>번호</th>
-            <th>유형</th>
-            <th width="50%">제목</th>
-            <th>등록일</th>
-            <th>상태</th>
+            <th width="60px">유형</th>
+            <th>제목</th>
+            <th width="90px">등록일</th>
+            <th width="85px">상태</th>
           </tr>
           <tr>
-            <td>1</td>
-            <td>강남</td>
+            <td>입출금</td>
             <td align="left">안드로메다</td>
             <td>2020-05-27</td>
             <td>답변완료</td>
           </tr>
           <tr>
-            <td>1</td>
-            <td>강남</td>
+            <td>로그인</td>
             <td align="left">안드로메다</td>
             <td>2020-05-27</td>
             <td>답변대기중</td>
           </tr>
           <tr>
-            <td colSpan="5">문의내역이 없습니다.</td>
+            <td colSpan="4">문의내역이 없습니다.</td>
           </tr>
         </table>
         <div className="btn_div">

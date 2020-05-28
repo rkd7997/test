@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { LOAD_ANNOUNCEMENTS_REQUEST } from "../reducers/service";
 
 const Announcements = () => {
+
     const { announcementsList } = useSelector(state => state.service);
     const dispatch = useDispatch();
 

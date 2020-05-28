@@ -139,28 +139,36 @@ const AppLayout = ({ children }) => {
           <h1><Link href="/">FX로고영역</Link></h1>
         </div>
         <Menus right disableAutoFocus>
+        <div className="user_info01">
+            <Link href="/profile"><a className="name">주노강님</a></Link>
+            <a onClick={onClickLogout} className="out">로그아웃</a>
+          </div>
+          <div className="user_info02">
+            <Link href="/profile"><a><i className="ri-store-2-line"></i>강남점</a></Link>
+            <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>100,000</a></Link>
+          </div>
           <div>
             <h5>거래하기</h5>
             <a className="menu-item" href="/results">거래결과</a>
           </div>
           <div>
-          <h5>FX소개</h5>
+            <h5>FX소개</h5>
             <a className="menu-item" href="">FX마진거래</a>
             <a className="menu-item" href="">FX투자방법</a>
           </div>
           <div>
-          <h5>입출금</h5>
+            <h5>입출금</h5>
             <a className="menu-item" href="/deposit">입금신청</a>
             <a className="menu-item" href="/withdrawals">출금신청</a>
             <a className="menu-item" href="/depositandwithdrawalshistory">입출금내역</a>
           </div>
           <div>
-          <h5>공지사항</h5>
+            <h5>공지사항</h5>
             <a className="menu-item" href="/announcements">공지사항</a>
             <a className="menu-item" href="/news">소식</a>
           </div>
           <div>
-          <h5>마이페이지</h5>
+            <h5>마이페이지</h5>
             <a className="menu-item" href="/profile">회원정보</a>
             <a className="menu-item" href="/customerinquiry">1:1문의</a>
             <a className="menu-item" href="/branchmove">지점이동신청</a>

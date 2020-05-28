@@ -361,7 +361,7 @@
                     }
                     .buy_ui p{
                         width: 120px;
-                        font-size: 1em;
+                        font-size: 1.2em;
                         color: #ffffff;
                     }
                     .deal_buy_max{
@@ -411,7 +411,7 @@
                     }
                     .sell_ui p{
                         width: 120px;
-                        font-size: 1em;
+                        font-size: 1.2em;
                         color: #ffffff;
                     }
                     .deal_sell_max{
@@ -428,7 +428,7 @@
                     //버튼
                     .sell_del{
                         padding: 8px 20px;
-                        font-size: 0.9em;
+                        font-size: 1.1em;
                         border: 1px solid #666;
                         color: #666666;
                         background: #ffffff;
@@ -436,7 +436,7 @@
                     }
                     .buy_ok{
                         padding: 8px 20px;
-                        font-size: 0.9em;
+                        font-size: 1.1em;
                         border: 1px solid #d60000;
                         color: #ffffff;
                         background: #d60000;
@@ -444,7 +444,7 @@
                     }
                     .buy_max{
                         padding: 8px 20px;
-                        font-size: 0.9em;
+                        font-size: 1.1em;
                         border: 1px solid #d60000;
                         color: #d60000;
                         background: #ffffff;
@@ -452,7 +452,7 @@
                     }
                     .sell_ok{
                         padding: 8px 20px;
-                        font-size: 0.9em;
+                        font-size: 1.1em;
                         border: 1px solid #0042b7;
                         color: #ffffff;
                         background: #0042b7;
@@ -460,7 +460,7 @@
                     }
                     .sell_max{
                         padding: 8px 20px;
-                        font-size: 0.9em;
+                        font-size: 1.1em;
                         border: 1px solid #0042b7;
                         color: #0042b7;
                         background: #ffffff;
@@ -616,6 +616,11 @@
             margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
+
+            select{
+                width: 100px;
+                margin-right: 5px;
+            }
         }
 
     }
