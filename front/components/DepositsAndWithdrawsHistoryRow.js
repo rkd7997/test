@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const DepositsAndWithdrawsHistoryRow = ({ history }) => {
   return (
       <tr>
-        <td>{history.id}</td>
+        {/* <td>{history.id}</td> */}
         <td>{history.time}</td>
         <td>{history.type}</td>
         <td>{history.amount}</td>
@@ -16,7 +16,7 @@ const DepositsAndWithdrawsHistoryRow = ({ history }) => {
 
 DepositsAndWithdrawsHistoryRow.propTypes = {
   history: PropTypes.shape({
-    id: PropTypes.number,
+    // id: PropTypes.number,
     time: PropTypes.object,
     type: PropTypes.string,
     amount: PropTypes.string,

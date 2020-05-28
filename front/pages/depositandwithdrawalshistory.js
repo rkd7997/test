@@ -42,10 +42,10 @@ const DepositAndWithdrawalsHistory = () => {
         </div>
         <table className="tb_02" width="100%" >
             <tr>
-              <th width="120px">번호</th>
-              <th>요청일시</th>
-              <th width="200px">종류</th>
-              <th width="200px">금액</th>
+              {/* <th width="120px">번호</th> */}
+              <th width="120px">요청일시</th>
+              <th width="80px">종류</th>
+              <th width="120px">금액</th>
               <th width="120px">처리내용</th>
             </tr>
           {userDepositsAndWithdrawsHistory.map(c => {

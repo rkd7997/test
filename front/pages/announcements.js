@@ -29,10 +29,8 @@ const Announcements = () => {
                 <h3 className="tit_01">공지사항</h3>
                 <table className="tb_02" width="100%" >
                     <tr>
-                        <th width="80px">번호</th>
                         <th>제목</th>
                         <th width="120px">등록일</th>
-                        <th width="100px">조회수</th>
                     </tr>
                     {announcementsList.map(c => {
                         return (

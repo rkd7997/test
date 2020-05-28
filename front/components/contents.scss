@@ -95,9 +95,15 @@
                     text-align: left;
 
                     h1{
+                        width: 100%;
                         color: #ffffff;
                         font-size: 1em;
                         margin-right: 120px;
+                    }
+
+                    .top_logo{
+                        width: 120px;
+                        text-align: left;
                     }
 
                     a{
@@ -125,7 +131,7 @@
 
                 a{
                     display: flex;
-                    font-size: 0.8em;
+                    font-size: 0.9em;
                     color: #ffffff;
                     margin-right: 15px;
                     
@@ -483,7 +489,7 @@
         // 입출금
         .deposit_info{
             margin-top: 3px;
-            font-size: 0.7em;
+            font-size: 0.85em;
             color:#0463c5;
         }
         .deposit_btn{

@@ -78,7 +78,7 @@ const AppLayout = ({ children }) => {
         <div className="header">
           <div className="header_inner">
             <div className="header_menu">
-              <Link href="/"><h1>홈(FX 시티)</h1></Link>
+              <Link href="/"><a className="top_logo"><h1>홈(FX 시티)</h1></a></Link>
               <div className="nav_btn">
                 <Link href="/exchange"><a>거래하기</a></Link>
                 <Link href="introduce"><a>FX소개</a></Link>
@@ -152,6 +152,7 @@ const AppLayout = ({ children }) => {
 
           <Accordion>
             <AccordionItem title={'거래하기'} className="main_menu" >  
+            <a className="sub_menu" href="/exchange">거래하기</a>
               <a className="sub_menu" href="/results">거래결과</a>
             </AccordionItem>
             <AccordionItem title={'FX소개'} className="main_menu" >  
