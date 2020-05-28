@@ -17,22 +17,16 @@ const News = () => {
         <h3 className="tit_01">소식</h3>
         <table className="tb_02" width="100%" >
             <tr>
-              <th>번호</th>
               <th>제목</th>
-              <th>등록일</th>
-              <th>조회수</th>
+              <th width="100px">등록일</th>
             </tr>
             <tr>
-              <td>1</td>
-              <td>뉴스입니다.</td>
+              <td align="left">뉴스입니다.</td>
               <td>2020-05-21</td>
-              <td>100000</td>
             </tr>
           </table>
           <div className="btn_div">
-
-
-          <Pagination defaultCurrent={1} total={50} />
+            <Pagination defaultCurrent={1} total={50} />
           </div>
       </div>
     </div>

@@ -43,21 +43,18 @@ const Branchmove = () => {
           <h4 className="con_txt01">신청내역</h4>
           <table className="tb_02" width="100%" >
             <tr>
-              <th>번호</th>
-              <th>소속지점</th>
+              <th width="70px">소속지점</th>
               <th>이동지점</th>
-              <th>신청일자</th>
-              <th>상태</th>
+              <th width="90px">신청일자</th>
+              <th width="60px">상태</th>
             </tr>
             <tr>
-              <td>1</td>
               <td>강남</td>
               <td>안드로메다</td>
               <td>2020-05-27</td>
               <td>승인</td>
             </tr>
             <tr>
-              <td>1</td>
               <td>강남</td>
               <td>안드로메다</td>
               <td>2020-05-27</td>

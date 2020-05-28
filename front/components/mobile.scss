@@ -57,14 +57,52 @@
     }
     
     /* General sidebar styles */
+    //회원정보
+    .bm-menu .user_info01{
+        display: flex !important;
+        align-items: center;
+        padding: 1em 2em;
+        border-bottom: 1px solid #0b203a;
+
+        a{
+            display: inline-block;
+            text-align: left;
+            color: #ffffff;
+        }
+        .name{
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+        .out{
+            padding: 3px 10px;
+            background: #1e497f;
+            font-size: 0.95em;
+            margin-left: 10px;
+        }
+    }
+    .bm-menu .user_info02{
+        padding: 0 0.8em;
+
+        a{
+            display: inline-block;
+            text-align: center;
+            width: 50%;
+            color: #ffffff;
+        }
+    }
+
+    .bm-cross-button{
+        color: #ffffff;
+    }
+
     .bm-menu {
         background: #10325c;
-        padding: 2.5em 1.5em 0;
         font-size: 0.95em;
     }
 
     .bm-menu div{
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        padding: 0.4em 2em;
     }
 
     .bm-menu h5{
@@ -83,7 +121,6 @@
     /* Wrapper for item list */
     .bm-item-list {
         color: #b8b7ad;
-        padding: 0.8em;
     }
     .bm-item-list a{
         color: #9cadc3;
@@ -122,6 +159,55 @@
                 }
 
             }
+            
+            // 회원가입
+            .mobile_signup{
+                background: #ffffff;
+                border: 1px solid #ddd;
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .mobile_signup li{
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                width: 50%;
+                padding: 20px;
+                border-bottom: 1px solid #ddd;
+
+                div{
+                    display: flex;
+                    width: 100%;
+
+                    button{
+                        margin-left: 0;
+                    }
+                    em{
+                        margin: 0 5px;
+                    }
+                }
+
+            }
+            .mobile_signup li:nth-child(odd){
+                border-right: 1px solid #ddd;
+            }
+            .mobile_signup li:last-child{
+                border-bottom: none;
+                border-right: none;
+            }
+            .mobile_signup li label{
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+                font-size: 0.95em;
+            }
+
+            input[type=email]{
+                width: 134px;
+            }
+            select{
+                height: 33px;
+            }
 
         }
     }
@@ -138,11 +224,219 @@
 }
 
 @media (max-width: 768px) {
+    // 모바일메뉴
+    .mobile_menu .menu > div > ul > li{
+        font-size: 1rem;
+    }
+
+     // 컨텐츠
+     .contents{
+        margin-top: 50px;
+
+        .contents_inner{
+            width: 95%;
+            padding: 20px 0 40px 0;
+
+            .sub_div{
+
+                .sub_menu{
+                    display: none;
+                }
+                .sub_page{
+                    width: 100%;
+                    padding: 15px;
+                }
+
+            }
+            
+            // 회원가입
+            .mobile_signup{
+                background: #ffffff;
+                border: 1px solid #ddd;
+                display: flex;
+                flex-flow: row wrap;
+            }
+            .mobile_signup li{
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                width: 50%;
+                padding: 1em 0.8em;
+                border-bottom: 1px solid #ddd;
+
+                div{
+                    display: flex;
+                    width: 100%;
+
+                    button{
+                        margin-left: 0;
+                    }
+                    em{
+                        margin: 0 5px;
+                    }
+                }
+
+            }
+            .mobile_signup li:nth-child(odd){
+                border-right: 1px solid #ddd;
+            }
+            .mobile_signup li:last-child{
+                border-bottom: none;
+                border-right: none;
+            }
+            .mobile_signup li label{
+                display: block;
+                margin-bottom: 5px;
+                font-weight: 500;
+                font-size: 0.95em;
+            }
+
+            input[type=email]{
+                width: 100px;
+            }
+
+            // 약관
+            .signup_div{
+                margin-top: 20px;
+
+                .agree_content{
+                    padding: 1em 0.8em;
+                }
+
+            }
+
+        }
+    }
+
+}
+
+@media (max-width: 420px) {
+    // 모바일메뉴
+    .mobile_menu .menu > div > ul > li{
+        font-size: 1rem;
+    }
+
+     // 컨텐츠
+     .contents{
+        margin-top: 50px;
+
+        .contents_inner{
+            width: 95%;
+            padding: 20px 0 40px 0;
+
+            .sub_div{
+
+                .sub_menu{
+                    display: none;
+                }
+                .sub_page{
+                    width: 100%;
+                    padding: 15px;
+                }
+
+            }
+            
+            // 회원가입
+            .mobile_signup{
+                background: #ffffff;
+                border: 1px solid #ddd;
+            }
+            .mobile_signup li{
+                display: flex;
+                align-items: flex-start;
+                flex-direction: column;
+                width: 100%;
+                padding: 1em 0.8em;
+                border-bottom: 1px solid #ddd;
+
+            }
+            .mobile_signup li:nth-child(odd){
+                border-right: none;
+            }
+            .mobile_signup li:last-child{
+                border-bottom: none;
+                border-right: none;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    h1{font-size: 1.2em;}
+    h2{font-size: 0.8em;}
+    h3{font-size: 1.3em;}
+    h4{font-size: 1.2em;}
+    h5{font-size: 0.9em; font-weight: 400;}
+    p{font-size: 0.9em;}
+    table{font-size: 0.8em;}
 
     // 모바일메뉴
     .mobile_menu .menu > div > ul > li{
-
         font-size: 1rem;
+    }
+
+     // 컨텐츠
+     .contents{
+        margin-top: 50px;
+
+        .contents_inner{
+            width: 95%;
+            padding: 20px 0 40px 0;
+
+            .tit_01{
+                margin-bottom: 10px;
+            }
+
+            .sub_div{
+
+                .sub_menu{
+                    display: none;
+                }
+                .sub_page{
+                    width: 100%;
+                    padding: 15px;
+                }
+
+            }
+            
+            // 회원가입
+            .mobile_signup li{
+                padding: 1em 0.5em;
+
+                div{
+                    em{
+                        margin: 0 2px;
+                    }
+                }
+
+                .email_ip{
+                    input[type=email]{
+                        font-size: 0.8em;
+                    }
+                    select{
+                        width: 90px;
+                        font-size: 0.8em;
+                    }
+                }
+
+            }
+            
+            input[type=email]{
+                width: 90px;
+            }
+
+            // 약관
+            .signup_div{
+                margin-top: 15px;
+
+                .agree_content{
+                    padding: 1em 0.8em;
+                }
+
+            }
+
+        }
     }
 
 }
