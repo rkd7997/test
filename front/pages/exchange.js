@@ -2,7 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Button, List, Card, Icon, Tabs } from 'antd';
 import NicknameEditForm from '../components/NicknameEditForm';
 import ChartComponent from '../components/ChartComponent'
-import TVChartContainer from '../components/TVChartContainer'
+import TVChartContainer from '../components/TVChartContainer/index'
 
 
 const { TabPane } = Tabs;

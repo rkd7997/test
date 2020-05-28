@@ -154,7 +154,6 @@ const AppLayout = ({ children }) => {
             <AccordionItem title={'거래하기'} >  
             <a className="menu-item" href="/results">거래결과</a>
 
-
             </AccordionItem>
             <AccordionItem title={'아이템2'} >  
               <div>
