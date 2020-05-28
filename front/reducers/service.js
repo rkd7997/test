@@ -8,22 +8,6 @@ export const LOAD_NEWS_REQUEST = 'LOAD_NEWS_REQUEST';
 export const LOAD_NEWS_SUCCESS = 'LOAD_NEWS_SUCCESS';
 export const LOAD_NEWS_FAILURE = 'LOAD_NEWS_FAILURE';
 
-const dummyAnnouncements = {
-    id: 1,
-    subject: '공지사항입니다.',
-    content: '공지사항입니다. 공지사항입니다.',
-    regDate: '2020-05-21',
-    hit: 9997,
-};
-
-const dummyNews = {
-    id: 1,
-    subject: '뉴스입니다.',
-    content: '뉴스입니다. 뉴스입니다.',
-    regDate: '2020-05-21',
-    hit: 995,
-};
-
 export const initialState = {
     announcementsList: [],
     isLoadingAnnouncements: false,
@@ -48,13 +32,15 @@ export default (state = initialState, action) => {
             }
             case LOAD_ANNOUNCEMENTS_SUCCESS: {
                 draft.isLoadingAnnouncements = false;
-                draft.announcementsList = [dummyAnnouncements, ...state.announcementsList];
+                action.data.forEach((d) => {
+                    draft.announcementsList.push(d);
+                });
                 draft.isLoadedAnnouncements = true;
                 break;
             }
             case LOAD_ANNOUNCEMENTS_FAILURE: {
                 draft.isLoadingAnnouncements = false;
-                draft.announcementsLoadErrorReason = action.error;
+                draft.announcementsLoadErrorReason = action.reason;
                 break;
             }
             case LOAD_NEWS_REQUEST: {
@@ -66,13 +52,15 @@ export default (state = initialState, action) => {
             }
             case LOAD_NEWS_SUCCESS: {
                 draft.isLoadingNews = false;
-                draft.newsList = [dummyNews, ...state.newsList];
+                action.data.forEach((d) => {
+                    draft.newsList.push(d);
+                });
                 draft.isLoadedNews = true;
                 break;
             }
             case LOAD_NEWS_FAILURE: {
                 draft.isLoadingNews = false;
-                draft.newsLoadErrorReason = action.error;
+                draft.newsLoadErrorReason = action.reason;
                 break;
             }
             default: {

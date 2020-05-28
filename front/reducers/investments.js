@@ -8,22 +8,6 @@ export const LOAD_USER_TRANSACTION_HISTORY_REQUEST = 'LOAD_USER_TRANSACTION_HIST
 export const LOAD_USER_TRANSACTION_HISTORY_SUCCESS = 'LOAD_USER_TRANSACTION_HISTORY_SUCCESS';
 export const LOAD_USER_TRANSACTION_HISTORY_FAILURE = 'LOAD_USER_TRANSACTION_HISTORY_FAILURE';
 
-const dummyUserDepositsAndWithdrawsHistory = {
-    id: 1,
-    type: '입금',
-    time: '2020-05-13 18:52:00.880',
-    amount: '10000',
-    result: '완료'
-};
-
-const dummyUserTransactionHistory = {
-    id: 1,
-    type: '1분매수',
-    time: '13일 19시 56분',
-    amount: '10000',
-    result: '실현'
-};
-
 export const initialState = {
     userDepositsAndWithdrawsHistory: [],
     isLoadingUserDepositsAndWithdrawsHistory: false,
@@ -47,13 +31,15 @@ export default (state = initialState, action) => {
             }
             case LOAD_USER_DEPOSIT_WITHDRAW_HISTORY_SUCCESS: {
                 draft.isLoadingUserDepositsAndWithdrawsHistory = false;
-                draft.userDepositsAndWithdrawsHistory = [dummyUserDepositsAndWithdrawsHistory, ...state.userDepositsAndWithdrawsHistory];
+                action.data.forEach((d) => {
+                    draft.userDepositsAndWithdrawsHistory.push(d);
+                });
                 draft.isLoadedUserDepositsAndWithdrawsHistory = true;
                 break;
             }
             case LOAD_USER_DEPOSIT_WITHDRAW_HISTORY_FAILURE: {
                 draft.isLoadingUserDepositsAndWithdrawsHistory = false;
-                draft.userDepositsAndWithdrawsHistoryErrorReason = action.error;
+                draft.userDepositsAndWithdrawsHistoryErrorReason = action.reason;
                 break;
             }
             case LOAD_USER_TRANSACTION_HISTORY_REQUEST: {
@@ -65,13 +51,15 @@ export default (state = initialState, action) => {
             }
             case LOAD_USER_TRANSACTION_HISTORY_SUCCESS: {
                 draft.isLoadingUserTransactionHistory = false;
-                draft.userTransactionHistory = [dummyUserTransactionHistory, ...state.userTransactionHistory];
+                action.data.forEach((d) => {
+                    draft.userTransactionHistory.push(d);
+                });
                 draft.isLoadedUserTransactionHistory = true;
                 break;
             }
             case LOAD_USER_TRANSACTION_HISTORY_FAILURE: {
                 draft.isLoadingUserTransactionHistory = false;
-                draft.userTransactionHistoryErrorReason = action.error;
+                draft.userTransactionHistoryErrorReason = action.reason;
                 break;
             }
             default: {

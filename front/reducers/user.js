@@ -1,15 +1,5 @@
 import produce from 'immer';
 
-const dummyUser = {
-  nickname: '강준호',
-  money: 5000000,
-  location: '삼성점',
-  // Post: [],
-  // Followings: [],
-  // Followers: [],
-  // id: 1,
-};
-
 export const SIGN_UP_REQUEST = 'SIGN_UP_REQUEST';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
@@ -69,20 +59,29 @@ export default (state = initialState, action) => {
       case LOG_IN_SUCCESS: {
         draft.isLoggingIn = false;
         draft.isLoggedIn = true;
-        draft.me = dummyUser;
+        draft.me = action.data;
         draft.isLoading = false;
         break;
       }
       case LOG_IN_FAILURE: {
         draft.isLoggingIn = false;
         draft.isLoggedIn = false;
-        draft.logInErrorReason = action.error;
+        draft.logInErrorReason = action.reason;
         draft.me = null;
         break;
       }
       case LOG_OUT_REQUEST: {
+        draft.isLoggingOut = true;
+        break;
+      }
+      case LOG_OUT_SUCCESS: {
         draft.isLoggedIn = false;
+        draft.isLoggingOut = false;
         draft.me = null;
+        break;
+      }
+      case LOG_OUT_FAILURE: {
+        draft.isLoggingOut = false;
         break;
       }
       case SIGN_UP_REQUEST: {
@@ -98,7 +97,7 @@ export default (state = initialState, action) => {
       }
       case SIGN_UP_FAILURE: {
         draft.isSigningUp = false;
-        draft.signUpErrorReason = action.error;
+        draft.signUpErrorReason = action.reason;
         break;
       }
       default: {
