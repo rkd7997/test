@@ -18,6 +18,8 @@ const FXCITY = ({ Component, store }) => {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.4.0/fonts/remixicon.css" rel="stylesheet" />
         <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script> 
+        <script src="/charting_library/charting_library.min.js"></script>
+
       </Head>
       <AppLayout>
         <Component />

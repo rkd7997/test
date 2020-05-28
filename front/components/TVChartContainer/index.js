@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import './TVChartView.scss';
 import Datafeed from './api/';
-// import { withRouter } from 'react-router-dom';
-// import { translate } from 'react-i18next';
-// import { inject, observer } from 'mobx-react';
 
-// @withRouter
-// @translate('translations')
-// @inject('tradingPairStore', 'isMobile')
-// @observer
+
 class TVChartContainer extends Component {
     static defaultProps = {
 		symbol: '',
@@ -23,68 +17,71 @@ class TVChartContainer extends Component {
 		autosize: true
     };
     
-	// componentDidMount() {
-    //     this._initializeTVWidget(this.props.theme);
-    //     this.props.i18n.on('languageChanged', this._changeLanguage);
-    //     if (this.tvWidget._ready) {
-    //         this.tvWidget.setSymbol(this.props.tradingPairName, this.props.min || this.props.interval);
-    //     } else {
-    //         if (this.tvWidget._readyHandlers.length === 0) {
-    //             this.tvWidget.onChartReady(() => {
-    //                 this.tvWidget.setSymbol(this.props.tradingPairName, this.props.min || this.props.interval);
-    //             });
-    //         } 
-    //     }
-    // }
+	componentDidMount() {
+        this._initializeTVWidget('Light');
+        // this.props.i18n.on('languageChanged', this._changeLanguage);
+        if (this.tvWidget._ready) {
+            this.tvWidget.setSymbol('', 5);
+        } else {
+            if (this.tvWidget._readyHandlers.length === 0) {
+                this.tvWidget.onChartReady(() => {
+					this.tvWidget.setSymbol('', 5);
+                });
+            } 
+        }
+    }
     
-    // componentWillReceiveProps(nextProps) {
-    //     if (this.props.tradingPairName !== nextProps.tradingPairName) {
-    //         if (this.tvWidget._ready) {
-    //             this.tvWidget.setSymbol(nextProps.tradingPairName, this.props.min || this.props.interval);
-    //         }
+    componentWillReceiveProps(nextProps) {
+        // if (this.props.tradingPairName !== nextProps.tradingPairName) {
+        //     if (this.tvWidget._ready) {
+        //         this.tvWidget.setSymbol(nextProps.tradingPairName, this.props.min || this.props.interval);
+        //     }
 
-    //         if (this.tvWidget._readyHandlers.length === 0) {
-    //             this.tvWidget.onChartReady(() => {
-    //                 this.tvWidget.setSymbol(this.props.tradingPairName, this.props.min || this.props.interval);
-    //             });
-    //         }
-    //     }
+        //     if (this.tvWidget._readyHandlers.length === 0) {
+        //         this.tvWidget.onChartReady(() => {
+        //             this.tvWidget.setSymbol(this.props.tradingPairName, this.props.min || this.props.interval);
+        //         });
+        //     }
+        // }
         
-    //     if (this.props.theme !== nextProps.theme) {
-    //         // debugger
-    //         this._initializeTVWidget(nextProps.theme);
-    //     }
-    // }
+        // if (this.props.theme !== nextProps.theme) {
+        //     // debugger
+        //     this._initializeTVWidget(nextProps.theme);
+        // }
+    }
 
-	// componentWillUnmount() {
-	// 	const i18n = this.props.i18n;
-    //     i18n.off('languageChanged', this._changeLanguage);
-    //     this.tradingPairName = null;
-    // }
+	componentWillUnmount() {
+		// const i18n = this.props.i18n;
+        // i18n.off('languageChanged', this._changeLanguage);
+        // this.tradingPairName = null;
+    }
     
-    // _changeLanguage = () => {
-    //     if (this.tvWidget._ready) {
-    //         this.tvWidget.setLanguage(this._getCurrentLanguage());
-    //     } else {
-    //         this.tvWidget.onChartReady(() => {
-    //             this.tvWidget.setLanguage(this._getCurrentLanguage());
-    //         });
-    //     }
-    // }
+    _changeLanguage = () => {
+        // if (this.tvWidget._ready) {
+        //     this.tvWidget.setLanguage(this._getCurrentLanguage());
+        // } else {
+        //     this.tvWidget.onChartReady(() => {
+        //         this.tvWidget.setLanguage(this._getCurrentLanguage());
+        //     });
+		// }
+		return 'ko'
+    }
 
-	// _getCurrentLanguage = () => {
-	// 	const language = this.props.i18n.language.split('-')[0];
-	// 	return language;
-	// }
+	_getCurrentLanguage = () => {
+		// const language = this.props.i18n.language.split('-')[0];
+		// return language;
+		return 'ko'
+	}
 
 	_initializeTVWidget = (targetTheme) => {
-		let height = this.props.useDocumentScreenSize ? `${document.documentElement.clientHeight}px` : '100%';
+		let height = '100%' 
+		// this.props.useDocumentScreenSize ? `${document.documentElement.clientHeight}px` : '100%';
 
 		let volumePaneSize = "small";
 
-		if(this.props.isMobile) {
-			volumePaneSize = "large"
-		}
+		// if(this.props.isMobile) {
+		// 	volumePaneSize = "large"
+		// }
 		
 		let background = "#fff",
 			vertGridProperties_color = "rgb(221, 221, 221)",
@@ -108,7 +105,7 @@ class TVChartContainer extends Component {
 			background = "rgb(26, 34, 40)";
 			vertGridProperties_color = "rgb(49, 54, 59)";
 			horzGridProperties_color = vertGridProperties_color;
-			scalesProperties_textColor = "rgb(160, 160, 160)";
+			scalespProperties_textColor = "rgb(160, 160, 160)";
 			upColor = "rgb(73, 176, 124)";
 			downColor = "rgb(232, 67, 82)";
 			studiesOverrides = {
@@ -123,15 +120,15 @@ class TVChartContainer extends Component {
 			theme = 'Dark';
 		}
         
-        const { tradingPairName } = this.props;
+        // const { tradingPairName } = this.props;
 		const widgetOptions = {
 			debug: false,
-			symbol: tradingPairName,
+			symbol: 'tradingPairName',
 			datafeed: Datafeed,
-			interval: this.props.min || this.props.interval,
-			container_id: '1234',
-			timezone: 'Asia/Seoul',
-			library_path: this.props.libraryPath,
+			interval: 5,
+			container_id: 'tv_chart_container',
+			timezone: 'Asia/Seoul',	
+			libraryPath: `/charting_library/`,
 			locale: this._getCurrentLanguage(), // 번역
 			disabled_features: [
 				'use_localstorage_for_settings',
@@ -148,11 +145,16 @@ class TVChartContainer extends Component {
 			],
 			enabled_features: enabled_features,
 			loading_screen: { backgroundColor: "#ebeff2", foregroundColor: "#0042b7" },
-			charts_storage_url: this.props.chartsStorageUrl,
-			charts_storage_api_version: this.props.chartsStorageApiVersion,
-			client_id: this.props.clientId,
-			user_id: this.props.userId,
-			fullscreen: this.props.fullscreen,
+			chartsStorageUrl: 'https://saveload.tradingview.com',
+			chartsStorageApiVersion: '1.1',
+			clientId: 'tradingview.com',
+			userId: 'public_user_id',
+
+			// charts_storage_url: 'this.props.chartsStorageUrl',
+			// charts_storage_api_version: 'this.props.chartsStorageApiVersion',
+			// client_id: 'this.props.clientId',
+			// user_id: 'this.props.userId',
+			fullscreen: 'this.props.fullscreen',
 			custom_css_url: custom_css_url,
 			width: '100%',
 			height: height,
@@ -227,12 +229,14 @@ class TVChartContainer extends Component {
 
 		};
 		this.tvWidget = new window.TradingView.widget(widgetOptions);
+		console.log(this.tvWidget,'티비위젯뱀')
 	}
 
 	render() {
+		console.log(this.props.containerId,'컨테이너id뱀')
 		return (
 			<div
-				id={'1234'}
+				id={'tv_chart_container'}
 				className={'TVChartContainer'}
 			/>
 		);
