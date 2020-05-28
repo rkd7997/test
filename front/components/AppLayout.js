@@ -151,49 +151,29 @@ const AppLayout = ({ children }) => {
           </div>
 
           <Accordion>
-            <AccordionItem title={'거래하기'} >  
-            <a className="menu-item" href="/results">거래결과</a>
-
-
+            <AccordionItem title={'거래하기'} className="main_menu" >  
+              <a className="sub_menu" href="/results">거래결과</a>
             </AccordionItem>
-            <AccordionItem title={'아이템2'} >  
-              <div>
-                '아이템2'
-              </div>
-
+            <AccordionItem title={'FX소개'} className="main_menu" >  
+              <a className="sub_menu" href="">FX마진거래</a>
+              <a className="sub_menu" href="">FX투자방법</a>
             </AccordionItem>
-
+            <AccordionItem title={'입출금'} className="main_menu" >  
+              <a className="sub_menu" href="/deposit">입금신청</a>
+              <a className="sub_menu" href="/withdrawals">출금신청</a>
+              <a className="sub_menu" href="/depositandwithdrawalshistory">입출금내역</a>
+            </AccordionItem>
+            <AccordionItem title={'공지사항'} className="main_menu" >  
+              <a className="sub_menu" href="/announcements">공지사항</a>
+              <a className="sub_menu" href="/news">소식</a>
+            </AccordionItem>
+            <AccordionItem title={'마이페이지'} className="main_menu" >  
+              <a className="sub_menu" href="/profile">회원정보</a>
+              <a className="sub_menu" href="/customerinquiry">1:1문의</a>
+              <a className="sub_menu" href="/branchmove">지점이동신청</a>
+              <a className="sub_menu" href="/transactionhistory">나의거래내역</a>
+            </AccordionItem>
           </Accordion>
-          <div>
-            <h5>거래하기</h5>
-            <a className="menu-item" href="/results">거래결과</a>
-          </div>
-         
-         
-         
-          <div>
-            <h5>FX소개</h5>
-            <a className="menu-item" href="">FX마진거래</a>
-            <a className="menu-item" href="">FX투자방법</a>
-          </div>
-          <div>
-            <h5>입출금</h5>
-            <a className="menu-item" href="/deposit">입금신청</a>
-            <a className="menu-item" href="/withdrawals">출금신청</a>
-            <a className="menu-item" href="/depositandwithdrawalshistory">입출금내역</a>
-          </div>
-          <div>
-            <h5>공지사항</h5>
-            <a className="menu-item" href="/announcements">공지사항</a>
-            <a className="menu-item" href="/news">소식</a>
-          </div>
-          <div>
-            <h5>마이페이지</h5>
-            <a className="menu-item" href="/profile">회원정보</a>
-            <a className="menu-item" href="/customerinquiry">1:1문의</a>
-            <a className="menu-item" href="/branchmove">지점이동신청</a>
-            <a className="menu-item" href="/transactionhistory">나의거래내역</a>
-          </div>
         </Menus>
         {/* mobile_menu */}
 
