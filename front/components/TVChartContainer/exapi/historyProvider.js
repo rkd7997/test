@@ -1,7 +1,11 @@
 import axios from 'axios';
 
-const API_ROOT = `${process.env.RAZZLE_API_ENDPOINT}/api/${process.env.RAZZLE_API_VERSION}`;
+// const API_ROOT = `${process.env.RAZZLE_API_ENDPOINT}/api/${process.env.RAZZLE_API_VERSION}`;
+const API_ROOT = `https://production-api.coinbit.global/api/v1.0/`;
+
+console.log(API_ROOT,'API')
 const history = {}; // 각 trading pair의 마지막 바를 기록한 뒤 socket으로 새로운 ticker가 오면 그 뒤에 붙여서 그래프를 업데이트합니다.
+// const uri =`https://production-api.coinbit.global/api/v1.0/minute_candles/?trading_pair=BTC-KRW&unit=1&page_size=2000&to=1590673616`;
 let last = {
     tradingPairName: '',
     next: null,
@@ -78,7 +82,7 @@ export default {
                 to: to
             };
 
-            return axios.get(`${API_ROOT}${url}`, {
+            return axios.get(uri, {
                 params: queryParams
             })
                 .then(response => {

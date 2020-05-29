@@ -1,6 +1,8 @@
 import * as React from 'react';
-import './TvChartView.scss';
-import Datafeed from './exapi'
+import './TVChartView.scss';
+import { widget } from '../../static/charting_library/charting_library.min';
+import DataFeeds from './exapi/'
+
 
 
 function getLanguageFromURL() {
@@ -9,13 +11,13 @@ function getLanguageFromURL() {
 	return results === null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 
-export default class TVChartContainer extends React.PureComponent {
-
+export class TVChartContainer extends React.PureComponent {
 	static defaultProps = {
-		symbol: 'Coinbase:BTC/USD',
-		interval: '15',
+		symbol: 'AAPL',
+		interval: 'D',
 		containerId: 'tv_chart_container',
-		libraryPath: '/charting_library/',
+		datafeedUrl: 'https://demo_feed.tradingview.com',
+		libraryPath: '/static/charting_library/',
 		chartsStorageUrl: 'https://saveload.tradingview.com',
 		chartsStorageApiVersion: '1.1',
 		clientId: 'tradingview.com',
@@ -25,14 +27,17 @@ export default class TVChartContainer extends React.PureComponent {
 		studiesOverrides: {},
 	};
 
+	tvWidget = null;
+
 	componentDidMount() {
 		const widgetOptions = {
-			debug: false,
 			symbol: this.props.symbol,
-			datafeed: Datafeed,
+			// BEWARE: no trailing slash is expected in feed URL
+			datafeed: new window.Datafeeds.UDFCompatibleDatafeed(this.props.datafeedUrl),
 			interval: this.props.interval,
 			container_id: this.props.containerId,
 			library_path: this.props.libraryPath,
+
 			locale: getLanguageFromURL() || 'en',
 			disabled_features: ['use_localstorage_for_settings'],
 			enabled_features: ['study_templates'],
@@ -43,25 +48,34 @@ export default class TVChartContainer extends React.PureComponent {
 			fullscreen: this.props.fullscreen,
 			autosize: this.props.autosize,
 			studies_overrides: this.props.studiesOverrides,
-			overrides: {
-				// "mainSeriesProperties.showCountdown": true,
-				"paneProperties.background": "#131722",
-				"paneProperties.vertGridProperties.color": "#363c4e",
-				"paneProperties.horzGridProperties.color": "#363c4e",
-				"symbolWatermarkProperties.transparency": 90,
-				"scalesProperties.textColor" : "#AAA",
-				"mainSeriesProperties.candleStyle.wickUpColor": '#336854',
-				"mainSeriesProperties.candleStyle.wickDownColor": '#7f323f',
-			}
 		};
 
-		window.TradingView.onready(() => {
-			const widget = window.tvWidget = new window.TradingView.widget(widgetOptions);
+		const tvWidget = new widget(widgetOptions);
+		this.tvWidget = tvWidget;
 
-			widget.onChartReady(() => {
-				console.log('Chart has loaded!')
+		tvWidget.onChartReady(() => {
+			tvWidget.headerReady().then(() => {
+				const button = tvWidget.createButton();
+				button.setAttribute('title', 'Click to show a notification popup');
+				button.classList.add('apply-common-tooltip');
+				button.addEventListener('click', () => tvWidget.showNoticeDialog({
+					title: 'Notification',
+					body: 'TradingView Charting Library API works correctly',
+					callback: () => {
+						console.log('Noticed!');
+					},
+				}));
+
+				button.innerHTML = 'Check API';
 			});
 		});
+	}
+
+	componentWillUnmount() {
+		if (this.tvWidget !== null) {
+			this.tvWidget.remove();
+			this.tvWidget = null;
+		}
 	}
 
 	render() {
