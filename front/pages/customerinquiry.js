@@ -28,7 +28,7 @@ const CustomerInquiry = () => {
           <tr>
             <th width="60px">유형</th>
             <th>제목</th>
-            <th width="90px">등록일</th>
+            <th width="95px">등록일</th>
             <th width="85px">상태</th>
           </tr>
           <tr>

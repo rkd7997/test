@@ -9,10 +9,10 @@ const PCApplyHistory = () => {
         <h4 className="con_txt01">신청내역</h4>
         <table className="tb_02" width="100%" >
           <tr>
-            <th width="70px">소속지점</th>
+            <th width="80px">소속지점</th>
             <th>이동지점</th>
-            <th width="90px">신청일자</th>
-            <th width="60px">상태</th>
+            <th width="95px">신청일자</th>
+            <th width="90px">상태</th>
           </tr>
           <tr>
             <td>강남</td>

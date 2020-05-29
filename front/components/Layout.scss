@@ -16,6 +16,8 @@ body{
     color: #333;
 }
 
+img{width: 100%;}
+
 h1, h2, h3, h4, h5, h6, p, a{
     margin: 0;
 }
@@ -48,7 +50,7 @@ label{
 
 h1{font-size: 1.2em;}
 h2{font-size: 0.8em;}
-h3{font-size: 1.5em;}
+h3{font-size: 1.6em;}
 h4{font-size: 1.2em;}
 h5{font-size: 0.9em; font-weight: 400;}
 p{font-size: 1em;}
@@ -58,7 +60,7 @@ em{font-style: normal;}
     width: 100%;
     border-bottom: 2px solid #dddddd;
     font-weight: 500;
-    padding: 0 0 5px 0;
+    padding: 0 0 8px 0;
     margin-bottom: 20px;
 }
 .tit_02{
@@ -90,7 +92,7 @@ form, table{
     width: 75% !important;
 }
 .wd_80{
-    width: 80% !important;
+    width: 79% !important;
 }
 .wd_82{
     width: 82% !important;
@@ -106,7 +108,7 @@ form, table{
 table{
     border-top: 2px solid #666;
     background: #fff;
-    font-size: 0.95em;
+    font-size: 1em;
 }
 table tr th{
     background: #f2f2f2;
