@@ -1,13 +1,10 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import dynamic from 'next/dynamic';
 
-const Home = () => {
+const TVChartContainer = dynamic(
+	() =>
+		import('../components/TVChartContainer').then(mod => mod.TVChartContainer),
+	{ ssr: false },
+);
 
-  return (
-    <div>
-      메인 페이지
-    </div>
-  );
-};
-
-export default Home;
+export default () => <TVChartContainer />;

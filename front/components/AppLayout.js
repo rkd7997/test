@@ -163,6 +163,7 @@ const AppLayout = ({ children }) => {
             <AccordionItem title={'거래하기'} className="main_menu" >
               <a className="sub_menu" href="/exchange">거래하기</a>
               <a className="sub_menu" href="/results">거래결과</a>
+
             </AccordionItem>
             <AccordionItem title={'FX소개'} className="main_menu" >
               <a className="sub_menu" href="">FX마진거래</a>

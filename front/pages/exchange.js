@@ -1,12 +1,19 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Button, List, Card, Icon, Tabs } from 'antd';
-import NicknameEditForm from '../components/NicknameEditForm';
-import ChartComponent from '../components/ChartComponent'
-import TVChartContainer from '../components/TVChartContainer'
+// import NicknameEditForm from '../components/NicknameEditForm';
+// import ChartComponent from '../components/ChartComponent'
+import dynamic from 'next/dynamic';
+
+// import TVChartContainer from '../components/TVChartContainer/'
 
 
 const { TabPane } = Tabs;
 
+const TVChartContainer = dynamic(
+	() =>
+		import('../components/TVChartContainer').then(mod => mod.TVChartContainer),
+	{ ssr: false },
+);
 
 
 var times =59;
@@ -50,8 +57,10 @@ const Exchange = () => {
 
     <div className="left_div">
       
-      <div className="trad_box">
-        <TVChartContainer/>
+      <div className="trad_box" >
+
+
+        <TVChartContainer />
         {/* <ChartComponent/> */}
         
         </div>
