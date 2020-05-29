@@ -30,7 +30,7 @@ export default {
 			ticker: symbolName,
 			exchange: split_data[0],
 			minmov: 1,
-			pricescale: 100,
+			pricescale: 100000000,
 			has_intraday: true,
 			intraday_multipliers: ['1', '60'],
 			supported_resolution:  supportedResolutions,

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './TVChartView.scss';
 import { widget } from '../../static/charting_library/charting_library.min';
-import DataFeeds from './exapi/'
+// import DataFeeds from './exapi/'
 
 
 

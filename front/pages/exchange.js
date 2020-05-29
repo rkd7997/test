@@ -60,6 +60,7 @@ const Exchange = () => {
       <div className="trad_box" >
 
 
+
         <TVChartContainer />
         {/* <ChartComponent/> */}
         
