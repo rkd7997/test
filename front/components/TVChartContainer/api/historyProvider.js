@@ -1,4 +1,5 @@
 // var rp = require('request-promise').defaults({json: true})
+import axios from 'axios';
 
 const api_root = 'https://min-api.cryptocompare.com'
 const history = {}
