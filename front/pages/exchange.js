@@ -60,7 +60,7 @@ const Exchange = () => {
       <div className="trad_box" >
 
 
-        <TVChartContainer />
+        {/* <TVChartContainer /> */}
         {/* <ChartComponent/> */}
         
         </div>

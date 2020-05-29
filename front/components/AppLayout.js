@@ -147,7 +147,7 @@ const AppLayout = ({ children }) => {
 
         {/* mobile_menu */}
         <div className="mobile_menu">
-          <h1><Link href="/"><a className="mb_top_logo"></a></Link></h1>
+          <h1><Link href="/"><a className="mb_top_logo"><img src="/img/top_logo.png" /></a></Link></h1>
         </div>
         <Menus right disableAutoFocus>
           <div className="user_info01">
@@ -208,7 +208,7 @@ const AppLayout = ({ children }) => {
             </div>
             <div className="footer_right">
               <p><i class="ri-phone-fill"></i>고객센터</p>
-              <Link href="/user-term"><a>1588-0000</a></Link>
+              <Link href="tel:1588-0000"><a>1588-0000</a></Link>
             </div>
           </div>
         </div>
