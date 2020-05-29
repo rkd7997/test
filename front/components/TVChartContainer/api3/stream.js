@@ -59,7 +59,7 @@ socket.on('m', (e) => {
   from_sym: _data[3],
   trade_id: _data[5],
   ts: parseInt(_data[6],10),
-  volume: parseFloat(_data[7]),
+  // volume: parseFloat(_data[7]),
   price: parseFloat(_data[8])
  }
  
