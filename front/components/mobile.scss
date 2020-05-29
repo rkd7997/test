@@ -301,80 +301,87 @@
     }
 
     // 푸터영역
-    .footer{
+.footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #4C4948;
 
-        .footer_inner{
-            width: 95%;
-            display: initial;
-            align-items: unset;
-            justify-content: unset;
-            padding: 20px 0;
+    .footer_inner{
+        width: 1200px;
+        padding: 30px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: #ddd;
+        font-size: 0.9em;
 
-            .footer_left{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: unset;
-                margin: 0 0 8px 0;
+        a{
+            color: #ddd;
+        }
 
-                .fotter_logo{
-                    margin: 0 0 10px 0;
-                    width: 120px;
-                }
-    
-                ul{}
-    
-                ul li{
-                    margin-bottom: 3px;
-                    font-size: 0.8em;
-                }
-                ul li:last-child{
-                    margin-bottom: 0;
-                }
-                ul li span{
-                    width: 1px;
-                    height: 12px;
-                    background: #9a9a9a;
-                    display: inline-block;
-                    margin: 0 8px;
-                }
-                ul li a{
-                    color: #ffffff;
-                    font-size: 1.2em;
-                }
-                .company_info{
-                    display: flex;
-                    align-items: center;
-                    height: 12px;
-                    font-size: 0.9em;
-                    color: #9a9a9a;
-                }
+        .footer_left{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .fotter_logo{
+                margin-right: 100px;
+                width: 150px;
             }
-            .footer_right{
+
+            ul{}
+
+            ul li{
+                margin-bottom: 8px;
+                font-size: 1em;
+            }
+            ul li:last-child{
+                margin-bottom: 0;
+            }
+            ul li span{
+                width: 1px;
+                height: 12px;
+                background: #9a9a9a;
+                display: inline-block;
+                margin: 0 8px;
+            }
+            ul li a{
+                color: #ffffff;
+                font-size: 1.2em;
+            }
+            .company_info{
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                flex-direction: row;
-
-                p{
-                    position: relative;
-                    text-align: right;
-                    font-size: 1.3em !important;
-                    padding: 0 10px 0 20px;
-    
-                    i{
-                        position: absolute;
-                        top: 2px;
-                        left: 0px;
-                    }
-                }
-                a{
-                    font-size: 1.3em;
-                }
+                height: 12px;
+                font-size: 1.1em;
+                color: #9a9a9a;
             }
         }
 
+        .footer_right{
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            
+            p{
+                position: relative;
+                text-align: right;
+                font-size: 1.5em;
+
+                i{
+                    position: absolute;
+                    top: 2px;
+                    left: 17px;
+                }
+            }
+            a{
+                font-size: 1.8em;
+            }
+
+        }
     }
+}
 
 }
 
@@ -391,6 +398,13 @@
         .contents_inner{
             width: 95%;
             padding: 20px 0 40px 0;
+
+            // 거래하기
+            .exchange_div{
+                .right_div{
+                    display: none;
+                }
+            }
 
             .sub_div{
 
