@@ -9,20 +9,28 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #10325c;
+        background: #ffffff;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 50px;
         z-index: 2;
+        border-bottom: 1px solid #d9d9d9;
 
-        h1 .mb_top_logo{
-            width: 120px;
-            height: 40px;
+        // mb_top_logo
+        h1{
+            width: 130px;
+            color: #a62304;
+            font-size: 1em;
 
-            img{
-                width: 130px;
+            .top_logo{
+                width: 100%;
+                text-align: center;
+
+                img{
+                    width: 100%;
+                }
             }
         }
     }
@@ -38,18 +46,19 @@
     
     /* Color/shape of burger icon bars */
     .bm-burger-bars {
-        background: #fff;
+        background-image: url('/img/menu-fill.png');
+        background-position: center center;
+        background-size: 100%;
     }
     
     /* Position and sizing of clickable cross button */
     .bm-cross-button {
-        height: 24px;
-        width: 24px;
-    }
-    
-    /* Color/shape of close button cross */
-    .bm-cross {
-        background: #bdc3c7;
+        display: block;
+        width: 35px !important;
+        height: 35px !important;
+        background-image: url('/img/close-fill.png');
+        background-position: center center;
+        background-size: 100%;
     }
     
     /*
@@ -66,9 +75,11 @@
     .bm-menu .user_info01{
         display: flex !important;
         align-items: center;
-        padding: 1em 2em;
-        border-bottom: 1px solid #0b203a;
+        padding: 0.9em 2em;
+        border-bottom: 1px solid #d9d9d9;
         margin-bottom: 0;
+        background: rgb(173,36,9);
+        background: linear-gradient(90deg, rgba(173,36,9,1) 0%, rgba(134,23,3,1) 66%, rgba(91,1,0,1) 100%);
 
         a{
             display: inline-block;
@@ -81,8 +92,9 @@
         }
         .out{
             padding: 3px 10px;
-            background: #1e497f;
+            background: #ffffff;
             font-size: 0.95em;
+            color: #a62304;
             margin-left: 10px;
         }
     }
@@ -91,8 +103,9 @@
         align-items: center;
         justify-content: center;
         padding: 1em 0;
-        border-bottom: 1px solid #0b203a;
+        border-bottom: 1px solid #d9d9d9;
         margin-bottom: 0;
+        background: #f8fbfe;
 
         a{
             display: flex !important;
@@ -100,11 +113,11 @@
             justify-content: center;
             text-align: center;
             width: 50%;
-            color: #ffffff;
-            border-right: 1px solid #1e497f;
+            color: #333333;
+            border-right: 1px solid #d9d9d9;
 
             i{
-                color: #00fff0;
+                color: #a62304;
                 margin-right: 3px;
             }
         }
@@ -113,12 +126,8 @@
         }
     }
 
-    .bm-cross-button{
-        color: #ffffff;
-    }
-
     .bm-menu {
-        background: #10325c;
+        background: #ffffff;
         font-size: 0.95em;
     }
 
@@ -127,11 +136,11 @@
         margin-bottom: 0;
     }
     .main_menu h3{
-        padding: 1em 2em;
-        border-bottom: 1px solid #0b203a;
-        color: #fff;
-        font-size: 1.1em;
-        background-image: url('/img/arrow-drop-right-line.png');
+        padding: 0.7em 2em;
+        border-bottom: 1px solid #d9d9d9;
+        color: #333;
+        font-size: 1.1em !important;
+        background-image: url('/img/add-fill.png');
         background-repeat: no-repeat;
         background-position: 93% center;
     }
@@ -141,10 +150,10 @@
     }
     .main_menu .sub_menu{
         padding: 1em 0;
-        border-bottom: 1px solid #183d6b;
-        color: #fff;
+        border-bottom: 1px solid #f2f2f2;
+        color: #333;
         font-size: 1em;
-        font-weight: 300;
+        font-weight: 400;
     }
     
     /* Morph shape necessary with bubble or elastic */
@@ -296,6 +305,73 @@
 
         .footer_inner{
             width: 95%;
+            display: initial;
+            align-items: unset;
+            justify-content: unset;
+            padding: 20px 0;
+
+            .footer_left{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: unset;
+                margin: 0 0 8px 0;
+
+                .fotter_logo{
+                    margin: 0 0 10px 0;
+                    width: 120px;
+                }
+    
+                ul{}
+    
+                ul li{
+                    margin-bottom: 3px;
+                    font-size: 0.8em;
+                }
+                ul li:last-child{
+                    margin-bottom: 0;
+                }
+                ul li span{
+                    width: 1px;
+                    height: 12px;
+                    background: #9a9a9a;
+                    display: inline-block;
+                    margin: 0 8px;
+                }
+                ul li a{
+                    color: #ffffff;
+                    font-size: 1.2em;
+                }
+                .company_info{
+                    display: flex;
+                    align-items: center;
+                    height: 12px;
+                    font-size: 0.9em;
+                    color: #9a9a9a;
+                }
+            }
+            .footer_right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+                p{
+                    position: relative;
+                    text-align: right;
+                    font-size: 1.3em !important;
+                    padding: 0 10px 0 20px;
+    
+                    i{
+                        position: absolute;
+                        top: 2px;
+                        left: 0px;
+                    }
+                }
+                a{
+                    font-size: 1.3em;
+                }
+            }
         }
 
     }
@@ -433,6 +509,17 @@
 }
 
 @media (max-width: 420px) {
+    h1{font-size: 1.2em !important;}
+    h2{font-size: 0.8em !important;}
+    h3{font-size: 1.3em !important;}
+    h4{font-size: 1.2em !important;}
+    h5{font-size: 0.9em !important; font-weight: 400 !important;}
+    p{font-size: 0.9em !important;}
+    table{font-size: 0.93em !important;}
+    table tr th{padding: 12px 5px !important;}
+    table tr td{padding: 12px 5px !important;}
+    .history_th{width: 100px;}
+
     // 모바일메뉴
     .mobile_menu .menu > div > ul > li{
         font-size: 1rem;
@@ -444,7 +531,16 @@
 
         .contents_inner{
             width: 95%;
-            padding: 20px 0 40px 0;
+            padding: 15px 0 15px 0;
+
+            .btn_div{
+                margin-top: 15px;
+
+                button{
+                    height: 36px;
+                    font-size: 1em;
+                }
+            }
 
             .sub_div{
 
@@ -453,7 +549,7 @@
                 }
                 .sub_page{
                     width: 100%;
-                    padding: 20px 10px;
+                    padding: 15px 10px 40px 10px;
 
                     // 입출금
                     .deposit_btn .mobile{
@@ -535,13 +631,16 @@
 }
 
 @media (max-width: 320px) {
-    h1{font-size: 1.2em;}
-    h2{font-size: 0.8em;}
-    h3{font-size: 1.3em;}
-    h4{font-size: 1.2em;}
-    h5{font-size: 0.9em; font-weight: 400;}
-    p{font-size: 0.9em;}
-    table{font-size: 0.8em;}
+    h1{font-size: 1.2em !important;}
+    h2{font-size: 0.8em !important;}
+    h3{font-size: 1.3em !important;}
+    h4{font-size: 1.2em !important;}
+    h5{font-size: 0.9em !important; font-weight: 400 !important;}
+    p{font-size: 0.9em !important;}
+    table{font-size: 0.83em !important;}
+    table tr th{padding: 10px 3px !important;}
+    table tr td{padding: 10px 3px !important;}
+    .history_th{width: 85px !important;}
 
     // 모바일메뉴
     .mobile_menu .menu > div > ul > li{
@@ -554,7 +653,12 @@
 
         .contents_inner{
             width: 95%;
-            padding: 20px 0 40px 0;
+
+            // ant-pagination
+            .ant-pagination  li{
+                width: 25px;
+                height: 30px;
+            }
 
             .tit_01{
                 margin-bottom: 10px;
@@ -595,6 +699,19 @@
                     input[type=email]{
                         width: 90px;
                     }
+                    .btn_div_left{
+                        select{
+                            width: 70px;
+                        }
+                        .ant-calendar-picker{
+                            width: 120px;
+                            margin-right: 5px;
+                            input{
+                                width: 120px;
+                            }
+                        }
+                    }
+                    
 
                     // 입출금
                     .deposit_btn .mobile{

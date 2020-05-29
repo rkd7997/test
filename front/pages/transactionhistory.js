@@ -31,30 +31,27 @@ const TransactionHistory = () => {
         </div>
         <table className="tb_02" width="100%" >
             <tr>
-              <th>대여일시</th>
+              <th className="history_th">대여일시</th>
               <th>구분</th>
               <th>수량</th>
-              <th>보증금</th>
-              <th>보유보증금</th>
               <th>결과</th>
+              <th>상세</th>
               <th>약정서</th>
             </tr>
             <tr>
               <td>2020-05-15 11:04:51</td>
               <td>1분<span className="red_txt">매수</span></td>
               <td>2&nbsp;lot</td>
-              <td>10,000</td>
-              <td>10,000</td>
               <td className="red_txt">실격</td>
+              <td><Button value="보기" size={'small'} type="primary" >보기</Button></td>
               <td><Button value="보기" size={'small'} type="primary" >보기</Button></td>
             </tr>
             <tr>
               <td>2020-05-15 11:04:51</td>
               <td>1분<span className="blue_txt">매도</span></td>
               <td>2&nbsp;lot</td>
-              <td>10,000</td>
-              <td>10,000</td>
               <td className="blue_txt">실현</td>
+              <td><Button value="보기" size={'small'} type="primary" >보기</Button></td>
               <td><Button value="보기" size={'small'} type="primary" >보기</Button></td>
             </tr>
           </table>
