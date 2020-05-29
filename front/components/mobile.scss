@@ -20,7 +20,7 @@
 
         // mb_top_logo
         h1{
-            width: 120px;
+            width: 130px;
             color: #a62304;
             font-size: 1em;
 
@@ -136,10 +136,10 @@
         margin-bottom: 0;
     }
     .main_menu h3{
-        padding: 1em 2em;
+        padding: 0.7em 2em;
         border-bottom: 1px solid #d9d9d9;
         color: #333;
-        font-size: 1.1em;
+        font-size: 1.1em !important;
         background-image: url('/img/add-fill.png');
         background-repeat: no-repeat;
         background-position: 93% center;
@@ -359,7 +359,7 @@
                 p{
                     position: relative;
                     text-align: right;
-                    font-size: 1.3em;
+                    font-size: 1.3em !important;
                     padding: 0 10px 0 20px;
     
                     i{
@@ -509,6 +509,17 @@
 }
 
 @media (max-width: 420px) {
+    h1{font-size: 1.2em !important;}
+    h2{font-size: 0.8em !important;}
+    h3{font-size: 1.3em !important;}
+    h4{font-size: 1.2em !important;}
+    h5{font-size: 0.9em !important; font-weight: 400 !important;}
+    p{font-size: 0.9em !important;}
+    table{font-size: 0.93em !important;}
+    table tr th{padding: 12px 5px !important;}
+    table tr td{padding: 12px 5px !important;}
+    .history_th{width: 100px;}
+
     // 모바일메뉴
     .mobile_menu .menu > div > ul > li{
         font-size: 1rem;
@@ -520,7 +531,16 @@
 
         .contents_inner{
             width: 95%;
-            padding: 20px 0 40px 0;
+            padding: 15px 0 15px 0;
+
+            .btn_div{
+                margin-top: 15px;
+
+                button{
+                    height: 36px;
+                    font-size: 1em;
+                }
+            }
 
             .sub_div{
 
@@ -529,7 +549,7 @@
                 }
                 .sub_page{
                     width: 100%;
-                    padding: 20px 10px;
+                    padding: 15px 10px 40px 10px;
 
                     // 입출금
                     .deposit_btn .mobile{
@@ -611,13 +631,16 @@
 }
 
 @media (max-width: 320px) {
-    h1{font-size: 1.2em;}
-    h2{font-size: 0.8em;}
-    h3{font-size: 1.3em;}
-    h4{font-size: 1.2em;}
-    h5{font-size: 0.9em; font-weight: 400;}
-    p{font-size: 0.9em;}
-    table{font-size: 0.8em;}
+    h1{font-size: 1.2em !important;}
+    h2{font-size: 0.8em !important;}
+    h3{font-size: 1.3em !important;}
+    h4{font-size: 1.2em !important;}
+    h5{font-size: 0.9em !important; font-weight: 400 !important;}
+    p{font-size: 0.9em !important;}
+    table{font-size: 0.83em !important;}
+    table tr th{padding: 10px 3px !important;}
+    table tr td{padding: 10px 3px !important;}
+    .history_th{width: 85px !important;}
 
     // 모바일메뉴
     .mobile_menu .menu > div > ul > li{
@@ -630,7 +653,12 @@
 
         .contents_inner{
             width: 95%;
-            padding: 20px 0 40px 0;
+
+            // ant-pagination
+            .ant-pagination  li{
+                width: 25px;
+                height: 30px;
+            }
 
             .tit_01{
                 margin-bottom: 10px;
@@ -671,6 +699,19 @@
                     input[type=email]{
                         width: 90px;
                     }
+                    .btn_div_left{
+                        select{
+                            width: 70px;
+                        }
+                        .ant-calendar-picker{
+                            width: 120px;
+                            margin-right: 5px;
+                            input{
+                                width: 120px;
+                            }
+                        }
+                    }
+                    
 
                     // 입출금
                     .deposit_btn .mobile{
