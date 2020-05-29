@@ -9,7 +9,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #ffffff;
+        background: #3c3c3c;
         position: fixed;
         top: 0;
         left: 0;
@@ -46,7 +46,7 @@
     
     /* Color/shape of burger icon bars */
     .bm-burger-bars {
-        background-image: url('/img/menu-fill.png');
+        background-image: url('/img/menu-fill_white.png');
         background-position: center center;
         background-size: 100%;
     }
@@ -302,31 +302,39 @@
 
     // 푸터영역
     .footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #4C4948;
 
         .footer_inner{
             width: 95%;
-            display: initial;
-            align-items: unset;
-            justify-content: unset;
-            padding: 20px 0;
+            padding: 30px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            color: #ddd;
+            font-size: 0.9em;
+
+            a{
+                color: #ddd;
+            }
 
             .footer_left{
                 display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: unset;
-                margin: 0 0 8px 0;
+                align-items: flex-start;
+                justify-content: space-between;
 
                 .fotter_logo{
-                    margin: 0 0 10px 0;
-                    width: 120px;
+                    margin-right: 100px;
+                    width: 150px;
                 }
-    
+
                 ul{}
-    
+
                 ul li{
-                    margin-bottom: 3px;
-                    font-size: 0.8em;
+                    margin-bottom: 8px;
+                    font-size: 1em;
                 }
                 ul li:last-child{
                     margin-bottom: 0;
@@ -346,22 +354,22 @@
                     display: flex;
                     align-items: center;
                     height: 12px;
-                    font-size: 0.9em;
+                    font-size: 1.1em;
                     color: #9a9a9a;
                 }
             }
+
             .footer_right{
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: row;
-
+                align-items: flex-start;
+                justify-content: flex-end;
+                
                 p{
                     position: relative;
                     text-align: right;
-                    font-size: 1.3em !important;
-                    padding: 0 10px 0 20px;
-    
+                    font-size: 1.8em;
+                    padding: 0 0 0 25px;
+
                     i{
                         position: absolute;
                         top: 2px;
@@ -369,11 +377,11 @@
                     }
                 }
                 a{
-                    font-size: 1.3em;
+                    font-size: 1.8em;
                 }
+
             }
         }
-
     }
 
 }
@@ -391,6 +399,13 @@
         .contents_inner{
             width: 95%;
             padding: 20px 0 40px 0;
+
+            // 거래하기
+            .exchange_div{
+                .right_div{
+                    display: none;
+                }
+            }
 
             .sub_div{
 
@@ -503,6 +518,89 @@
 
             }
 
+        }
+    }
+
+    // 푸터영역
+    .footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #4C4948;
+
+        .footer_inner{
+            width: 95%;
+            padding: 30px 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            color: #ddd;
+            font-size: 0.9em;
+
+            a{
+                color: #ddd;
+            }
+
+            .footer_left{
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+
+                .fotter_logo{
+                    margin-right: 30px;
+                    width: 140px;
+                }
+
+                ul{}
+
+                ul li{
+                    margin-bottom: 5px;
+                }
+                ul li:last-child{
+                    margin-bottom: 0;
+                }
+                ul li span{
+                    width: 1px;
+                    height: 12px;
+                    background: #9a9a9a;
+                    display: inline-block;
+                    margin: 0 8px;
+                }
+                ul li a{
+                    color: #ffffff;
+                    font-size: 1.1em;
+                }
+                .company_info{
+                    display: flex;
+                    align-items: center;
+                    height: 12px;
+                    font-size: 0.95em;
+                    color: #9a9a9a;
+                }
+            }
+
+            .footer_right{
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-end;
+                
+                p{
+                    position: relative;
+                    text-align: right;
+                    font-size: 1.5em;
+                    padding: 0 0 0 25px;
+
+                    i{
+                        position: absolute;
+                        top: 2px;
+                        left: 0px;
+                    }
+                }
+                a{
+                    font-size: 1.5em;
+                }
+
+            }
         }
     }
 
@@ -626,6 +724,97 @@
                 border-right: none;
             }
 
+        }
+    }
+
+    // 푸터영역
+    .footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #4C4948;
+
+        .footer_inner{
+            width: 95%;
+            padding: 20px 0;
+            display: initial;
+            align-items: initial;
+            justify-content: initial;
+            color: #ddd;
+            font-size: 0.9em;
+
+            a{
+                color: #ddd;
+            }
+
+            .footer_left{
+                display: flex;
+                align-items: center;
+                justify-content: initial;
+                flex-direction: column;
+                margin-bottom: 5px;
+
+                .fotter_logo{
+                    display: flex;
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                    width: 130px;
+                }
+
+                ul{
+                }
+
+                ul li{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 5px;
+                }
+                ul li:last-child{
+                    margin-bottom: 0;
+                }
+                ul li span{
+                    width: 1px;
+                    height: 12px;
+                    background: #9a9a9a;
+                    display: inline-block;
+                    margin: 0 8px;
+                }
+                ul li a{
+                    color: #ffffff;
+                    font-size: 1.1em !important;
+                }
+                .company_info{
+                    display: flex;
+                    align-items: center;
+                    height: 12px;
+                    font-size: 0.9em !important;
+                    color: #9a9a9a;
+                }
+            }
+
+            .footer_right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                p{
+                    position: relative;
+                    text-align: right;
+                    font-size: 1.5em !important;
+                    padding: 0 0 0 22px;
+
+                    i{
+                        position: absolute;
+                        top: 2px;
+                        left: 0px;
+                    }
+                }
+                a{
+                    font-size: 1.5em;
+                }
+
+            }
         }
     }
 }
@@ -763,6 +952,97 @@
 
             }
 
+        }
+    }
+
+    // 푸터영역
+    .footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #4C4948;
+
+        .footer_inner{
+            width: 95%;
+            padding: 20px 0;
+            display: initial;
+            align-items: initial;
+            justify-content: initial;
+            color: #ddd;
+            font-size: 0.9em;
+
+            a{
+                color: #ddd;
+            }
+
+            .footer_left{
+                display: flex;
+                align-items: center;
+                justify-content: initial;
+                flex-direction: column;
+                margin-bottom: 5px;
+
+                .fotter_logo{
+                    display: flex;
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                    width: 120px;
+                }
+
+                ul{
+                }
+
+                ul li{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 5px;
+                }
+                ul li:last-child{
+                    margin-bottom: 0;
+                }
+                ul li span{
+                    width: 1px;
+                    height: 12px;
+                    background: #9a9a9a;
+                    display: inline-block;
+                    margin: 0 8px;
+                }
+                ul li a{
+                    color: #ffffff;
+                    font-size: 1em !important;
+                }
+                .company_info{
+                    display: flex;
+                    align-items: center;
+                    height: 12px;
+                    font-size: 0.9em !important;
+                    color: #9a9a9a;
+                }
+            }
+
+            .footer_right{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                p{
+                    position: relative;
+                    text-align: right;
+                    font-size: 1.3em !important;
+                    padding: 0 0 0 22px;
+
+                    i{
+                        position: absolute;
+                        top: 2px;
+                        left: 0px;
+                    }
+                }
+                a{
+                    font-size: 1.3em;
+                }
+
+            }
         }
     }
 

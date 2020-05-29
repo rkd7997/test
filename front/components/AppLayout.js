@@ -79,7 +79,7 @@ const AppLayout = ({ children }) => {
           {/* header_top */}
           <div className="header_top">
             <div className="header_inner">
-              <h1><Link href="/"><a className="top_logo"><img src="/img/top_logo.png" /></a></Link></h1>
+              <h1><Link href="/"><a className="top_logo"><img src="/img/top_logo02.png" /></a></Link></h1>
               {me ?
                 <div className="header_user">
                   <Link href="/profile"><a><i className="ri-user-line"></i>{me.nickname}</a></Link>
@@ -147,7 +147,7 @@ const AppLayout = ({ children }) => {
 
         {/* mobile_menu */}
         <div className="mobile_menu">
-          <h1><Link href="/"><a className="mb_top_logo"><img src="/img/top_logo.png" /></a></Link></h1>
+          <h1><Link href="/"><a className="mb_top_logo"><img src="/img/top_logo02.png" /></a></Link></h1>
         </div>
         <Menus right disableAutoFocus>
           <div className="user_info01">
