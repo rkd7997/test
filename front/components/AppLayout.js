@@ -147,7 +147,7 @@ const AppLayout = ({ children }) => {
 
         {/* mobile_menu */}
         <div className="mobile_menu">
-          <h1><Link href="/"><a className="mb_top_logo"><img src="/img/top_logo.png" /></a></Link></h1>
+          <h1><Link href="/"><a className="mb_top_logo"><img src="/img/top_logo02.png" /></a></Link></h1>
         </div>
         <Menus right disableAutoFocus>
           <div className="user_info01">

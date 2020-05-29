@@ -9,7 +9,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background: #ffffff;
+        background: #3c3c3c;
         position: fixed;
         top: 0;
         left: 0;
@@ -46,7 +46,7 @@
     
     /* Color/shape of burger icon bars */
     .bm-burger-bars {
-        background-image: url('/img/menu-fill.png');
+        background-image: url('/img/menu-fill_white.png');
         background-position: center center;
         background-size: 100%;
     }
