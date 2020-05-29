@@ -21,6 +21,7 @@
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid #d9d9d9;
+            background: #000;
 
             .header_inner{
                 width: 1200px;
@@ -768,18 +769,19 @@
 
         .footer_right{
             display: flex;
+            align-items: flex-start;
             justify-content: flex-end;
-            flex-direction: column;
             
             p{
                 position: relative;
                 text-align: right;
-                font-size: 1.5em;
+                font-size: 1.8em;
+                padding: 0 0 0 25px;
 
                 i{
                     position: absolute;
                     top: 2px;
-                    left: 17px;
+                    left: 0px;
                 }
             }
             a{
