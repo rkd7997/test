@@ -26,10 +26,14 @@ const MobileDeposit = () => {
         <table className="tb_01" width="100%" >
             <tr>
               <th>입금계좌</th>
-              <td>1. 국민은행 920301-01-706349 주식회사에프엑스시티플래티넘</td>
+            </tr>
+            <tr>
+            <td>1. 국민은행 920301-01-706349 주식회사에프엑스시티플래티넘</td>
             </tr>
             <tr>
               <th>예금주</th>
+            </tr>
+            <tr>
               <td>
                 <p>홍길동</p>
                 <span className="deposit_info">가입시 등록된 예금주 명의로만 입금 가능하며 변경 시 필히 고객센터에 문의 바랍니다.</span>
@@ -37,13 +41,15 @@ const MobileDeposit = () => {
             </tr>
             <tr>
               <th>신청금액</th>
-              <td>
+            </tr>
+            <tr>
+             <td>
                 <p>
-                  <Input name="user-num" type="number" required placeholder="0" />
+                  <Input name="user-num" type="number" required placeholder="0" className="wd_90" />
                   <em>원</em>
                 </p>
                 <span className="deposit_info">* 최소 10,000원부터 입금 가능합니다.</span>
-                <p className="deposit_btn">
+                <p className="deposit_btn mobile">
                   <Button type="primary" ghost size={'small'} value="10,000" className="won_btn" >10,000</Button>
                   <Button type="primary" ghost size={'small'} value="50,000" className="won_btn" >50,000</Button>
                   <Button type="primary" ghost size={'small'} value="100,000" className="won_btn" >100,000</Button>
@@ -54,6 +60,8 @@ const MobileDeposit = () => {
             </tr>
             <tr>
               <th>신청후 금액</th>
+            </tr>
+            <tr>
               <td>500,000원</td>
             </tr>
           </table>

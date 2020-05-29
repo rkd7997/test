@@ -29,10 +29,10 @@ const News = () => {
         <h3 className="tit_01">소식</h3>
         <table className="tb_02" width="100%" >
           <tr>
-            <th>번호</th>
+            {/* <th>번호</th> */}
             <th>제목</th>
             <th>등록일</th>
-            <th>조회수</th>
+            {/* <th>조회수</th> */}
           </tr>
           {newsList.map(c => {
             return (

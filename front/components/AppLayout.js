@@ -76,9 +76,29 @@ const AppLayout = ({ children }) => {
       <div className="wrapper">
         {/* web_menu */}
         <div className="header">
-          <div className="header_inner">
-            <div className="header_menu">
-              <Link href="/"><h1>홈(FX 시티)</h1></Link>
+          {/* header_top */}
+          <div className="header_top">
+            <div className="header_inner">
+              <h1><Link href="/"><a className="top_logo"><img src="/img/top_logo.png" /></a></Link></h1>
+              {me ?
+                <div className="header_user">
+                  <Link href="/profile"><a><i className="ri-user-line"></i>{me.nickname}</a></Link>
+                  <Link href="/profile"><a><i className="ri-store-2-line"></i>{me.location}</a></Link>
+                  <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>{me.money}</a></Link>
+                  <a onClick={onClickLogout}><i className="ri-logout-circle-r-line"></i>로그아웃</a>
+                </div>
+                :
+                <div className="header_user">
+                  <Link href="signup"><a><i class="ri-user-add-line"></i>회원가입</a></Link>
+                  <Link href="login"><a><i class="ri-login-circle-line"></i>로그인</a></Link>
+                </div>
+              }
+            </div>
+          </div>
+          {/* header_top */}
+          {/* header_menu */}
+          <div className="header_menu">
+            <div className="header_inner">
               <div className="nav_btn">
                 <Link href="/exchange"><a>거래하기</a></Link>
                 <Link href="introduce"><a>FX소개</a></Link>
@@ -92,6 +112,7 @@ const AppLayout = ({ children }) => {
                   <div class="row">
                     <div className="row_div">
                       <div class="column">
+                        <Link href="/exchange"><a>거래하기</a></Link>
                         <Link href="/results"><a>거래결과</a></Link>
                       </div>
                       <div class="column">
@@ -118,30 +139,18 @@ const AppLayout = ({ children }) => {
                 </div>
                 {/* 서브메뉴영역 */}
               </div>
-
             </div>
-            {me ?
-              <div className="header_user">
-                <Link href="/profile"><a><i className="ri-user-line"></i>{me.nickname}</a></Link>
-                <Link href="/profile"><a><i className="ri-store-2-line"></i>{me.location}</a></Link>
-                <Link href="/deposit"><a><i className="ri-money-dollar-circle-line"></i>{me.money}</a></Link>
-                <a onClick={onClickLogout}><i className="ri-logout-circle-r-line"></i>로그아웃</a>
-              </div>
-              :
-              <div className="header_user">
-                <Link href="login"><a><i class="ri-login-circle-line"></i>로그인</a></Link>
-              </div>
-            }
           </div>
+          {/* header_menu */}
         </div>
         {/* web_menu */}
 
         {/* mobile_menu */}
         <div className="mobile_menu">
-          <h1><Link href="/">FX로고영역</Link></h1>
+          <h1><Link href="/"><a className="mb_top_logo"></a></Link></h1>
         </div>
         <Menus right disableAutoFocus>
-        <div className="user_info01">
+          <div className="user_info01">
             <Link href="/profile"><a className="name">주노강님</a></Link>
             <a onClick={onClickLogout} className="out">로그아웃</a>
           </div>
@@ -151,48 +160,31 @@ const AppLayout = ({ children }) => {
           </div>
 
           <Accordion>
-            <AccordionItem title={'거래하기'} >  
-            <a className="menu-item" href="/results">거래결과</a>
+            <AccordionItem title={'거래하기'} className="main_menu" >
+              <a className="sub_menu" href="/exchange">거래하기</a>
+              <a className="sub_menu" href="/results">거래결과</a>
 
             </AccordionItem>
-            <AccordionItem title={'아이템2'} >  
-              <div>
-                '아이템2'
-              </div>
-
+            <AccordionItem title={'FX소개'} className="main_menu" >
+              <a className="sub_menu" href="">FX마진거래</a>
+              <a className="sub_menu" href="">FX투자방법</a>
             </AccordionItem>
-
+            <AccordionItem title={'입출금'} className="main_menu" >
+              <a className="sub_menu" href="/deposit">입금신청</a>
+              <a className="sub_menu" href="/withdrawals">출금신청</a>
+              <a className="sub_menu" href="/depositandwithdrawalshistory">입출금내역</a>
+            </AccordionItem>
+            <AccordionItem title={'공지사항'} className="main_menu" >
+              <a className="sub_menu" href="/announcements">공지사항</a>
+              <a className="sub_menu" href="/news">소식</a>
+            </AccordionItem>
+            <AccordionItem title={'마이페이지'} className="main_menu" >
+              <a className="sub_menu" href="/profile">회원정보</a>
+              <a className="sub_menu" href="/customerinquiry">1:1문의</a>
+              <a className="sub_menu" href="/branchmove">지점이동신청</a>
+              <a className="sub_menu" href="/transactionhistory">나의거래내역</a>
+            </AccordionItem>
           </Accordion>
-          <div>
-            <h5>거래하기</h5>
-            <a className="menu-item" href="/results">거래결과</a>
-          </div>
-         
-         
-         
-          <div>
-            <h5>FX소개</h5>
-            <a className="menu-item" href="">FX마진거래</a>
-            <a className="menu-item" href="">FX투자방법</a>
-          </div>
-          <div>
-            <h5>입출금</h5>
-            <a className="menu-item" href="/deposit">입금신청</a>
-            <a className="menu-item" href="/withdrawals">출금신청</a>
-            <a className="menu-item" href="/depositandwithdrawalshistory">입출금내역</a>
-          </div>
-          <div>
-            <h5>공지사항</h5>
-            <a className="menu-item" href="/announcements">공지사항</a>
-            <a className="menu-item" href="/news">소식</a>
-          </div>
-          <div>
-            <h5>마이페이지</h5>
-            <a className="menu-item" href="/profile">회원정보</a>
-            <a className="menu-item" href="/customerinquiry">1:1문의</a>
-            <a className="menu-item" href="/branchmove">지점이동신청</a>
-            <a className="menu-item" href="/transactionhistory">나의거래내역</a>
-          </div>
         </Menus>
         {/* mobile_menu */}
 
@@ -205,9 +197,9 @@ const AppLayout = ({ children }) => {
         <div className="footer">
           <div class="footer_inner">
             <div className="footer_left">
-              <div className="fotter_logo">로고영역</div>
+              <div className="fotter_logo"><img src="/img/fotter_logo.png" /></div>
               <ul>
-                <li>주식회사<span></span>대표 홍길동<span></span>우주 깐따삐야</li>
+                <li className="company_info">주식회사<span></span>대표 홍길동<span></span>우주 깐따삐야</li>
                 <li>
                   <Link href="/user-term"><a>서비스이용약관</a></Link><span></span>
                   <Link href="/private-term"><a>개인정보처리방침</a></Link>
@@ -215,7 +207,8 @@ const AppLayout = ({ children }) => {
               </ul>
             </div>
             <div className="footer_right">
-              <Link href="/user-term"><a>고객센터</a></Link>
+              <p><i class="ri-phone-fill"></i>고객센터</p>
+              <Link href="/user-term"><a>1588-0000</a></Link>
             </div>
           </div>
         </div>

@@ -17,8 +17,13 @@
         height: 50px;
         z-index: 2;
 
-        h1 a{
-            color: #fff;
+        h1 .mb_top_logo{
+            width: 120px;
+            height: 40px;
+
+            img{
+                width: 130px;
+            }
         }
     }
     /* Position and sizing of burger button */
@@ -63,6 +68,7 @@
         align-items: center;
         padding: 1em 2em;
         border-bottom: 1px solid #0b203a;
+        margin-bottom: 0;
 
         a{
             display: inline-block;
@@ -81,13 +87,29 @@
         }
     }
     .bm-menu .user_info02{
-        padding: 0 0.8em;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 1em 0;
+        border-bottom: 1px solid #0b203a;
+        margin-bottom: 0;
 
         a{
-            display: inline-block;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             width: 50%;
             color: #ffffff;
+            border-right: 1px solid #1e497f;
+
+            i{
+                color: #00fff0;
+                margin-right: 3px;
+            }
+        }
+        a:last-child{
+            border-right: none;
         }
     }
 
@@ -100,17 +122,29 @@
         font-size: 0.95em;
     }
 
-    .bm-menu div{
-        margin-bottom: 10px;
-        padding: 0.4em 2em;
+    // 아코디언메뉴
+    .main_menu{
+        margin-bottom: 0;
     }
-
-    .bm-menu h5{
-        padding-bottom: 0.3em;
-        margin-bottom: 0.3em;
-        border-bottom: 1px solid #657992;
+    .main_menu h3{
+        padding: 1em 2em;
+        border-bottom: 1px solid #0b203a;
         color: #fff;
         font-size: 1.1em;
+        background-image: url('/img/arrow-drop-right-line.png');
+        background-repeat: no-repeat;
+        background-position: 93% center;
+    }
+    
+    .react-sanfona-item-body-wrapper{
+        padding: 0 2.1em;
+    }
+    .main_menu .sub_menu{
+        padding: 1em 0;
+        border-bottom: 1px solid #183d6b;
+        color: #fff;
+        font-size: 1em;
+        font-weight: 300;
     }
     
     /* Morph shape necessary with bubble or elastic */
@@ -155,19 +189,63 @@
                 }
                 .sub_page{
                     width: 100%;
-                    padding: 15px;
+                    padding: 30px 15px;
+
+
+                    // 회원정보
+                    .mobile_li_tb{
+                        background: #ffffff;
+                        border: 1px solid #ddd;
+                        display: flex;
+                        flex-flow: row wrap;
+                    }
+                    .mobile_li_tb li{
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        width: 50%;
+                        padding: 20px;
+                        border-bottom: 1px solid #ddd;
+
+                        div{
+                            display: flex;
+                            width: 100%;
+
+                            button{
+                                margin-left: 0;
+                            }
+                            em{
+                                margin: 0 5px;
+                            }
+                        }
+
+                    }
+                    .mobile_li_tb li:nth-child(odd){
+                        border-right: 1px solid #ddd;
+                    }
+                    .mobile_li_tb li:last-child{
+                        border-bottom: none;
+                        border-right: none;
+                    }
+                    .mobile_li_tb li label{
+                        display: block;
+                        margin-bottom: 5px;
+                        font-weight: 500;
+                        font-size: 0.95em;
+                    }
+
                 }
 
             }
             
             // 회원가입
-            .mobile_signup{
+            .mobile_li_tb{
                 background: #ffffff;
                 border: 1px solid #ddd;
                 display: flex;
                 flex-flow: row wrap;
             }
-            .mobile_signup li{
+            .mobile_li_tb li{
                 display: flex;
                 align-items: flex-start;
                 flex-direction: column;
@@ -188,14 +266,14 @@
                 }
 
             }
-            .mobile_signup li:nth-child(odd){
+            .mobile_li_tb li:nth-child(odd){
                 border-right: 1px solid #ddd;
             }
-            .mobile_signup li:last-child{
+            .mobile_li_tb li:last-child{
                 border-bottom: none;
                 border-right: none;
             }
-            .mobile_signup li label{
+            .mobile_li_tb li label{
                 display: block;
                 margin-bottom: 5px;
                 font-weight: 500;
@@ -210,6 +288,7 @@
             }
 
         }
+
     }
 
     // 푸터영역
@@ -244,19 +323,62 @@
                 }
                 .sub_page{
                     width: 100%;
-                    padding: 15px;
+                    padding: 30px 15px;
+
+                    // 회원정보
+                    .mobile_li_tb{
+                        background: #ffffff;
+                        border: 1px solid #ddd;
+                        display: flex;
+                        flex-flow: row wrap;
+                    }
+                    .mobile_li_tb li{
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        width: 100%;
+                        padding: 20px;
+                        border-bottom: 1px solid #ddd;
+
+                        div{
+                            display: flex;
+                            width: 100%;
+
+                            button{
+                                margin-left: 0;
+                            }
+                            em{
+                                margin: 0 5px;
+                            }
+                        }
+
+                    }
+                    .mobile_li_tb li:nth-child(odd){
+                        border-right: none;
+                    }
+                    .mobile_li_tb li:last-child{
+                        border-bottom: none;
+                        border-right: none;
+                    }
+                    .mobile_li_tb li label{
+                        display: block;
+                        margin-bottom: 5px;
+                        font-weight: 500;
+                        font-size: 0.95em;
+                    }
+
                 }
 
             }
             
             // 회원가입
-            .mobile_signup{
+            .mobile_li_tb{
                 background: #ffffff;
                 border: 1px solid #ddd;
                 display: flex;
                 flex-flow: row wrap;
             }
-            .mobile_signup li{
+            .mobile_li_tb li{
                 display: flex;
                 align-items: flex-start;
                 flex-direction: column;
@@ -277,14 +399,14 @@
                 }
 
             }
-            .mobile_signup li:nth-child(odd){
+            .mobile_li_tb li:nth-child(odd){
                 border-right: 1px solid #ddd;
             }
-            .mobile_signup li:last-child{
+            .mobile_li_tb li:last-child{
                 border-bottom: none;
                 border-right: none;
             }
-            .mobile_signup li label{
+            .mobile_li_tb li label{
                 display: block;
                 margin-bottom: 5px;
                 font-weight: 500;
@@ -331,17 +453,67 @@
                 }
                 .sub_page{
                     width: 100%;
-                    padding: 15px;
+                    padding: 20px 10px;
+
+                    // 입출금
+                    .deposit_btn .mobile{
+                        margin-top: 10px;
+                    }
+                    .ant-btn-sm{
+                        margin-right: 3px;
+                        font-size: 1em;
+                        padding: 3px 7px;
+                    }
+
+                    // 회원정보
+                    .mobile_li_tb{
+                        background: #ffffff;
+                        border: 1px solid #ddd;
+                    }
+                    .mobile_li_tb li{
+                        display: flex;
+                        align-items: flex-start;
+                        flex-direction: column;
+                        width: 100%;
+                        padding: 1em 0.8em;
+                        border-bottom: 1px solid #ddd;
+
+                        div{
+                            em{
+                                margin: 0 2px;
+                            }
+                        }
+
+                        .email_ip{
+                            input[type=email]{
+                                width: 95px;
+                                font-size: 0.9em;
+                                padding: 4px 5px;
+                            }
+                            select{
+                                width: 90px;
+                                font-size: 0.9em;
+                            }
+                        }
+
+                    }
+                    .mobile_li_tb li:nth-child(odd){
+                        border-right: none;
+                    }
+                    .mobile_li_tb li:last-child{
+                        border-bottom: none;
+                        border-right: none;
+                    }
                 }
 
             }
             
             // 회원가입
-            .mobile_signup{
+            .mobile_li_tb{
                 background: #ffffff;
                 border: 1px solid #ddd;
             }
-            .mobile_signup li{
+            .mobile_li_tb li{
                 display: flex;
                 align-items: flex-start;
                 flex-direction: column;
@@ -350,10 +522,10 @@
                 border-bottom: 1px solid #ddd;
 
             }
-            .mobile_signup li:nth-child(odd){
+            .mobile_li_tb li:nth-child(odd){
                 border-right: none;
             }
-            .mobile_signup li:last-child{
+            .mobile_li_tb li:last-child{
                 border-bottom: none;
                 border-right: none;
             }
@@ -395,13 +567,51 @@
                 }
                 .sub_page{
                     width: 100%;
-                    padding: 15px;
+
+                    // 회원정보
+                    .mobile_li_tb li{
+                        padding: 1em 0.5em;
+
+                        div{
+                            em{
+                                margin: 0 2px;
+                            }
+                        }
+
+                        .email_ip{
+                            input[type=email]{
+                                width: 75px;
+                                font-size: 0.8em;
+                                padding: 4px 5px;
+                            }
+                            select{
+                                width: 90px;
+                                font-size: 0.8em;
+                            }
+                        }
+
+                    }
+                    
+                    input[type=email]{
+                        width: 90px;
+                    }
+
+                    // 입출금
+                    .deposit_btn .mobile{
+                        margin-top: 10px;
+                    }
+                    .ant-btn-sm{
+                        margin-right: 3px;
+                        font-size: 0.9em;
+                        padding: 3px 5px;
+                    }
+
                 }
 
             }
             
             // 회원가입
-            .mobile_signup li{
+            .mobile_li_tb li{
                 padding: 1em 0.5em;
 
                 div{

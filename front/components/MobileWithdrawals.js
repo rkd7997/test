@@ -22,17 +22,21 @@ const MobileWithdrawals = () => {
           <table className="tb_01" width="100%" >
               <tr>
                 <th>보유금액</th>
+              </tr>
+              <tr>
                 <td>100,000,000 원</td>
               </tr>
               <tr>
                 <th>신청금액</th>
+              </tr>
+              <tr>
                 <td>
                   <p>
                     <Input name="user-num" type="number" required placeholder="0" />
                     <em>원</em>
                   </p>
                   <span className="deposit_info">* 최소 10,000원부터 입금 가능합니다.</span>
-                  <p className="deposit_btn">
+                  <p className="deposit_btn mobile">
                     <Button type="primary" ghost size={'small'} value="10,000" className="won_btn" >10,000</Button>
                     <Button type="primary" ghost size={'small'} value="50,000" className="won_btn" >50,000</Button>
                     <Button type="primary" ghost size={'small'} value="100,000" className="won_btn" >100,000</Button>
@@ -43,6 +47,8 @@ const MobileWithdrawals = () => {
               </tr>
               <tr>
                 <th>출금후 잔액</th>
+              </tr>
+              <tr>
                 <td>500,000원</td>
               </tr>
             </table>

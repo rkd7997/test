@@ -10,10 +10,10 @@ const AnnouncementsRow = ({ announcements }) => {
 
   return (
       <tr>
-        <td>{announcements.id}</td>
+        {/* <td>{announcements.id}</td> */}
         <td align="left">{announcements.subject}</td>
         <td>{announcements.regDate}</td>
-        <td>{announcements.hit}</td>
+        {/* <td>{announcements.hit}</td> */}
       </tr>
   );
 };
