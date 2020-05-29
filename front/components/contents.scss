@@ -602,8 +602,9 @@
                     font-size: 1.2em;
                     // border-bottom: 2px solid #10325c;
                     // color: #10325c;
-                    background: #5d718a;
+                    background: #a3a3a3;
                     color: #ffffff;
+                    font-weight: 500s;
                 }
 
                 ul{
@@ -619,11 +620,11 @@
                     background-color: #f5f6fa;
                 }
                 ul li.active a{
-                    color: #0051c7;
+                    color: #a62304;
                     font-weight: bold;
                 }
                 ul li:hover a{
-                    color: #0051c7;
+                    color: #a62304;
                     font-weight: bold;
                 }
                 ul li a{

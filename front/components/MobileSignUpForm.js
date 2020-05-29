@@ -109,7 +109,7 @@ const MobileSignUpForm = () => {
       <div className="signup_div">
         <h4 className="tit_02">회원정보입력</h4>
         <Form onSubmit={onSubmit}>
-          <ul className="mobile_signup">
+          <ul className="mobile_li_tb">
             <li>
               <label htmlFor="user-id">아이디</label>
               <div>
@@ -134,6 +134,13 @@ const MobileSignUpForm = () => {
             <li>
               <label htmlFor="user-name">이름</label>
               <Input name="user-name" required onChange={onChangeId} disabled className="wd_100" />
+            </li>
+            <li>
+              <label htmlFor="user-phon">휴대폰번호</label>
+              <div>
+                <Input name="user-phon" required onChange={onChangeMobile}  className="wd_75" />
+                <Button value="본인인증" onClick={OnMobileVerification} type="primary" >본인인증</Button>
+              </div>
             </li>
             <li>
               <label htmlFor="user-password">비밀번호</label>
