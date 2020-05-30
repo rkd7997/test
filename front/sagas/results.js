@@ -1,12 +1,12 @@
 import { all, delay, fork, put, takeEvery, call } from 'redux-saga/effects';
 import axios from 'axios';
 import {
-  LOAD_TRANSACTIONS_REQUEST,
-  LOAD_TRANSACTIONS_SUCCESS,
-  LOAD_TRANSACTIONS_FAILURE,
-} from '../reducers/exchange';
+  LOAD_TRANSACTION_HISTORY_REQUEST,
+  LOAD_TRANSACTION_HISTORY_SUCCESS,
+  LOAD_TRANSACTION_HISTORY_FAILURE,
+} from '../reducers/results';
 
-function transactionsAPI() {
+function transactionHistoryAPI() {
   return {
     data: [
       {
@@ -32,26 +32,26 @@ function transactionsAPI() {
   }
 }
 
-function* transactions() {
+function* transactionHistory() {
   try {
-    const result = yield call(transactionsAPI);
+    const result = yield call(transactionHistoryAPI);
     yield delay(100);
     yield put({
-      type: LOAD_TRANSACTIONS_SUCCESS,
+      type: LOAD_TRANSACTION_HISTORY_SUCCESS,
       data: result.data,
     });
   } catch (e) {
     console.error(e);
-    yield put({ e, type: LOAD_TRANSACTIONS_FAILURE, reason: e.response && e.response.data.reason || 'Server Error' });
+    yield put({ e, type: LOAD_TRANSACTION_HISTORY_FAILURE, reason: e.response && e.response.data.reason || 'Server Error' });
   }
 }
 
-function* watchTransactions() {
-  yield takeEvery(LOAD_TRANSACTIONS_REQUEST, transactions);
+function* watchTransactionHistory() {
+  yield takeEvery(LOAD_TRANSACTION_HISTORY_REQUEST, transactionHistory);
 }
 
 export default function* exchangeSaga() {
   yield all([
-    fork(watchTransactions),
+    fork(watchTransactionHistory),
   ]);
 }

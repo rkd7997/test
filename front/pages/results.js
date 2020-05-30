@@ -9,9 +9,7 @@ const Results = () => {
       <div className="sub_menu">
         <h5 className="lnb_tit">거래하기</h5>
         <ul>
-          <li className="active"><Link href='deposit'>입금신청</Link></li>
-          <li ><Link href='withdrawals'>출금신청</Link></li>
-          <li ><Link href='depositandwithdrawalshistory'>입출금내역</Link></li>
+          <li className="active"><Link href='results'>거래결과</Link></li>
         </ul>
       </div>
       <div className="sub_page">

@@ -3,6 +3,8 @@ import user from './user';
 import chart from './chart'
 import service from './service';
 import investments from "./investments";
+import results from "./results";
+import exchange from "./exchange";
 
 export default function* rootSaga() {
   yield all([
@@ -10,5 +12,7 @@ export default function* rootSaga() {
     fork(chart),
     fork(service),
     fork(investments),
+    fork(results),
+    fork(exchange),
   ]);
 }
