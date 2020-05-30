@@ -54,17 +54,17 @@ function userTransactionHistoryAPI() {
     data: [
       {
         id: 2,
-        type: '2분매도',
-        time: '21일 20시 32분',
-        amount: '10000',
+        type: '1분매수',
+        time: '2020-05-21 11:04:51',
+        amount: '2 lot',
         result: '실격'
       }
       ,
       {
         id: 1,
-        type: '1분매수',
-        time: '13일 19시 56분',
-        amount: '10000',
+        type: '1분매도',
+        time: '2020-05-15 21:03:16',
+        amount: '2 lot',
         result: '실현'
       }
     ]
