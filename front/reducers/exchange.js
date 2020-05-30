@@ -1,37 +1,37 @@
 import produce from "immer";
 
-export const LOAD_TRANSACTION_HISTORY_REQUEST = 'LOAD_TRANSACTION_HISTORY_REQUEST';
-export const LOAD_TRANSACTION_HISTORY_SUCCESS = 'LOAD_TRANSACTION_HISTORY_SUCCESS';
-export const LOAD_TRANSACTION_HISTORY_FAILURE = 'LOAD_TRANSACTION_HISTORY_FAILURE';
+export const LOAD_TRANSACTIONS_REQUEST = 'LOAD_TRANSACTIONS_REQUEST';
+export const LOAD_TRANSACTIONS_SUCCESS = 'LOAD_TRANSACTIONS_SUCCESS';
+export const LOAD_TRANSACTIONS_FAILURE = 'LOAD_TRANSACTIONS_FAILURE';
 
 export const initialState = {
-    transactionHistory: [],
-    isLoadingTransactionHistory: false,
-    isLoadedTransactionHistory: false,
-    transactionHistoryErrorReason: '',
+    transactions: [],
+    isLoadingTransactions: false,
+    isLoadedTransactions: false,
+    transactionsErrorReason: '',
 };
 
 export default (state = initialState, action) => {
     return produce(state, (draft) => {
         switch (action.type) {
-            case LOAD_TRANSACTION_HISTORY_REQUEST: {
-                draft.isLoadingTransactionHistory = true;
-                draft.isLoadedTransactionHistory = false;
-                draft.transactionHistoryErrorReason = '';
-                draft.transactionHistory = [];
+            case LOAD_TRANSACTIONS_REQUEST: {
+                draft.isLoadingTransactions = true;
+                draft.isLoadedTransactions = false;
+                draft.transactionsErrorReason = '';
+                draft.transactions = [];
                 break;
             }
-            case LOAD_TRANSACTION_HISTORY_SUCCESS: {
-                draft.isLoadingTransactionHistory = false;
+            case LOAD_TRANSACTIONS_SUCCESS: {
+                draft.isLoadingTransactions = false;
                 action.data.forEach((d) => {
-                    draft.transactionHistory.push(d);
+                    draft.transactions.push(d);
                 });
-                draft.isLoadedTransactionHistory = true;
+                draft.isLoadedTransactions = true;
                 break;
             }
-            case LOAD_TRANSACTION_HISTORY_FAILURE: {
-                draft.isLoadingTransactionHistory = false;
-                draft.transactionHistoryErrorReason = action.reason;
+            case LOAD_TRANSACTIONS_FAILURE: {
+                draft.isLoadingTransactions = false;
+                draft.transactionsErrorReason = action.reason;
                 break;
             }
             default: {
