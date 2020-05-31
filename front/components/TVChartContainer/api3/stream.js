@@ -10,7 +10,7 @@ var _subs = []
 var simul ={
  sub : null,
  interval : 2000,
- max_ratio : 0.005
+ max_ratio : 0.0005
 };
 
 export default {
