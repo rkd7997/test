@@ -208,7 +208,7 @@ const AppLayout = ({ children }) => {
             </div>
             <div className="footer_right">
               <p><i class="ri-phone-fill"></i>고객센터</p>
-              <Link href="tel:1588-0000"><a>1588-0000</a></Link>
+              {/*<Link href="tel:1588-0000"><a>1588-0000</a></Link>*/}
             </div>
           </div>
         </div>

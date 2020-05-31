@@ -5,13 +5,13 @@ const supportedResolutions = ["1", "3", "5"]
 
 const config = {
     supported_resolutions: supportedResolutions
-}; 
+};
 
 export default {
 	onReady: cb => {
-	console.log('=====onReady running')	
+	console.log('=====onReady running')
 		setTimeout(() => cb(config), 0)
-		
+
 	},
 	searchSymbols: (userInput, exchange, symbolType, onResultReadyCallback) => {
 		console.log('====Search Symbols running')
@@ -46,13 +46,13 @@ export default {
 			onSymbolResolvedCallback(symbol_stub)
 			console.log('Resolving that symbol....', symbol_stub)
 		}, 0)
-		
-		
+
+
 		// onResolveErrorCallback('Not feeling it today')
 
 	},
 	getBars: function(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback, firstDataRequest) {
-		console.log('=====getBars running')
+		console.log('=====getBars running ', resolution)
 		// console.log('function args',arguments)
 		// console.log(`Requesting bars between ${new Date(from * 1000).toISOString()} and ${new Date(to * 1000).toISOString()}`)
 		historyProvider.getBars(symbolInfo, resolution, from, to, firstDataRequest)
@@ -69,7 +69,7 @@ export default {
 
 	},
 	subscribeBars: (symbolInfo, resolution, onRealtimeCallback, subscribeUID, onResetCacheNeededCallback) => {
-		console.log('=====subscribeBars runnning')
+		console.log('=====subscribeBars runnning resolution=',resolution)
 		stream.subscribeBars(symbolInfo, resolution, onRealtimeCallback, subscribeUID, onResetCacheNeededCallback)
 	},
 	unsubscribeBars: subscriberUID => {
