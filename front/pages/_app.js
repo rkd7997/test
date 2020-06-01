@@ -10,11 +10,11 @@ import AppLayout from '../components/AppLayout';
 import reducer from '../reducers';
 import rootSaga from '../sagas';
 
-const FXCITY = ({ Component, store }) => {
+const ChartUP = ({ Component, store }) => {
   return (
     <Provider store={store}>
       <Head>
-        <title>FX시티</title>
+        <title>ChartUP</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.4.0/fonts/remixicon.css" rel="stylesheet" />
         {/* <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>  */}
@@ -28,7 +28,7 @@ const FXCITY = ({ Component, store }) => {
   );
 };
 
-FXCITY.propTypes = {
+ChartUP.propTypes = {
   Component: PropTypes.elementType.isRequired,
   store: PropTypes.object.isRequired,
 };
@@ -47,4 +47,4 @@ const configureStore = (initialState, options) => {
   return store;
 };
 
-export default withRedux(configureStore)(FXCITY);
+export default withRedux(configureStore)(ChartUP);

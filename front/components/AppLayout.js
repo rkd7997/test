@@ -9,6 +9,7 @@ import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
 import { CHART_DATA_UPDATE } from '../reducers/chart';
 import { Accordion, AccordionItem } from 'react-sanfona';
+import Router from 'next/router'
 
 import Router from 'next/router'
 
@@ -29,47 +30,65 @@ const AppLayout = ({ children }) => {
     });
   }, []);
 
-  function subscribe(io) {
-    console.log('clickSubscribe');
+  // function subscribe(io) {
 
-    io.socket.get('/api/v1/price/subscribe?channel=EUR', function (resData) {
-      console.log(resData);
-    });
+  //   io.socket.get('/api/v1/price/subscribe?channel=EUR', function (resData) {
+  //     console.log(resData);
+  //   });
 
-    io.socket.on('PriceAdd', function (msg) {
-      // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
-      let d = Number(msg.time); // unix time
-      dispatch({
-        type: CHART_DATA_UPDATE,
-        data: msg
-      });
+  //   io.socket.on('PriceAdd', function (msg) {
+  //     // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+  //     console.log(msg,'메시지')
+  //     let d = Number(msg.time); // unix time
+  //     dispatch({
+  //       type: CHART_DATA_UPDATE,
+  //       data: msg
+  //     });
 
-      // let r = dataSeries.update({
-      //     time: d,
-      //     open: Number(msg.open),
-      //     close: Number(msg.close),
-      //     high: Number(msg.high),
-      //     low: Number(msg.low),
-      // })
-    });
+  //     // let r = dataSeries.update({
+  //     //     time: d,
+  //     //     open: Number(msg.open),
+  //     //     close: Number(msg.close),
+  //     //     high: Number(msg.high),
+  //     //     low: Number(msg.low),
+  //     // })
+  //   });
+    
+  //   io.socket.on('PriceAdd_1Min', function (msg) {
+  //     // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+  //     console.log(msg,'메시지-1분')
+  //     let d = Number(msg.time); // unix time
+  //     dispatch({
+  //       type: CHART_DATA_UPDATE,
+  //       data: msg
+  //     });
+
+  //     // let r = dataSeries.update({
+  //     //     time: d,
+  //     //     open: Number(msg.open),
+  //     //     close: Number(msg.close),
+  //     //     high: Number(msg.high),
+  //     //     low: Number(msg.low),
+  //     // })
+  //   });
 
 
-  }
+  // }
 
 
-  React.useEffect(() => {
-    var socketIOClient = require('socket.io-client');
-    var sailsIOClient = require('sails.io.js');
-    var io = sailsIOClient(socketIOClient);
-    io.sails.url = 'http://211.62.107.211:1340';
-    console.log('subscribing..');
-    subscribe(io);
+  // React.useEffect(() => {
+  //   var socketIOClient = require('socket.io-client');
+  //   var sailsIOClient = require('sails.io.js');
+  //   var io = sailsIOClient(socketIOClient);
+  //   io.sails.url = 'http://211.62.107.211:1340';
+  //   console.log('subscribing..');
+  //   subscribe(io);
 
-    return () => {
-      console.log('unsubscirbin..', io.socket);
-      io.socket.disconnect();
-    }
-  }, [])
+  //   return () => {
+  //     console.log('unsubscirbin..', io.socket);
+  //     io.socket.disconnect();
+  //   }
+  // }, [])
 
 
   return (
@@ -215,7 +234,7 @@ const AppLayout = ({ children }) => {
             </div>
             <div className="footer_right">
               <p><i class="ri-phone-fill"></i>고객센터</p>
-              <Link href="tel:1588-0000"><a>1588-0000</a></Link>
+              {/*<Link href="tel:1588-0000"><a>1588-0000</a></Link>*/}
             </div>
           </div>
         </div>
