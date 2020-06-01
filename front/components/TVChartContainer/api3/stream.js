@@ -34,7 +34,7 @@ io2.socket.on('PriceAdd', function (msg) {
       return
      }
     }
-  // if (_subs == null) return;
+  if (!sub) return;
   let bar = sub.lastBar;
   if (bar.isBarClosed) {
     return;
