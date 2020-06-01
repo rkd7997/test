@@ -9,7 +9,7 @@ var _subs = []
 
 var simul ={
  sub : null,
- interval : 2000,
+ interval : 1500,
  max_ratio : 0.0005
 };
 
