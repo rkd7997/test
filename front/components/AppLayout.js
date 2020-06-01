@@ -11,6 +11,7 @@ import { CHART_DATA_UPDATE } from '../reducers/chart';
 import { Accordion, AccordionItem } from 'react-sanfona';
 import Router from 'next/router'
 
+import Router from 'next/router'
 
 import { slide as Menus } from 'react-burger-menu'
 
@@ -208,9 +209,15 @@ const AppLayout = ({ children }) => {
         {/* mobile_menu */}
 
         <div className="contents">
+          {(children.type.name === 'Home')?
+          <div>
+          {children}
+          </div>  
+          :
           <div className="contents_inner">
-            {children}
-          </div>
+          {children}
+         </div>
+          }
         </div>
 
         <div className="footer">
@@ -218,7 +225,7 @@ const AppLayout = ({ children }) => {
             <div className="footer_left">
               <div className="fotter_logo"><img src="/img/fotter_logo.png" /></div>
               <ul>
-                <li className="company_info">주식회사<span></span>대표 홍길동<span></span>우주 깐따삐야</li>
+                <li className="company_info">주식회사 차트파트너스<span></span>대표 김유상<span></span>서울특별시 강남구 테헤란로 13길 13-3 503호<span></span>350-86-01612</li>
                 <li>
                   <Link href="/user-term"><a>서비스이용약관</a></Link><span></span>
                   <Link href="/private-term"><a>개인정보처리방침</a></Link>
