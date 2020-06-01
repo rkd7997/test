@@ -35,12 +35,11 @@ io2.socket.on('PriceAdd', function (msg) {
      }
     }
   // if (_subs == null) return;
+  if(!sub) {return;}
   let bar = sub.lastBar;
   if (bar.isBarClosed) {
     return;
   }
-
-  console.log(bar,'바');
   const data = {
     time: bar.time/1000,
     price: bar.price

@@ -9,7 +9,6 @@ import './Layout.scss'
 import { LOG_OUT_REQUEST } from '../reducers/user';
 import { CHART_DATA_UPDATE } from '../reducers/chart';
 import { Accordion, AccordionItem } from 'react-sanfona';
-import Router from 'next/router'
 
 import Router from 'next/router'
 

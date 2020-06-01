@@ -11,6 +11,7 @@ const Home = () => {
         <img src="/img/main_benner_img.jpg" />
       </div>
       {/* 메인배너 */}
+      {/* 메인컨텐츠 */}
       <div className="main_con gray">
         <div className="main_con_inner">
           <div className="main_tit">
@@ -34,11 +35,61 @@ const Home = () => {
               <p>냉철한 분석에 따라 자신에게 잘 맞는 거래방식과 거래단위를 선택 하시기 바랍니다.</p>
             </div>
           </div>
-          <div>
+          <div className="main_btn">
             <Link href="signup"><a>회원가입</a></Link> 
           </div>
         </div>
       </div>
+      {/* 메인컨텐츠 */}
+      {/* 메인컨텐츠 */}
+      <div className="main_con red">
+        <div className="main_con_inner">
+          <div className="main_tit">
+            <h2>빠르고 안정적인 거래 시스템</h2>
+          </div>
+          <div className="main_item_con">
+            <div className="main_item_left">
+              <div className="main_item02">
+                <h5>쉽고 간편한 거래</h5>
+                <p>언제 어디서나 PC, 모바일로<br/>빠르고 간편하게 거래</p>
+              </div>
+              <div className="main_item02">
+                <h5>차트의 고급화</h5>
+                <p>한눈에 파악할 수 있는 차트 구성<br/>다양한 모드와 기능 활용 가능</p>
+              </div>
+            </div>
+            <div className="main_item_right">
+              <div className="main_item02">
+                <h5>자동 입금 시스템</h5>
+                <p>실시간 입금처리 기능으로<br/>더욱 원활한 거래 가능</p>
+              </div>
+              <div className="main_item02">
+                <h5>차별화된 거래 시스템</h5>
+                <p>매수 매도 결과가 실시간 반영되는<br/>차별화된 거래 시스템 구축</p>
+              </div>
+            </div>
+          </div>
+          <div className="main_item_img">
+            <img src="/img/main_con02_img.png" />
+          </div>
+        </div>
+      </div>
+      {/* 메인컨텐츠 */}
+      {/* 메인컨텐츠 */}
+      <div className="main_con">
+        <div className="main_con_inner">
+          <div className="main_tit">
+            <h2>강력한 보안으로 24시간 안심거래</h2>
+            <p>한단계 높은 보안과 최적화된 플렛폼으로 사용자들의 정보의 안전을 보장합니다.</p>
+          </div>
+          <div className="main_item_con">
+            <div className="main_item03">
+              <img src="/img/main_con03_img.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* 메인컨텐츠 */}
     </div> 
   );
 };
