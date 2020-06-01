@@ -29,7 +29,6 @@ const AppLayout = ({ children }) => {
   }, []);
 
   function subscribe(io) {
-    console.log('clickSubscribe');
 
     io.socket.get('/api/v1/price/subscribe?channel=EUR', function (resData) {
       console.log(resData);
@@ -37,6 +36,25 @@ const AppLayout = ({ children }) => {
 
     io.socket.on('PriceAdd', function (msg) {
       // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+      console.log(msg,'메시지')
+      let d = Number(msg.time); // unix time
+      dispatch({
+        type: CHART_DATA_UPDATE,
+        data: msg
+      });
+
+      // let r = dataSeries.update({
+      //     time: d,
+      //     open: Number(msg.open),
+      //     close: Number(msg.close),
+      //     high: Number(msg.high),
+      //     low: Number(msg.low),
+      // })
+    });
+    
+    io.socket.on('PriceAdd_1Min', function (msg) {
+      // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+      console.log(msg,'메시지')
       let d = Number(msg.time); // unix time
       dispatch({
         type: CHART_DATA_UPDATE,

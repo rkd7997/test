@@ -74,7 +74,7 @@ function updateSimul() {
      // } else {
      //  bar.high = sim_val
      // }
-     console.log('updateSimul ', d.price);
+    //  console.log('updateSimul ', d.price);
      // if (simul.sub.lastBar.high < sim_close) {
      //  simul.sub.lastBar.high = sim_close;
      // } else if (simul.sub.lastBar.low  > sim_close) {
@@ -101,7 +101,7 @@ socket.on('error', err => {
  console.log('====socket error', err)
 })
 socket.on('m', (e) => {
-  console.log(e, new Date(), 'api3 데이터소켓')
+  // console.log(e, new Date(), 'api3 데이터소켓')
  // here we get all events the CryptoCompare connection has subscribed to
  // we need to send this new data to our subscribed charts
  const _data= e.split('~')

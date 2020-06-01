@@ -10,7 +10,7 @@ import AppLayout from '../components/AppLayout';
 import reducer from '../reducers';
 import rootSaga from '../sagas';
 
-const FXCITY = ({ Component, store }) => {
+const ChartUP = ({ Component, store }) => {
   return (
     <Provider store={store}>
       <Head>
@@ -28,7 +28,7 @@ const FXCITY = ({ Component, store }) => {
   );
 };
 
-FXCITY.propTypes = {
+ChartUP.propTypes = {
   Component: PropTypes.elementType.isRequired,
   store: PropTypes.object.isRequired,
 };
@@ -47,4 +47,4 @@ const configureStore = (initialState, options) => {
   return store;
 };
 
-export default withRedux(configureStore)(FXCITY);
+export default withRedux(configureStore)(ChartUP);

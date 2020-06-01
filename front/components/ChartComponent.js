@@ -96,7 +96,7 @@ const  Graph = () => {
     if(chartRef.current && chart_on){
       chart_on = false;
       chart = LightweightCharts.createChart(chartRef.current, {
-        width: 845,
+        width: 445,
         height: 400,
         crosshair: {
           mode: "normal"
@@ -110,7 +110,7 @@ const  Graph = () => {
 
   React.useEffect(()=> {    
       const charts = LightweightCharts.createChart(chartRef.current, {
-        width: 845,
+        width: 445,
         height: 400,
         crosshair: {
           mode: "normal"
