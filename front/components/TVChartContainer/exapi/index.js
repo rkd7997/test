@@ -20,7 +20,7 @@ export default {
 			session: '24x7',
 			ticker: symbolName,
 			minmov: 1,
-			pricescale: 100000000,
+			pricescale: 10000,
 			has_intraday: true,
 			intraday_multipliers: ['1', '60'],
 			has_daily: true,
@@ -29,17 +29,17 @@ export default {
 			volume_precision: 3,
 			data_status: 'streaming',
 		}
-		if (
-            symbolName
-            && symbolName.split('-')[1]
-        ) {
-            if (symbolName.split('-')[1].includes('KRW')) {
-                symbol_stub.pricescale = 100
-            }
-            if (['USDT'].includes(symbolName.split('-')[1])) {
-                symbol_stub.pricescale = 1000
-            }
-		}
+		// if (
+        //     symbolName
+        //     && symbolName.split('-')[1]
+        // ) {
+        //     if (symbolName.split('-')[1].includes('KRW')) {
+        //         symbol_stub.pricescale = 100
+        //     }
+        //     if (['USDT'].includes(symbolName.split('-')[1])) {
+        //         symbol_stub.pricescale = 1000
+        //     }
+		// }
 		setTimeout(function () {
 			onSymbolResolvedCallback(symbol_stub)
 		}, 0)

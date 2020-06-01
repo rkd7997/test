@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 
 
 
+
 const TextInput = ({ value }) => (
   <div>{value}</div>
 );

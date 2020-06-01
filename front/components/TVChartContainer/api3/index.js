@@ -17,11 +17,8 @@ export default {
 		console.log('====Search Symbols running')
 	},
 	resolveSymbol: (symbolName, onSymbolResolvedCallback, onResolveErrorCallback) => {
-		// expects a symbolInfo object in response
 		console.log('======resolveSymbol running')
-		// console.log('resolveSymbol:',{symbolName})
 		var split_data = symbolName.split(/[:/]/)
-		// console.log({split_data})
 		var symbol_stub = {
 			name: symbolName,
 			description: '',
@@ -30,7 +27,7 @@ export default {
 			timezone: 'Etc/UTC',
 			ticker: symbolName,
 			exchange: split_data[0],
-			minmov: 1,
+			minmov: 0.0001,
 			pricescale: 100000000,
 			has_intraday: true,
 			intraday_multipliers: ['1', '60'],
@@ -40,21 +37,15 @@ export default {
 		}
 
 		if (split_data[2].match(/USD|EUR|JPY|AUD|GBP|KRW|CNY/)) {
-			symbol_stub.pricescale = 100
+			symbol_stub.pricescale = 100000
 		}
 		setTimeout(function() {
 			onSymbolResolvedCallback(symbol_stub)
 			console.log('Resolving that symbol....', symbol_stub)
 		}, 0)
-
-
-		// onResolveErrorCallback('Not feeling it today')
-
 	},
 	getBars: function(symbolInfo, resolution, from, to, onHistoryCallback, onErrorCallback, firstDataRequest) {
 		console.log('=====getBars running ', resolution)
-		// console.log('function args',arguments)
-		// console.log(`Requesting bars between ${new Date(from * 1000).toISOString()} and ${new Date(to * 1000).toISOString()}`)
 		historyProvider.getBars(symbolInfo, resolution, from, to, firstDataRequest)
 		.then(bars => {
 			if (bars.length) {
@@ -74,7 +65,6 @@ export default {
 	},
 	unsubscribeBars: subscriberUID => {
 		console.log('=====unsubscribeBars running')
-
 		stream.unsubscribeBars(subscriberUID)
 	},
 	calculateHistoryDepth: (resolution, resolutionBack, intervalBack) => {
