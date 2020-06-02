@@ -214,7 +214,204 @@
     display: none;
 }
 
-// 컨텐츠
+// 메인 컨텐츠
+.main_inner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    // 메인배너영역
+    .main_benner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // 메인컨텐츠영역
+    .main_con{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+    }
+    .main_con_inner{
+        width: 1200px;
+        padding: 60px 0;
+        text-align: center;
+
+    }
+    // 이용방법
+    .main_con.gray{
+        background-color: #f2f2f2;
+        
+        .main_tit{
+            width: 100%;
+            margin-bottom: 30px;
+
+            h2{
+                color: #333333;
+                font-size: 2em;
+            }
+            p{
+                color: #333333;
+                font-size: 1.2em;
+            }
+
+        }
+        .main_item_con{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+        }
+        .main_item01{
+            width: 25%;
+
+            img{
+                width: 107px;
+                height: 96px;
+                margin-bottom: 10px;
+            }
+            h5{
+                font-size: 1.4em;
+                font-weight: 500;
+            }
+            p{
+                font-size: 1.1em;
+                word-break: keep-all;
+            }
+        }
+
+        .main_btn{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 30px;
+
+            a{
+                padding: 10px 60px;
+                border-radius: 50px;
+                font-size: 1.2em;
+                color: #ffffff;
+                background: #b10000;
+            }
+        }
+
+    }
+    // 거래시스템
+    .main_con.red{
+        background-color: #b10000;
+
+        .main_tit{
+            width: 100%;
+            margin-bottom: 30px;
+
+            h2{
+                color: #ffffff;
+                font-size: 2em;
+            }
+            p{
+                color: #ffffff;
+                font-size: 1.2em;
+            }
+
+        }
+
+        .main_con_inner{
+            padding: 60px 0 0 0;
+            position: relative;
+        }
+
+        // 거래시스템
+        .main_item_con{
+            width: 100%;
+            position: absolute;
+            left: 0px;
+            top: 240px;
+
+            .main_item_left{
+                width: 300px;
+                text-align: right;
+                position: absolute;
+                left: 75px;
+
+                .main_item02{
+                    margin-bottom: 145px;
+                }
+                .main_item02:last-child{
+                    padding-right: 35px;
+                }
+            }
+            .main_item_right{
+                width: 300px;
+                text-align: left;
+                position: absolute;
+                right: 60px;
+
+                .main_item02{
+                    margin-bottom: 145px;
+                }
+                .main_item02:last-child{
+                    padding-left: 35px;
+                }
+            }
+        }
+        .main_item02{
+            h5{
+                color: #ffffff;
+                font-size: 1.4em;
+                font-weight: 500;
+            }
+            p{
+                color: #ffffff;
+                font-size: 1.1em;
+                word-break: keep-all;
+            }
+        }
+        .main_item_img{
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: 545px;
+                height: 594px;
+            }
+        }
+        
+
+    }
+
+    // 안심거래
+    .main_con{
+
+        .main_tit{
+            width: 100%;
+            margin-bottom: 30px;
+
+            h2{
+                color: #333333;
+                font-size: 2em;
+            }
+            p{
+                color: #333333;
+                font-size: 1.2em;
+            }
+
+        }
+
+        .main_item_con{
+            display: flex;
+            justify-content: center;
+            .main_item03{
+                width: 60%;
+            }
+        }
+
+    }
+
+}
+
+// 서브 컨텐츠
 .contents{
     width: 100%;
     display: flex;

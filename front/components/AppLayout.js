@@ -10,6 +10,7 @@ import { LOG_OUT_REQUEST } from '../reducers/user';
 import { CHART_DATA_UPDATE } from '../reducers/chart';
 import { Accordion, AccordionItem } from 'react-sanfona';
 
+import Router from 'next/router'
 
 import { slide as Menus } from 'react-burger-menu'
 
@@ -28,47 +29,65 @@ const AppLayout = ({ children }) => {
     });
   }, []);
 
-  function subscribe(io) {
-    console.log('clickSubscribe');
+  // function subscribe(io) {
 
-    io.socket.get('/api/v1/price/subscribe?channel=EUR', function (resData) {
-      console.log(resData);
-    });
+  //   io.socket.get('/api/v1/price/subscribe?channel=EUR', function (resData) {
+  //     console.log(resData);
+  //   });
 
-    io.socket.on('PriceAdd', function (msg) {
-      // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
-      let d = Number(msg.time); // unix time
-      dispatch({
-        type: CHART_DATA_UPDATE,
-        data: msg
-      });
+  //   io.socket.on('PriceAdd', function (msg) {
+  //     // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+  //     console.log(msg,'메시지')
+  //     let d = Number(msg.time); // unix time
+  //     dispatch({
+  //       type: CHART_DATA_UPDATE,
+  //       data: msg
+  //     });
 
-      // let r = dataSeries.update({
-      //     time: d,
-      //     open: Number(msg.open),
-      //     close: Number(msg.close),
-      //     high: Number(msg.high),
-      //     low: Number(msg.low),
-      // })
-    });
+  //     // let r = dataSeries.update({
+  //     //     time: d,
+  //     //     open: Number(msg.open),
+  //     //     close: Number(msg.close),
+  //     //     high: Number(msg.high),
+  //     //     low: Number(msg.low),
+  //     // })
+  //   });
+    
+  //   io.socket.on('PriceAdd_1Min', function (msg) {
+  //     // let d =new Date(Number(msg.time)).toISOString().substr(0,10); //day
+  //     console.log(msg,'메시지-1분')
+  //     let d = Number(msg.time); // unix time
+  //     dispatch({
+  //       type: CHART_DATA_UPDATE,
+  //       data: msg
+  //     });
+
+  //     // let r = dataSeries.update({
+  //     //     time: d,
+  //     //     open: Number(msg.open),
+  //     //     close: Number(msg.close),
+  //     //     high: Number(msg.high),
+  //     //     low: Number(msg.low),
+  //     // })
+  //   });
 
 
-  }
+  // }
 
 
-  React.useEffect(() => {
-    var socketIOClient = require('socket.io-client');
-    var sailsIOClient = require('sails.io.js');
-    var io = sailsIOClient(socketIOClient);
-    io.sails.url = 'http://211.62.107.211:1340';
-    console.log('subscribing..');
-    subscribe(io);
+  // React.useEffect(() => {
+  //   var socketIOClient = require('socket.io-client');
+  //   var sailsIOClient = require('sails.io.js');
+  //   var io = sailsIOClient(socketIOClient);
+  //   io.sails.url = 'http://211.62.107.211:1340';
+  //   console.log('subscribing..');
+  //   subscribe(io);
 
-    return () => {
-      console.log('unsubscirbin..', io.socket);
-      io.socket.disconnect();
-    }
-  }, [])
+  //   return () => {
+  //     console.log('unsubscirbin..', io.socket);
+  //     io.socket.disconnect();
+  //   }
+  // }, [])
 
 
   return (
@@ -189,9 +208,15 @@ const AppLayout = ({ children }) => {
         {/* mobile_menu */}
 
         <div className="contents">
+          {(children.type.name === 'Home')?
+          <div>
+          {children}
+          </div>  
+          :
           <div className="contents_inner">
-            {children}
-          </div>
+          {children}
+         </div>
+          }
         </div>
 
         <div className="footer">
@@ -199,7 +224,7 @@ const AppLayout = ({ children }) => {
             <div className="footer_left">
               <div className="fotter_logo"><img src="/img/fotter_logo.png" /></div>
               <ul>
-                <li className="company_info">주식회사<span></span>대표 홍길동<span></span>우주 깐따삐야</li>
+                <li className="company_info">주식회사 차트파트너스<span></span>대표 김유상<span></span>서울특별시 강남구 테헤란로 13길 13-3 503호<span></span>350-86-01612</li>
                 <li>
                   <Link href="/user-term"><a>서비스이용약관</a></Link><span></span>
                   <Link href="/private-term"><a>개인정보처리방침</a></Link>
@@ -208,7 +233,7 @@ const AppLayout = ({ children }) => {
             </div>
             <div className="footer_right">
               <p><i class="ri-phone-fill"></i>고객센터</p>
-              <Link href="tel:1588-0000"><a>1588-0000</a></Link>
+              {/*<Link href="tel:1588-0000"><a>1588-0000</a></Link>*/}
             </div>
           </div>
         </div>
