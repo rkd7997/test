@@ -602,148 +602,261 @@
                         }
                     }
                     // 매수매도
-                    //매수
-                    .deal_buy{
-                        display: flex;
-                        align-items: stretch;
-                        justify-content: center;
-                    }
-                    .buy_ui{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 245px;
-                        padding: 6px 10px;
-                        border-radius: 4px;
-                        background: #d60000;
-                    }
-                    .buy_ui span{
-                        height: 30px;
-                        line-height: 28px;
-                        padding: 0 5px;
-                        border-radius: 3px;
-                        color: #d60000;
-                        font-weight: 700;
-                        background: #ffffff;
-                    }
-                    .buy_ui button{
-                        width: 30px;
-                        height: 30px;
-                        line-height: 26px;
+                    .div_table{
+                        width: 100%;
+                        border-top: 2px solid #666;
                         font-size: 1em;
-                        font-weight: 700;
-                        color: #ffffff;
-                        border: 1px solid #ffffff;
-                        background: #d60000;
-                    }
-                    .buy_ui p{
-                        width: 120px;
-                        font-size: 1.2em;
-                        color: #ffffff;
-                    }
-                    .deal_buy_max{
-                        display: flex;
-                        flex: 1;
-                        margin-left: 5px;
-                        padding: 8px 10px;
-                        color: #d60000;
-                        border: 1px solid #d60000;
-                        border-radius: 4px;
-                        background: none;
-                        font-weight: 700;
-                    }
-                    //매도
-                    .deal_sell{
-                        display: flex;
-                        align-items: stretch;
-                        justify-content: center;
-                    }
-                    .sell_ui{
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        width: 245px;
-                        padding: 6px 10px;
-                        border-radius: 4px;
-                        background: #0042b7;
-                    }
-                    .sell_ui span{
-                        height: 30px;
-                        line-height: 28px;
-                        padding: 0 5px;
-                        border-radius: 3px;
-                        color: #0042b7;
-                        font-weight: 700;
-                        background: #ffffff;
-                    }
-                    .sell_ui button{
-                        width: 30px;
-                        height: 30px;
-                        line-height: 26px;
-                        font-size: 1em;
-                        font-weight: 700;
-                        color: #ffffff;
-                        border: 1px solid #ffffff;
-                        background: #0042b7;
-                    }
-                    .sell_ui p{
-                        width: 120px;
-                        font-size: 1.2em;
-                        color: #ffffff;
-                    }
-                    .deal_sell_max{
-                        display: flex;
-                        flex: 1;
-                        margin-left: 5px;
-                        padding: 8px 10px;
-                        color: #0042b7;
-                        border: 1px solid #0042b7;
-                        border-radius: 4px;
-                        background: none;
-                        font-weight: 700;
-                    }
-                    //버튼
-                    .sell_del{
-                        padding: 8px 20px;
-                        font-size: 1.1em;
-                        border: 1px solid #666;
-                        color: #666666;
-                        background: #ffffff;
-                        border-radius: 4px;
-                    }
-                    .buy_ok{
-                        padding: 8px 20px;
-                        font-size: 1.1em;
-                        border: 1px solid #d60000;
-                        color: #ffffff;
-                        background: #d60000;
-                        border-radius: 4px;
-                    }
-                    .buy_max{
-                        padding: 8px 20px;
-                        font-size: 1.1em;
-                        border: 1px solid #d60000;
-                        color: #d60000;
-                        background: #ffffff;
-                        border-radius: 4px;
-                    }
-                    .sell_ok{
-                        padding: 8px 20px;
-                        font-size: 1.1em;
-                        border: 1px solid #0042b7;
-                        color: #ffffff;
-                        background: #0042b7;
-                        border-radius: 4px;
-                    }
-                    .sell_max{
-                        padding: 8px 20px;
-                        font-size: 1.1em;
-                        border: 1px solid #0042b7;
-                        color: #0042b7;
-                        background: #ffffff;
-                        border-radius: 4px;
+
+                        .div_table_th{
+                            display: flex;
+                            align-items: center;
+                            justify-items: center;
+                            border-bottom: 2px solid #666;
+                            font-weight: 600;
+                            
+                            .div_th{
+                                text-align: center;
+                                padding: 15px 10px;
+                            }
+                            .div_th:nth-child(1){
+                                width: 10%;
+                            }
+                            .div_th:nth-child(2){
+                                width: 10%;
+                            }
+                            .div_th:nth-child(3){
+                                width: 40%;
+                            }
+                            .div_th:nth-child(4){
+                                width: 40%;
+                            }
+                        }
+                        .div_table_td{
+                            display: flex;
+                            align-items: center;
+                            justify-items: center;
+                            border-bottom: 1px solid #333;
+
+                            .div_td{
+                                text-align: center;
+                                padding: 15px 10px;
+                            }
+                            .div_td:nth-child(1){
+                                width: 10%;
+                            }
+                            .div_td:nth-child(2){
+                                width: 10%;
+                            }
+                            .div_td:nth-child(3){
+                                width: 40%;
+                            }
+                            .div_td:nth-child(4){
+                                width: 40%;
+                            }
+
+                            //매수
+                            .deal_buy{
+                                display: flex;
+                                align-items: stretch;
+                                justify-content: center;
+                                width: 100%;
+                            }
+                            .buy_ui{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                width: 80%;
+                                padding: 6px 10px;
+                                border-radius: 4px;
+                                background: #d60000;
+                            }
+                            .buy_ui span{
+                                height: 30px;
+                                line-height: 28px;
+                                padding: 0 5px;
+                                border-radius: 3px;
+                                color: #d60000;
+                                font-weight: 700;
+                                background: #ffffff;
+                            }
+                            .buy_ui button{
+                                width: 30px;
+                                height: 30px;
+                                line-height: 26px;
+                                font-size: 1em;
+                                font-weight: 700;
+                                color: #ffffff;
+                                border: 1px solid #ffffff;
+                                background: #d60000;
+                            }
+                            .buy_ui p{
+                                display: flex;
+                                padding: 0 7%;
+                                font-size: 1.2em;
+                                color: #ffffff;
+                            }
+                            .deal_buy_max{
+                                margin-left: 5px;
+                                padding: 8px 10px;
+                                color: #d60000;
+                                border: 1px solid #d60000;
+                                border-radius: 4px;
+                                background: none;
+                                font-weight: 700;
+                                width: 20%;
+                            }
+                            //매도
+                            .deal_sell{
+                                display: flex;
+                                align-items: stretch;
+                                justify-content: center;
+                                width: 100%;
+                            }
+                            .sell_ui{
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                width: 80%;
+                                padding: 6px 10px;
+                                border-radius: 4px;
+                                background: #0042b7;
+                            }
+                            .sell_ui span{
+                                height: 30px;
+                                line-height: 28px;
+                                padding: 0 5px;
+                                border-radius: 3px;
+                                color: #0042b7;
+                                font-weight: 700;
+                                background: #ffffff;
+                            }
+                            .sell_ui button{
+                                width: 30px;
+                                height: 30px;
+                                line-height: 26px;
+                                font-size: 1em;
+                                font-weight: 700;
+                                color: #ffffff;
+                                border: 1px solid #ffffff;
+                                background: #0042b7;
+                            }
+                            .sell_ui p{
+                                display: flex;
+                                padding: 0 6%;
+                                font-size: 1.2em;
+                                color: #ffffff;
+                            }
+                            .deal_sell_max{
+                                margin-left: 5px;
+                                padding: 8px 10px;
+                                color: #0042b7;
+                                border: 1px solid #0042b7;
+                                border-radius: 4px;
+                                background: none;
+                                font-weight: 700;
+                                width: 20%;
+                            }
+    
+                        }
+                        .div_table_foot{
+                                display: flex;
+                                align-items: center;
+                                justify-items: center;
+                                border-bottom: 1px solid #333;
+                                font-size: 1.1em;
+                                font-weight: 600;
+                                background: #f7f7f7;
+
+                                .div_foot{
+                                    text-align: center;
+                                    padding: 15px 10px;
+                                }
+                                .div_foot:nth-child(1){
+                                    width: 20%;
+                                    text-align: left;
+                                }
+                                .div_foot:nth-child(2){
+                                    width: 20%;
+                                    text-align: left;
+                                }
+                                .div_foot:nth-child(3){
+                                    width: 20%;
+                                    text-align: right;
+                                }
+                                .div_foot:nth-child(4){
+                                    width: 40%;
+                                    text-align: right;
+                                }
+                            
+                        }
+                        .div_table_btn{
+                            display: flex;
+                            align-items: center;
+                            justify-items: center;
+                            border-bottom: 1px solid #333;
+
+                            .div_btn{
+                                text-align: center;
+                                padding: 15px 10px;
+                            }
+                            .div_btn:nth-child(1){
+                                width: 20%;
+                                text-align: left;
+                            }
+                            .div_btn:nth-child(2){
+                                width: 40%;
+                                text-align: right;
+                            }
+                            .div_btn:nth-child(3){
+                                width: 40%;
+                                text-align: right;
+                            }
+
+                            //버튼
+                            .sell_del{
+                                padding: 8px 20px;
+                                font-size: 1.1em;
+                                border: 1px solid #666;
+                                color: #666666;
+                                background: #ffffff;
+                                border-radius: 4px;
+                            }
+                            .buy_ok{
+                                padding: 8px 20px;
+                                font-size: 1.1em;
+                                border: 1px solid #d60000;
+                                color: #ffffff;
+                                background: #d60000;
+                                border-radius: 4px;
+                            }
+                            .buy_max{
+                                padding: 8px 20px;
+                                font-size: 1.1em;
+                                border: 1px solid #d60000;
+                                color: #d60000;
+                                background: #ffffff;
+                                border-radius: 4px;
+                            }
+                            .sell_ok{
+                                padding: 8px 20px;
+                                font-size: 1.1em;
+                                border: 1px solid #0042b7;
+                                color: #ffffff;
+                                background: #0042b7;
+                                border-radius: 4px;
+                            }
+                            .sell_max{
+                                padding: 8px 20px;
+                                font-size: 1.1em;
+                                border: 1px solid #0042b7;
+                                color: #0042b7;
+                                background: #ffffff;
+                                border-radius: 4px;
+                            }
+                        }
                     }
                 }
+                    
             }
             .right_div{
                 width: 28%;
@@ -959,7 +1072,7 @@
                 display: flex;
                 align-items: center;
                 height: 12px;
-                font-size: 1.1em;
+                font-size: 1em;
                 color: #9a9a9a;
             }
         }

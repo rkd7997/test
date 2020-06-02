@@ -191,6 +191,354 @@
             width: 95%;
             padding: 20px 0 40px 0;
 
+            // 거래하기
+            .exchange_div{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .left_div{
+                    width: 100%;
+                    margin-right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: stretch;
+
+                    .trad_box{
+                        margin-bottom: 15px;
+                        background: #ffffff;
+                        border: 1px solid #f2f2f2;
+                    }
+                    .buy_box{
+                        background: #ffffff;
+                        border: 1px solid #f2f2f2;
+
+                        .deal_div{
+                            padding: 10px;
+                        }
+                        // 계약시간
+                        .timer{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-around;
+                            padding: 10px 20px 30px 20px;
+
+                            // 남은계약시간
+                            .ing_deal{
+                                display: flex;
+                                flex-direction: column;
+                            }
+                            .ing_deal p{
+                                text-align: center;
+                                margin-bottom: 5px;
+                                font-size: 1.2em;
+                            }
+                            .ing_deal ul li{
+                                display: inline-block;
+                                margin-right: 8px;
+                                font-size: 2.5em;
+                                color: #878787;
+                            }
+                            .ing_deal ul li span{
+                                padding: 0 12px;
+                                border-radius: 5px;
+                                font-weight: 700;
+                                color: #ffffff;
+                                background: #878787;
+                            }
+                            .ing_deal ul li:last-child{
+                                margin-right: 0;
+                            }
+
+                            // 다음계약시간
+                            .next_deal{
+                                display: flex;
+                                flex-direction: column;
+                            }
+                            .next_deal p{
+                                text-align: center;
+                                margin-bottom: 5px;
+                                font-size: 1.2em;
+                            }
+                            .next_deal ul li{
+                                display: inline-block;
+                                margin-right: 8px;
+                                font-size: 2.5em;
+                                color: #23a700;
+                            }
+                            .next_deal ul li span{
+                                padding: 0 12px;
+                                border-radius: 5px;
+                                font-weight: 700;
+                                color: #ffffff;
+                                background: #23a700;
+                            }
+                            .next_deal ul li:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                        // 매수매도
+                        .div_table{
+                            width: 100%;
+                            border-top: 2px solid #666;
+                            font-size: 1em;
+
+                            .div_table_th{
+                                display: flex;
+                                align-items: center;
+                                justify-items: center;
+                                border-bottom: 2px solid #666;
+                                font-weight: 600;
+                                
+                                .div_th{
+                                    text-align: center;
+                                    padding: 15px 10px;
+                                }
+                                .div_th:nth-child(1){
+                                    width: 10%;
+                                }
+                                .div_th:nth-child(2){
+                                    width: 10%;
+                                }
+                                .div_th:nth-child(3){
+                                    width: 40%;
+                                }
+                                .div_th:nth-child(4){
+                                    width: 40%;
+                                }
+                            }
+                            .div_table_td{
+                                display: flex;
+                                align-items: center;
+                                justify-items: center;
+                                border-bottom: 1px solid #333;
+
+                                .div_td{
+                                    text-align: center;
+                                    padding: 15px 10px;
+                                }
+                                .div_td:nth-child(1){
+                                    width: 10%;
+                                }
+                                .div_td:nth-child(2){
+                                    width: 10%;
+                                }
+                                .div_td:nth-child(3){
+                                    width: 40%;
+                                }
+                                .div_td:nth-child(4){
+                                    width: 40%;
+                                }
+
+                                //매수
+                                .deal_buy{
+                                    display: flex;
+                                    align-items: stretch;
+                                    justify-content: center;
+                                    width: 100%;
+                                }
+                                .buy_ui{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 80%;
+                                    padding: 6px 10px;
+                                    border-radius: 4px;
+                                    background: #d60000;
+                                }
+                                .buy_ui span{
+                                    height: 30px;
+                                    line-height: 28px;
+                                    padding: 0 5px;
+                                    border-radius: 3px;
+                                    color: #d60000;
+                                    font-weight: 700;
+                                    background: #ffffff;
+                                }
+                                .buy_ui button{
+                                    width: 30px;
+                                    height: 30px;
+                                    line-height: 26px;
+                                    font-size: 1em;
+                                    font-weight: 700;
+                                    color: #ffffff;
+                                    border: 1px solid #ffffff;
+                                    background: #d60000;
+                                }
+                                .buy_ui p{
+                                    display: flex;
+                                    padding: 0 7%;
+                                    font-size: 1.2em;
+                                    color: #ffffff;
+                                }
+                                .deal_buy_max{
+                                    margin-left: 5px;
+                                    padding: 8px 10px;
+                                    color: #d60000;
+                                    border: 1px solid #d60000;
+                                    border-radius: 4px;
+                                    background: none;
+                                    font-weight: 700;
+                                    width: 20%;
+                                }
+                                //매도
+                                .deal_sell{
+                                    display: flex;
+                                    align-items: stretch;
+                                    justify-content: center;
+                                    width: 100%;
+                                }
+                                .sell_ui{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    width: 80%;
+                                    padding: 6px 10px;
+                                    border-radius: 4px;
+                                    background: #0042b7;
+                                }
+                                .sell_ui span{
+                                    height: 30px;
+                                    line-height: 28px;
+                                    padding: 0 5px;
+                                    border-radius: 3px;
+                                    color: #0042b7;
+                                    font-weight: 700;
+                                    background: #ffffff;
+                                }
+                                .sell_ui button{
+                                    width: 30px;
+                                    height: 30px;
+                                    line-height: 26px;
+                                    font-size: 1em;
+                                    font-weight: 700;
+                                    color: #ffffff;
+                                    border: 1px solid #ffffff;
+                                    background: #0042b7;
+                                }
+                                .sell_ui p{
+                                    display: flex;
+                                    padding: 0 6%;
+                                    font-size: 1.2em;
+                                    color: #ffffff;
+                                }
+                                .deal_sell_max{
+                                    margin-left: 5px;
+                                    padding: 8px 10px;
+                                    color: #0042b7;
+                                    border: 1px solid #0042b7;
+                                    border-radius: 4px;
+                                    background: none;
+                                    font-weight: 700;
+                                    width: 20%;
+                                }
+        
+                            }
+                            .div_table_foot{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-items: center;
+                                    border-bottom: 1px solid #333;
+                                    font-size: 1.1em;
+                                    font-weight: 600;
+                                    background: #f7f7f7;
+
+                                    .div_foot{
+                                        text-align: center;
+                                        padding: 15px 10px;
+                                    }
+                                    .div_foot:nth-child(1){
+                                        width: 20%;
+                                        text-align: left;
+                                    }
+                                    .div_foot:nth-child(2){
+                                        width: 20%;
+                                        text-align: left;
+                                    }
+                                    .div_foot:nth-child(3){
+                                        width: 20%;
+                                        text-align: right;
+                                    }
+                                    .div_foot:nth-child(4){
+                                        width: 40%;
+                                        text-align: right;
+                                    }
+                                
+                            }
+                            .div_table_btn{
+                                display: flex;
+                                align-items: center;
+                                justify-items: center;
+                                border-bottom: 1px solid #333;
+
+                                .div_btn{
+                                    text-align: center;
+                                    padding: 15px 10px;
+                                }
+                                .div_btn:nth-child(1){
+                                    width: 20%;
+                                    text-align: left;
+                                }
+                                .div_btn:nth-child(2){
+                                    width: 40%;
+                                    text-align: right;
+                                }
+                                .div_btn:nth-child(3){
+                                    width: 40%;
+                                    text-align: right;
+                                }
+
+                                //버튼
+                                .sell_del{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #666;
+                                    color: #666666;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                                .buy_ok{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #d60000;
+                                    color: #ffffff;
+                                    background: #d60000;
+                                    border-radius: 4px;
+                                }
+                                .buy_max{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #d60000;
+                                    color: #d60000;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                                .sell_ok{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #0042b7;
+                                    color: #ffffff;
+                                    background: #0042b7;
+                                    border-radius: 4px;
+                                }
+                                .sell_max{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #0042b7;
+                                    color: #0042b7;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                            }
+                        }
+                    }
+                        
+                }
+                .right_div{
+                    display: none;
+                }
+            }
+
             .sub_div{
 
                 .sub_menu{
@@ -402,8 +750,144 @@
 
             // 거래하기
             .exchange_div{
-                .right_div{
-                    display: none;
+            
+                .left_div{
+
+                    .buy_box{
+                        background: #ffffff;
+                        border: 1px solid #f2f2f2;
+
+                        // 매수매도
+                        .div_table{
+                            font-size: 0.9em;
+
+                            .div_table_th{
+                                
+                                .div_th{
+                                    text-align: center;
+                                    padding: 10px 5px;
+                                }
+                                .div_th:nth-child(1){
+                                    width: 10%;
+                                }
+                                .div_th:nth-child(2){
+                                    width: 10%;
+                                }
+                                .div_th:nth-child(3){
+                                    width: 40%;
+                                }
+                                .div_th:nth-child(4){
+                                    width: 40%;
+                                }
+                            }
+                            .div_table_td{
+
+                                .div_td{
+                                    text-align: center;
+                                    padding: 10px 5px;
+                                }
+                                .div_td:nth-child(1){
+                                    width: 10%;
+                                }
+                                .div_td:nth-child(2){
+                                    width: 10%;
+                                }
+                                .div_td:nth-child(3){
+                                    width: 40%;
+                                }
+                                .div_td:nth-child(4){
+                                    width: 40%;
+                                }
+        
+                            }
+                            .div_table_foot{
+
+                                    .div_foot{
+                                        text-align: center;
+                                        padding: 15px 10px;
+                                    }
+                                    .div_foot:nth-child(1){
+                                        width: 20%;
+                                        text-align: left;
+                                    }
+                                    .div_foot:nth-child(2){
+                                        width: 20%;
+                                        text-align: left;
+                                    }
+                                    .div_foot:nth-child(3){
+                                        width: 20%;
+                                        text-align: right;
+                                    }
+                                    .div_foot:nth-child(4){
+                                        width: 40%;
+                                        text-align: right;
+                                    }
+                                
+                            }
+                            .div_table_btn{
+
+                                .div_btn{
+                                    text-align: center;
+                                    padding: 10px 5px;
+                                }
+                                .div_btn:nth-child(1){
+                                    width: 20%;
+                                    text-align: left;
+                                }
+                                .div_btn:nth-child(2){
+                                    width: 40%;
+                                    text-align: right;
+                                }
+                                .div_btn:nth-child(3){
+                                    width: 40%;
+                                    text-align: right;
+                                }
+
+                                //버튼
+                                .sell_del{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #666;
+                                    color: #666666;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                                .buy_ok{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #d60000;
+                                    color: #ffffff;
+                                    background: #d60000;
+                                    border-radius: 4px;
+                                }
+                                .buy_max{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #d60000;
+                                    color: #d60000;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                                .sell_ok{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #0042b7;
+                                    color: #ffffff;
+                                    background: #0042b7;
+                                    border-radius: 4px;
+                                }
+                                .sell_max{
+                                    padding: 8px 20px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #0042b7;
+                                    color: #0042b7;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                            }
+                        }
+                    }
+                        
                 }
             }
 
@@ -630,6 +1114,280 @@
         .contents_inner{
             width: 95%;
             padding: 15px 0 15px 0;
+
+            // 거래하기
+            .exchange_div{
+            
+                .left_div{
+
+                    .buy_box{
+                        background: #ffffff;
+                        border: 1px solid #f2f2f2;
+
+                        // 계약시간
+                        .timer{
+                            justify-content: space-between;
+                            padding: 10px 10px 30px 10px;
+
+                            // 남은계약시간
+                            .ing_deal p{
+                                margin-bottom: 5px;
+                                font-size: 1.2em;
+                            }
+                            .ing_deal ul li{
+                                margin-right: 5px;
+                                font-size: 2em;
+                            }
+                            .ing_deal ul li span{
+                                padding: 0 8px;
+                            }
+                            .ing_deal ul li:last-child{
+                                margin-right: 0;
+                            }
+
+                            // 다음계약시간
+                            .next_deal p{
+                                text-align: center;
+                                margin-bottom: 5px;
+                                font-size: 1.2em;
+                            }
+                            .next_deal ul li{
+                                margin-right: 5px;
+                                font-size: 2em;
+                            }
+                            .next_deal ul li span{
+                                padding: 0 8px;
+                            }
+                            .next_deal ul li:last-child{
+                                margin-right: 0;
+                            }
+                        }
+                        // 매수매도
+                        .div_table{
+                            font-size: 0.85em;
+
+                            .div_table_th{
+                                
+                                .div_th{
+                                    text-align: center;
+                                    padding: 10px 2px;
+                                }
+                                .div_th:nth-child(1){
+                                    display: none;
+                                }
+                                .div_th:nth-child(2){
+                                    display: none;
+                                }
+                                .div_th:nth-child(3){
+                                    width: 50%;
+                                }
+                                .div_th:nth-child(4){
+                                    width: 50%;
+                                }
+                            }
+                            .div_table_td{
+                                display: flex;
+                                flex-wrap: wrap;
+
+                                .div_td{
+                                    text-align: center;
+                                    padding: 5px 2px;
+                                }
+                                .div_td:nth-child(1){
+                                    width: 50%;
+                                }
+                                .div_td:nth-child(2){
+                                    width: 50%;
+                                }
+                                .div_td:nth-child(3){
+                                    width: 50%;
+                                }
+                                .div_td:nth-child(4){
+                                    width: 50%;
+                                }
+
+                                //매수
+                                .buy_ui{
+                                    padding: 5px 5px;
+                                    border-radius: 4px;
+                                    background: #d60000;
+                                }
+                                .buy_ui span{
+                                    height: 25px;
+                                    line-height: 25px;
+                                    padding: 0 2px;
+                                    font-size: 0.8em;
+                                    border-radius: 2px;
+                                    color: #d60000;
+                                    font-weight: 700;
+                                    background: #ffffff;
+                                }
+                                .buy_ui button{
+                                    width: 25px;
+                                    height: 25px;
+                                    line-height: 20px;
+                                    font-size: 1em;
+                                    font-weight: 700;
+                                    color: #ffffff;
+                                    border: 1px solid #ffffff;
+                                    background: #d60000;
+                                    margin-left: 2px;
+                                }
+                                .buy_ui p{
+                                    display: flex;
+                                    padding: 0 3%;
+                                    font-size: 1.2em;
+                                    color: #ffffff;
+                                }
+                                .deal_buy_max{
+                                    margin-left: 3px;
+                                    padding: 8px 5px;
+                                    color: #d60000;
+                                    border: 1px solid #d60000;
+                                    border-radius: 4px;
+                                    background: none;
+                                    font-weight: 700;
+                                    width: 20%;
+                                    font-size: 0.9em;
+                                }
+                                //매도
+                                .sell_ui{
+                                    padding: 5px 5px;
+                                    border-radius: 4px;
+                                    background: #0042b7;
+                                }
+                                .sell_ui span{
+                                    height: 25px;
+                                    line-height: 25px;
+                                    padding: 0 2px;
+                                    font-size: 0.8em;
+                                    border-radius: 2px;
+                                    color: #0042b7;
+                                    font-weight: 700;
+                                    background: #ffffff;
+                                }
+                                .sell_ui button{
+                                    width: 25px;
+                                    height: 25px;
+                                    line-height: 20px;
+                                    font-size: 1em;
+                                    font-weight: 700;
+                                    color: #ffffff;
+                                    border: 1px solid #ffffff;
+                                    background: #0042b7;
+                                    margin-left: 2px;
+                                }
+                                .sell_ui p{
+                                    display: flex;
+                                    padding: 0 3%;
+                                    font-size: 1.2em;
+                                    color: #ffffff;
+                                }
+                                .deal_sell_max{
+                                    margin-left: 3px;
+                                    padding: 8px 5px;
+                                    color: #0042b7;
+                                    border: 1px solid #0042b7;
+                                    border-radius: 4px;
+                                    background: none;
+                                    font-weight: 700;
+                                    width: 20%;
+                                    font-size: 0.9em;
+                                }
+        
+                            }
+                            .div_table_foot{
+                                flex-wrap: wrap;
+
+                                    .div_foot{
+                                        text-align: center;
+                                        padding: 10px 2px;
+                                    }
+                                    .div_foot:nth-child(1){
+                                        width: 100%;
+                                        text-align: left;
+                                    }
+                                    .div_foot:nth-child(2){
+                                        width: 25%;
+                                        text-align: left;
+                                    }
+                                    .div_foot:nth-child(3){
+                                        width: 25%;
+                                        text-align: right;
+                                    }
+                                    .div_foot:nth-child(4){
+                                        width: 50%;
+                                        text-align: right;
+                                    }
+                                
+                            }
+                            .div_table_btn{
+                                flex-wrap: wrap;
+
+                                .div_btn{
+                                    text-align: center;
+                                    padding: 10px 5px;
+                                }
+                                .div_btn:nth-child(1){
+                                    width: 100%;
+                                    text-align: left;
+                                }
+                                .div_btn:nth-child(2){
+                                    width: 50%;
+                                    text-align: right;
+                                }
+                                .div_btn:nth-child(3){
+                                    width: 50%;
+                                    text-align: right;
+                                }
+
+                                //버튼
+                                .sell_del{
+                                    padding: 8px 15px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #666;
+                                    color: #666666;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                                .buy_ok{
+                                    padding: 8px 15px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #d60000;
+                                    color: #ffffff;
+                                    background: #d60000;
+                                    border-radius: 4px;
+                                }
+                                .buy_max{
+                                    padding: 8px 15px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #d60000;
+                                    color: #d60000;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                                .sell_ok{
+                                    padding: 8px 15px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #0042b7;
+                                    color: #ffffff;
+                                    background: #0042b7;
+                                    border-radius: 4px;
+                                }
+                                .sell_max{
+                                    padding: 8px 15px;
+                                    font-size: 1.1em;
+                                    border: 1px solid #0042b7;
+                                    color: #0042b7;
+                                    background: #ffffff;
+                                    border-radius: 4px;
+                                }
+                            }
+                        }
+                    }
+                        
+                }
+            }
 
             .btn_div{
                 margin-top: 15px;
@@ -1016,7 +1774,7 @@
                     display: flex;
                     align-items: center;
                     height: 12px;
-                    font-size: 0.9em !important;
+                    font-size: 0.83em !important;
                     color: #9a9a9a;
                 }
             }
