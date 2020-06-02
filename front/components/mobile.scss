@@ -1630,7 +1630,7 @@
                         // 계약시간
                         .timer{
                             justify-content: space-between;
-                            padding: 10px 0px 30px 0px;
+                            padding: 8px 0px 15px 0px;
 
                             // 남은계약시간
                             .ing_deal p{
@@ -1668,14 +1668,17 @@
 
                         // 매수매도
                         .div_table{
-                            font-size: 0.85em;
+                            font-size: 0.8em;
                             .div_table_td{
 
                                 .div_td{
-                                    padding: 5px 2px;
+                                    padding: 5px 1px;
                                 }
 
                                 //매수
+                                .buy_ui{
+                                    padding: 2px;
+                                }
                                 .buy_ui{
                                     padding: 2px;
                                 }
@@ -1683,7 +1686,6 @@
                                 .sell_ui{
                                     padding: 3px;
                                 }
-                                
                                 .sell_ui p{
                                     font-size: 0.9em !important;
                                 }
@@ -1694,23 +1696,7 @@
 
                                     .div_foot{
                                         text-align: center;
-                                        padding: 10px 2px;
-                                    }
-                                    .div_foot:nth-child(1){
-                                        width: 100%;
-                                        text-align: left;
-                                    }
-                                    .div_foot:nth-child(2){
-                                        width: 25%;
-                                        text-align: left;
-                                    }
-                                    .div_foot:nth-child(3){
-                                        width: 25%;
-                                        text-align: right;
-                                    }
-                                    .div_foot:nth-child(4){
-                                        width: 50%;
-                                        text-align: right;
+                                        padding: 8px 2px;
                                     }
                                 
                             }
@@ -1719,10 +1705,12 @@
 
                                 .div_btn{
                                     text-align: center;
-                                    padding: 10px 5px;
+                                    padding: 10px 0px;
 
                                     button{
                                         margin-left: 2px;
+                                        padding: 5px 6px;
+                                        font-size: 0.9em;
                                     }
                                 }
                                 .div_btn:nth-child(1){
@@ -1738,47 +1726,6 @@
                                     text-align: right;
                                 }
 
-                                //버튼
-                                .sell_del{
-                                    padding: 5px 8px;
-                                    font-size: 1em;
-                                    border: 1px solid #666;
-                                    color: #666666;
-                                    background: #ffffff;
-                                    border-radius: 4px;
-                                }
-                                .buy_ok{
-                                    padding: 5px 8px;
-                                    font-size: 1em;
-                                    border: 1px solid #d60000;
-                                    color: #ffffff;
-                                    background: #d60000;
-                                    border-radius: 4px;
-                                }
-                                .buy_max{
-                                    padding: 5px 8px;
-                                    font-size: 1em;
-                                    border: 1px solid #d60000;
-                                    color: #d60000;
-                                    background: #ffffff;
-                                    border-radius: 4px;
-                                }
-                                .sell_ok{
-                                    padding: 5px 8px;
-                                    font-size: 1em;
-                                    border: 1px solid #0042b7;
-                                    color: #ffffff;
-                                    background: #0042b7;
-                                    border-radius: 4px;
-                                }
-                                .sell_max{
-                                    padding: 5px 8px;
-                                    font-size: 1em;
-                                    border: 1px solid #0042b7;
-                                    color: #0042b7;
-                                    background: #ffffff;
-                                    border-radius: 4px;
-                                }
                             }
                         }
                     }
