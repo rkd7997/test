@@ -2,6 +2,9 @@ import { all, delay, fork, put, takeEvery, call } from 'redux-saga/effects';
 import agent from "../agent";
 
 import {
+  LOAD_ORDER_CATEGORY_REQUEST,
+  LOAD_ORDER_CATEGORY_SUCCESS,
+  LOAD_ORDER_CATEGORY_FAILURE,
   LOAD_TRANSACTIONS_REQUEST,
   LOAD_TRANSACTIONS_SUCCESS,
   LOAD_TRANSACTIONS_FAILURE,
@@ -9,6 +12,33 @@ import {
   LOAD_USER_TRANSACTIONS_SUCCESS,
   LOAD_USER_TRANSACTIONS_FAILURE,
 } from '../reducers/exchange';
+
+function orderCategoryAPI(orderCategoryNumber) {
+  return {
+    data: {
+      orderCategory: `${orderCategoryNumber}MIN`,
+      orderCategoryNumber: orderCategoryNumber,
+    }
+  }
+}
+
+function* orderCategory(action) {
+  try {
+    const result = yield call(orderCategoryAPI, action.data);
+    yield delay(100);
+    yield put({
+      type: LOAD_ORDER_CATEGORY_SUCCESS,
+      data: result.data,
+    });
+  } catch (e) {
+    console.error(e);
+    yield put({ e, type: LOAD_ORDER_CATEGORY_FAILURE, reason: e.response && e.response.data.reason || 'Server Error' });
+  }
+}
+
+function* watchOrderCategory() {
+  yield takeEvery(LOAD_ORDER_CATEGORY_REQUEST, orderCategory);
+}
 
 function transactionsAPI() {
   return {
@@ -107,6 +137,7 @@ function* watchUserTransactions() {
 
 export default function* exchangeSaga() {
   yield all([
+    fork(watchOrderCategory),
     fork(watchTransactions),
     fork(watchUserTransactions),
   ]);

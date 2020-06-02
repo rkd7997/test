@@ -2,10 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Button, List, Card, Icon, Tabs } from 'antd';
 import dynamic from 'next/dynamic';
 import {useDispatch, useSelector} from "react-redux";
-import {LOAD_USER_TRANSACTIONS_REQUEST} from "../reducers/exchange";
-
-
-
+import {LOAD_ORDER_CATEGORY_REQUEST, LOAD_USER_TRANSACTIONS_REQUEST, LOAD_TRANSACTIONS_REQUEST} from "../reducers/exchange";
 
 const { TabPane } = Tabs;
 
@@ -15,20 +12,12 @@ const TVChartContainer = dynamic(
   { ssr: false },
 );
 
-
 var times = 59;
-
 
 const Exchange = () => {
 
-  const { UserTransactions } = useSelector(state => state.exchange);
+  const { orderCategoryNumber } = useSelector(state => state.exchange);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch({
-      type: LOAD_USER_TRANSACTIONS_REQUEST,
-    });
-  }, []);
 
   // const [time, settime] = useState(times);
   const [smallsec, setsmallsec] = useState(times % 10);
@@ -41,19 +30,38 @@ const Exchange = () => {
   const smallMinutes = next_minutes % 10;
   const bigMinutes = parseInt(next_minutes / 10);
 
+  // TODO :
+  //  1. timer -> state 로
+  //  2. components 로 분리
+
   const [buy1 , setbuy1] = useState(0);
   const [buy2 , setbuy2] = useState(0);
   const [buy3 , setbuy3] = useState(0);
   const [buy4 , setbuy4] = useState(0);
-  
+
   const [sell1 , setsell1] = useState(0);
   const [sell2 , setsell2] = useState(0);
   const [sell3 , setsell3] = useState(0);
   const [sell4 , setsell4] = useState(0);
 
+  const [orderCateNum , setorderCateNum] = useState(1);
 
-
-
+  useEffect(() => {
+    dispatch({
+      type: LOAD_ORDER_CATEGORY_REQUEST,
+      data: orderCateNum,
+    });
+  }, [orderCateNum]);
+  useEffect(() => {
+    dispatch({
+      type: LOAD_TRANSACTIONS_REQUEST,
+    });
+  }, []);
+  useEffect(() => {
+    dispatch({
+      type: LOAD_USER_TRANSACTIONS_REQUEST,
+    });
+  }, []);
 
   if (!First) {
     setFirst(true);
@@ -74,8 +82,6 @@ const Exchange = () => {
     }, 1000);
   }
 
-
-
   const onClickBuyPlus = (num) => {
       if(num === 1){
         if(buy1 === 10) {return;}
@@ -92,12 +98,12 @@ const Exchange = () => {
         if(buy3 === 10) {return;}
         const buys = buy3 + 1;
         setbuy3(buys);
-        
+
       }
       else if(num ===4){
         if(buy4 === 10) {return;}
         const buys = buy4 + 1;
-        setbuy4(buys);        
+        setbuy4(buys);
       }
   }
 
@@ -117,12 +123,12 @@ const Exchange = () => {
       if(buy3 === 0) {return;}
       const buys = buy3 - 1;
       setbuy3(buys);
-      
+
     }
     else if(num ===4){
       if(buy4 === 0) {return;}
       const buys = buy4 - 1;
-      setbuy4(buys);        
+      setbuy4(buys);
     }
 }
 
@@ -143,12 +149,12 @@ const onClickSellPlus = (num) => {
     if(sell3 === 10) {return;}
     const sells = sell3 + 1;
     setsell3(sells);
-    
+
   }
   else if(num ===4){
     if(sell4 === 10) {return;}
     const sells = sell4 + 1;
-    setsell4(sells);        
+    setsell4(sells);
   }
 }
 
@@ -168,12 +174,12 @@ else if(num ===3){
   if(sell3 === 0) {return;}
   const sells = sell3 - 1;
   setsell3(sells);
-  
+
 }
 else if(num ===4){
   if(sell4 === 0) {return;}
   const sells = sell4 - 1;
-  setsell4(sells);        
+  setsell4(sells);
 }
 }
 
@@ -187,10 +193,10 @@ const onClickBuyMax = (num) => {
   }
   else if(num ===3){
     setbuy3(10);
-    
+
   }
   else if(num ===4){
-    setbuy4(10);        
+    setbuy4(10);
   }
 }
 
@@ -200,33 +206,31 @@ const onClickSellMax = (num) => {
   }
   else if(num ===2){
     setsell2(0);
-  
+
   }
   else if(num ===3){
     setsell3(0);
-    
+
   }
   else if(num ===4){
-    setsell4(0);        
+    setsell4(0);
   }
   }
-      
+
 
 const onClickReset = (num) => {
     setsell1(0);
     setsell2(0);
     setsell3(0);
-    setsell4(0);        
+    setsell4(0);
     setbuy1(0);
     setbuy2(0);
     setbuy3(0);
     setbuy4(0);
   }
 
-
-
   return (
-    <div className="exchange_div">      
+    <div className="exchange_div">
       <div className="left_div">
         <div className="trad_box" >
           <TVChartContainer />
@@ -234,7 +238,7 @@ const onClickReset = (num) => {
         <div className="buy_box">
           <div className="card-container">
             <Tabs type="card">
-              <TabPane tab="1분거래" key="1">
+              <TabPane tab={ `${orderCategoryNumber}분거래` } key={ orderCategoryNumber }>
                 <div className="deal_div">
                   {/* 계약시간 */}
                   <div className="timer">
@@ -304,7 +308,7 @@ const onClickReset = (num) => {
                         <div className="div_td">
                           <div className="deal_buy">
                             <div className="buy_ui">
-                              <span>350</span>                              
+                              <span>350</span>
                               <button onClick={() => onClickBuyMinus(2)}>-</button>
                               <p>10,000(<em>{buy2}</em>)</p>
                               <button onClick={() => onClickBuyPlus(2)}>+</button>
@@ -419,8 +423,8 @@ const onClickReset = (num) => {
 
 
 
-              
-           
+
+
             </Tabs>
           </div>
         </div>
