@@ -196,7 +196,7 @@ const Exchange = () => {
                             <div className="buy_ui">
                               <span>350</span>
                               <button>-</button>
-                              <p>100,000(<em>0</em>)</p>
+                              <p>100,000(<em>10</em>)</p>
                               <button>+</button>
                             </div>
                             <button className="deal_buy_max">MAX</button>

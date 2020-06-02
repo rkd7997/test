@@ -1201,19 +1201,22 @@
                                 }
                                 .div_td:nth-child(3){
                                     width: 50%;
+                                    padding: 12px 2px 5px 2px;
                                 }
                                 .div_td:nth-child(4){
                                     width: 50%;
+                                    padding: 12px 2px 5px 2px;
                                 }
 
                                 //매수
                                 .buy_ui{
-                                    padding: 5px 5px;
+                                    padding: 5px 5px 5px 0px;
                                     border-radius: 4px;
                                     background: #d60000;
+                                    position: relative;
                                 }
                                 .buy_ui span{
-                                    height: 25px;
+                                    height: 15px;
                                     line-height: 25px;
                                     padding: 0 2px;
                                     font-size: 0.8em;
@@ -1221,6 +1224,10 @@
                                     color: #d60000;
                                     font-weight: 700;
                                     background: #ffffff;
+                                    border: 1px solid #d60000;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
                                 }
                                 .buy_ui button{
                                     width: 25px;
@@ -1252,12 +1259,12 @@
                                 }
                                 //매도
                                 .sell_ui{
-                                    padding: 5px 5px;
+                                    padding: 5px 5px 5px 0px;
                                     border-radius: 4px;
                                     background: #0042b7;
                                 }
                                 .sell_ui span{
-                                    height: 25px;
+                                    height: 100%;
                                     line-height: 25px;
                                     padding: 0 2px;
                                     font-size: 0.8em;
