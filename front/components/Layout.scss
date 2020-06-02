@@ -13,7 +13,7 @@ body{
     font-weight: 400;
     font-style: normal;
     background: #f8fbfe;
-    color: #333;
+    color: #222;
 }
 
 img{width: 100%;}
@@ -108,7 +108,7 @@ form, table{
 table{
     border-top: 2px solid #666;
     background: #fff;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 table tr th{
     background: #f2f2f2;
@@ -148,7 +148,7 @@ table tr td{
 .tab_tb{
     margin-top: 0;
     border-top: none;
-    font-size: 0.9em;
+    font-size: 1em;
     .tb_r{
         text-align: right;
     }
@@ -231,6 +231,8 @@ input.ant-calendar-picker-input{
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
     border-right: 1px solid #ddd;
+    font-size: 1.1em;
+    font-weight: 500;
 }
 .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
     color: #0042b7;
@@ -238,6 +240,7 @@ input.ant-calendar-picker-input{
     border-top: 1px solid #0042b7;
     border-right: 1px solid #0042b7;
     border-bottom: none;
+    font-weight: 700;
 }
 
 //매수매도tab

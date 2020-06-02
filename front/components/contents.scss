@@ -556,6 +556,7 @@
                             text-align: center;
                             margin-bottom: 5px;
                             font-size: 1.2em;
+                            font-weight: 700;
                         }
                         .ing_deal ul li{
                             display: inline-block;
@@ -583,6 +584,7 @@
                             text-align: center;
                             margin-bottom: 5px;
                             font-size: 1.2em;
+                            font-weight: 700;
                         }
                         .next_deal ul li{
                             display: inline-block;
@@ -638,14 +640,17 @@
                             border-bottom: 1px solid #333;
 
                             .div_td{
-                                text-align: center;
                                 padding: 15px 10px;
                             }
                             .div_td:nth-child(1){
                                 width: 10%;
+                                color: #333;
+                                font-weight: 500;
                             }
                             .div_td:nth-child(2){
                                 width: 10%;
+                                color: #333;
+                                font-weight: 500;
                             }
                             .div_td:nth-child(3){
                                 width: 40%;
@@ -664,7 +669,7 @@
                             .buy_ui{
                                 display: flex;
                                 align-items: center;
-                                justify-content: space-between;
+                                justify-content: space-around;
                                 width: 80%;
                                 padding: 6px 10px;
                                 border-radius: 4px;
@@ -690,8 +695,10 @@
                                 background: #d60000;
                             }
                             .buy_ui p{
+                                width: 54%;
+                                text-align: center;
+                                justify-content: center;
                                 display: flex;
-                                padding: 0 7%;
                                 font-size: 1.2em;
                                 color: #ffffff;
                             }
@@ -741,8 +748,10 @@
                                 background: #0042b7;
                             }
                             .sell_ui p{
+                                width: 54%;
+                                text-align: center;
+                                justify-content: center;
                                 display: flex;
-                                padding: 0 6%;
                                 font-size: 1.2em;
                                 color: #ffffff;
                             }
@@ -910,12 +919,12 @@
 
                 .lnb_tit{
                     padding: 20px 15px;
-                    font-size: 1.2em;
+                    font-size: 1.3em;
                     // border-bottom: 2px solid #10325c;
                     // color: #10325c;
                     background: #a3a3a3;
                     color: #ffffff;
-                    font-weight: 500s;
+                    font-weight: 500;
                 }
 
                 ul{
@@ -923,6 +932,7 @@
                 ul li{
                     padding: 15px 15px;
                     color: #4c4948;
+                    font-size: 1.1em;
                 }
                 ul li.active{
                     background-color: #f5f6fa;
