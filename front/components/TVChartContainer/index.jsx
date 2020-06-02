@@ -69,7 +69,6 @@ export class TVChartContainer extends React.PureComponent {
 		const tvWidget = new widget(widgetOptions);
 		this.tvWidget = tvWidget;
 
-		this._initializeTVWidget(white);
 
 		tvWidget.onChartReady(() => {
 			tvWidget.headerReady().then(() => {

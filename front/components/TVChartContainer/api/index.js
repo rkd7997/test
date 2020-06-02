@@ -20,11 +20,10 @@ export default {
 		console.log('======resolveSymbol running')
 		// console.log('resolveSymbol:',{symbolName})
 		var split_data = symbolName.split(/[:/]/)
-		// console.log({split_data})
 		var symbol_stub = {
 			name: symbolName,
 			description: '',
-			type: 'crypto',
+			type: 'EUR/USD',
 			session: '24x7',
 			timezone: 'Etc/UTC',
 			ticker: symbolName,
