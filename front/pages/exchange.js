@@ -78,20 +78,24 @@ const Exchange = () => {
 
   const onClickBuyPlus = (num) => {
       if(num === 1){
+        if(buy1 === 10) {return;}
         const buys = buy1 + 1;
         setbuy1(buys);
       }
       else if(num ===2){
+        if(buy2 === 10) {return;}
         const buys = buy2 + 1;
         setbuy2(buys);
 
       }
       else if(num ===3){
+        if(buy3 === 10) {return;}
         const buys = buy3 + 1;
         setbuy3(buys);
         
       }
       else if(num ===4){
+        if(buy4 === 10) {return;}
         const buys = buy4 + 1;
         setbuy4(buys);        
       }
@@ -99,51 +103,126 @@ const Exchange = () => {
 
   const onClickBuyMinus = (num) => {
     if(num === 1){
+      if(buy1 === 0) {return;}
       const buys = buy1 - 1;
       setbuy1(buys);
     }
     else if(num ===2){
+      if(buy2 === 0) {return;}
       const buys = buy2 - 1;
       setbuy2(buys);
 
     }
     else if(num ===3){
+      if(buy3 === 0) {return;}
       const buys = buy3 - 1;
       setbuy3(buys);
       
     }
     else if(num ===4){
+      if(buy4 === 0) {return;}
       const buys = buy4 - 1;
       setbuy4(buys);        
     }
 }
 
-  
-  const onClickSell = (num) => {
-    if(num === 1){
-      const buys = buy1 + 1;
-      setbuy1(buys);
-    }
-    else if(num ===2){
-      const buys = buy2 + 1;
-      setbuy2(buys);
 
-    }
-    else if(num ===3){
-      const buys = buy3 + 1;
-      setbuy3(buys);
-      
-    }
-    else if(num ===4){
-      const buys = buy4 + 1;
-      setbuy4(buys);        
-    }
+const onClickSellPlus = (num) => {
+  if(num === 1){
+    if(sell1 === 10) {return;}
+    const sells = sell1 + 1;
+    setsell1(sells);
+  }
+  else if(num ===2){
+    if(sell2 === 10) {return;}
+    const sells = sell2 + 1;
+    setsell2(sells);
+
+  }
+  else if(num ===3){
+    if(sell3 === 10) {return;}
+    const sells = sell3 + 1;
+    setsell3(sells);
+    
+  }
+  else if(num ===4){
+    if(sell4 === 10) {return;}
+    const sells = sell4 + 1;
+    setsell4(sells);        
+  }
 }
 
+const onClickSellMinus = (num) => {
+if(num === 1){
+  if(sell1 === 0) {return;}
+  const sells = sell1 - 1;
+  setsell1(sells);
+}
+else if(num ===2){
+  if(sell2 === 0) {return;}
+  const sells = sell2 - 1;
+  setsell2(sells);
 
+}
+else if(num ===3){
+  if(sell3 === 0) {return;}
+  const sells = sell3 - 1;
+  setsell3(sells);
+  
+}
+else if(num ===4){
+  if(sell4 === 0) {return;}
+  const sells = sell4 - 1;
+  setsell4(sells);        
+}
+}
 
+const onClickBuyMax = (num) => {
+  if(num === 1){
+    setbuy1(10);
+  }
+  else if(num ===2){
+    setbuy2(10);
 
+  }
+  else if(num ===3){
+    setbuy3(10);
+    
+  }
+  else if(num ===4){
+    setbuy4(10);        
+  }
+}
+
+const onClickSellMax = (num) => {
+  if(num === 1){
+    setsell1(0);
+  }
+  else if(num ===2){
+    setsell2(0);
+  
+  }
+  else if(num ===3){
+    setsell3(0);
+    
+  }
+  else if(num ===4){
+    setsell4(0);        
+  }
+  }
       
+
+const onClickReset = (num) => {
+    setsell1(0);
+    setsell2(0);
+    setsell3(0);
+    setsell4(0);        
+    setbuy1(0);
+    setbuy2(0);
+    setbuy3(0);
+    setbuy4(0);
+  }
+
 
 
   return (
@@ -202,18 +281,18 @@ const Exchange = () => {
                               <p>5,000(<em>{buy1}</em>)</p>
                               <button onClick={() => onClickBuyPlus(1)}>+</button>
                             </div>
-                            <button className="deal_buy_max">MAX</button>
+                            <button className="deal_buy_max" onClick={() => onClickBuyMax(1)}>MAX</button>
                           </div>
                         </div>
                         <div className="div_td">
                           <div className="deal_sell">
                             <div className="sell_ui">
                               <span>350</span>
-                              <button>-</button>
-                              <p>5,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <button onClick={() => onClickSellMinus(1)}>-</button>
+                              <p>5,000(<em>{sell1}</em>)</p>
+                              <button onClick={() => onClickSellPlus(1)}>+</button>
                             </div>
-                            <button className="deal_sell_max">MAX</button>
+                            <button className="deal_sell_max" onClick={() => onClickSellMax(1)}>MAX</button>
                           </div>
                         </div>
                       </div>
@@ -230,18 +309,18 @@ const Exchange = () => {
                               <p>10,000(<em>{buy2}</em>)</p>
                               <button onClick={() => onClickBuyPlus(2)}>+</button>
                             </div>
-                            <button className="deal_buy_max">MAX</button>
+                            <button className="deal_buy_max" onClick={() => onClickBuyMax(2)}>MAX</button>
                           </div>
                         </div>
                         <div className="div_td">
                           <div className="deal_sell">
                             <div className="sell_ui">
                               <span>350</span>
-                              <button>-</button>
-                              <p>10,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <button onClick={() => onClickSellMinus(2)}>-</button>
+                              <p>10,000(<em>{sell2}</em>)</p>
+                              <button onClick={() => onClickSellPlus(2)}>+</button>
                             </div>
-                            <button className="deal_sell_max">MAX</button>
+                            <button className="deal_sell_max" onClick={() => onClickSellMax(2)}>MAX</button>
                           </div>
                         </div>
                       </div>
@@ -258,18 +337,18 @@ const Exchange = () => {
                               <p>50,000(<em>{buy3}</em>)</p>
                               <button onClick={() => onClickBuyPlus(3)}>+</button>
                             </div>
-                            <button className="deal_buy_max">MAX</button>
+                            <button className="deal_buy_max" onClick={() => onClickBuyMax(3)}>MAX</button>
                           </div>
                         </div>
                         <div className="div_td">
                           <div className="deal_sell">
                             <div className="sell_ui">
                               <span>350</span>
-                              <button>-</button>
-                              <p>50,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <button onClick={() => onClickSellMinus(3)}>-</button>
+                              <p>50,000(<em>{sell3}</em>)</p>
+                              <button onClick={() => onClickSellPlus(3)}>+</button>
                             </div>
-                            <button className="deal_sell_max">MAX</button>
+                            <button className="deal_sell_max" onClick={() => onClickSellMax(3)}>MAX</button>
                           </div>
                         </div>
                       </div>
@@ -286,18 +365,18 @@ const Exchange = () => {
                               <p>100,000(<em>{buy4}</em>)</p>
                               <button onClick={() => onClickBuyPlus(4)}>+</button>
                             </div>
-                            <button className="deal_buy_max">MAX</button>
+                            <button className="deal_buy_max" onClick={() => onClickBuyMax(4)}>MAX</button>
                           </div>
                         </div>
                         <div className="div_td">
                           <div className="deal_sell">
                             <div className="sell_ui">
                               <span>350</span>
-                              <button>-</button>
-                              <p>100,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <button onClick={() => onClickSellMinus(4)}>-</button>
+                              <p>100,000(<em>{sell4}</em>)</p>
+                              <button onClick={() => onClickSellPlus(4)}>+</button>
                             </div>
-                            <button className="deal_sell_max">MAX</button>
+                            <button className="deal_sell_max" onClick={() => onClickSellMax(4)}>MAX</button>
                           </div>
                         </div>
                       </div>
@@ -313,15 +392,15 @@ const Exchange = () => {
                       {/* div_table_btn */}
                       <div className="div_table_btn">
                         <div className="div_btn">
-                          <button className="sell_del">초기화</button>
+                          <button className="sell_del" onClick={() =>onClickReset()}>초기화</button>
                         </div>
                         <div className="div_btn">
                           <button className="buy_ok">매수신청</button>
-                          <button className="buy_max">매수MAX</button>
+                          <button className="buy_max" onClick={() => onClickAllBuyMax()}>매수MAX</button>
                         </div>
                         <div className="div_btn">
                           <button className="sell_ok">매도신청</button>
-                          <button className="sell_max">매도MAX</button>
+                          <button className="sell_max" onClick={() => onClickAllSellMax()}>매도MAX</button>
                         </div>
 
                       </div>
