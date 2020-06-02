@@ -24,12 +24,12 @@ io2.socket.on('PriceAdd', function (msg) {
       return
      }
     }
+
   if (!sub) return;
   let bar = sub.lastBar;
   if (bar.isBarClosed) {
     return;
   }
-
   const data = {
     time: bar.time/1000,
     price: bar.price

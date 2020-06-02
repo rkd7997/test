@@ -15,6 +15,7 @@ const ChartUP = ({ Component, store }) => {
     <Provider store={store}>
       <Head>
         <title>ChartUP</title>
+        <link rel="shortcut icon" type="image⁄x-icon" sizes="196x196" href="/img/title_logo.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css" />
         <link href="https://cdn.jsdelivr.net/npm/remixicon@2.4.0/fonts/remixicon.css" rel="stylesheet" />
         {/* <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>  */}
