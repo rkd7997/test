@@ -1327,56 +1327,60 @@
                                 .div_btn{
                                     text-align: center;
                                     padding: 10px 5px;
+
+                                    button{
+                                        margin-left: 2px;
+                                    }
                                 }
                                 .div_btn:nth-child(1){
-                                    width: 100%;
+                                    width: 20%;
                                     text-align: left;
                                 }
                                 .div_btn:nth-child(2){
-                                    width: 50%;
+                                    width: 40%;
                                     text-align: right;
                                 }
                                 .div_btn:nth-child(3){
-                                    width: 50%;
+                                    width: 40%;
                                     text-align: right;
                                 }
 
                                 //버튼
                                 .sell_del{
-                                    padding: 8px 15px;
-                                    font-size: 1.1em;
+                                    padding: 5px 8px;
+                                    font-size: 1em;
                                     border: 1px solid #666;
                                     color: #666666;
                                     background: #ffffff;
                                     border-radius: 4px;
                                 }
                                 .buy_ok{
-                                    padding: 8px 15px;
-                                    font-size: 1.1em;
+                                    padding: 5px 8px;
+                                    font-size: 1em;
                                     border: 1px solid #d60000;
                                     color: #ffffff;
                                     background: #d60000;
                                     border-radius: 4px;
                                 }
                                 .buy_max{
-                                    padding: 8px 15px;
-                                    font-size: 1.1em;
+                                    padding: 5px 8px;
+                                    font-size: 1em;
                                     border: 1px solid #d60000;
                                     color: #d60000;
                                     background: #ffffff;
                                     border-radius: 4px;
                                 }
                                 .sell_ok{
-                                    padding: 8px 15px;
-                                    font-size: 1.1em;
+                                    padding: 5px 8px;
+                                    font-size: 1em;
                                     border: 1px solid #0042b7;
                                     color: #ffffff;
                                     background: #0042b7;
                                     border-radius: 4px;
                                 }
                                 .sell_max{
-                                    padding: 8px 15px;
-                                    font-size: 1.1em;
+                                    padding: 5px 8px;
+                                    font-size: 1em;
                                     border: 1px solid #0042b7;
                                     color: #0042b7;
                                     background: #ffffff;
