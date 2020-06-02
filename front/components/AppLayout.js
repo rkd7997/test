@@ -223,7 +223,7 @@ const AppLayout = ({ children }) => {
               <div className="fotter_logo"><img src="/img/fotter_logo.png" /></div>
               <ul>
                 <li className="company_info">주식회사 차트파트너스<span></span>대표 김유상</li>
-                <li className="company_info">서울특별시 강남구 테헤란로 13길 13-3 503호<span></span>350-86-01612</li>
+                <li className="company_info">서울특별시 강남구 테헤란로 13길 13-3 503호<span></span>사업자등록번호 350-86-01612</li>
                 <li>
                   <Link href="/user-term"><a>서비스이용약관</a></Link><span></span>
                   <Link href="/private-term"><a>개인정보처리방침</a></Link>
