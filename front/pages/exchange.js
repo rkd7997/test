@@ -3,6 +3,8 @@ import { Button, List, Card, Icon, Tabs } from 'antd';
 // import NicknameEditForm from '../components/NicknameEditForm';
 // import ChartComponent from '../components/ChartComponent'
 import dynamic from 'next/dynamic';
+import {useDispatch, useSelector} from "react-redux";
+import {LOAD_USER_TRANSACTIONS_REQUEST} from "../reducers/exchange";
 
 // import TVChartContainer from '../components/TVChartContainer/'
 
@@ -19,6 +21,16 @@ const TVChartContainer = dynamic(
 var times =59;
 
 const Exchange = () => {
+
+  const { UserTransactions } = useSelector(state => state.exchange);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: LOAD_USER_TRANSACTIONS_REQUEST,
+    });
+  }, []);
+
   // const [time, settime] = useState(times);
   const [smallsec, setsmallsec] = useState(times%10);
   const [bigsec, setbigsec] = useState(parseInt(times/10));

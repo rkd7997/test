@@ -1,5 +1,6 @@
 import { all, delay, fork, put, takeEvery, call } from 'redux-saga/effects';
-import axios from 'axios';
+import agent from "../agent";
+
 import {
   LOAD_TRANSACTIONS_REQUEST,
   LOAD_TRANSACTIONS_SUCCESS,
@@ -54,6 +55,9 @@ function* watchTransactions() {
 }
 
 function userTransactionsAPI() {
+  agent.loadRealtimeResult().then(function (res) {
+    console.log("res", res);
+  });
   return {
     data: [
       {

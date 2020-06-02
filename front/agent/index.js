@@ -1,7 +1,8 @@
 import axios from 'axios';
 import qs from 'qs';
 
-const API_ROOT = `${process.env.API_ENDPOINT}/api/${process.env.API_VERSION}`;
+// const API_ROOT = `${process.env.API_ENDPOINT}/api/${process.env.API_VERSION}`;
+const API_ROOT = `http://211.62.107.211:1340/api/v1`;
 
 class Agent {
     constructor(baseURL = null) {
