@@ -1,12 +1,10 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Button, List, Card, Icon, Tabs } from 'antd';
-// import NicknameEditForm from '../components/NicknameEditForm';
-// import ChartComponent from '../components/ChartComponent'
 import dynamic from 'next/dynamic';
 import {useDispatch, useSelector} from "react-redux";
 import {LOAD_USER_TRANSACTIONS_REQUEST} from "../reducers/exchange";
 
-// import TVChartContainer from '../components/TVChartContainer/'
+
 
 
 const { TabPane } = Tabs;
@@ -19,6 +17,7 @@ const TVChartContainer = dynamic(
 
 
 var times = 59;
+
 
 const Exchange = () => {
 
@@ -42,6 +41,18 @@ const Exchange = () => {
   const smallMinutes = next_minutes % 10;
   const bigMinutes = parseInt(next_minutes / 10);
 
+  const [buy1 , setbuy1] = useState(0);
+  const [buy2 , setbuy2] = useState(0);
+  const [buy3 , setbuy3] = useState(0);
+  const [buy4 , setbuy4] = useState(0);
+  
+  const [sell1 , setsell1] = useState(0);
+  const [sell2 , setsell2] = useState(0);
+  const [sell3 , setsell3] = useState(0);
+  const [sell4 , setsell4] = useState(0);
+
+
+
 
 
   if (!First) {
@@ -61,21 +72,85 @@ const Exchange = () => {
       setbigsec(parseInt(times / 10));
       // console.log(smallsec,bigsec,time,i)
     }, 1000);
-
   }
 
+
+
+  const onClickBuyPlus = (num) => {
+      if(num === 1){
+        const buys = buy1 + 1;
+        setbuy1(buys);
+      }
+      else if(num ===2){
+        const buys = buy2 + 1;
+        setbuy2(buys);
+
+      }
+      else if(num ===3){
+        const buys = buy3 + 1;
+        setbuy3(buys);
+        
+      }
+      else if(num ===4){
+        const buys = buy4 + 1;
+        setbuy4(buys);        
+      }
+  }
+
+  const onClickBuyMinus = (num) => {
+    if(num === 1){
+      const buys = buy1 - 1;
+      setbuy1(buys);
+    }
+    else if(num ===2){
+      const buys = buy2 - 1;
+      setbuy2(buys);
+
+    }
+    else if(num ===3){
+      const buys = buy3 - 1;
+      setbuy3(buys);
+      
+    }
+    else if(num ===4){
+      const buys = buy4 - 1;
+      setbuy4(buys);        
+    }
+}
+
+  
+  const onClickSell = (num) => {
+    if(num === 1){
+      const buys = buy1 + 1;
+      setbuy1(buys);
+    }
+    else if(num ===2){
+      const buys = buy2 + 1;
+      setbuy2(buys);
+
+    }
+    else if(num ===3){
+      const buys = buy3 + 1;
+      setbuy3(buys);
+      
+    }
+    else if(num ===4){
+      const buys = buy4 + 1;
+      setbuy4(buys);        
+    }
+}
+
+
+
+
+      
+
+
   return (
-    <div className="exchange_div">
-
+    <div className="exchange_div">      
       <div className="left_div">
-
         <div className="trad_box" >
-
-
-
           <TVChartContainer />
-          {/* <ChartComponent/> */}
-
         </div>
         <div className="buy_box">
           <div className="card-container">
@@ -123,9 +198,9 @@ const Exchange = () => {
                           <div className="deal_buy">
                             <div className="buy_ui">
                               <span>350</span>
-                              <button>-</button>
-                              <p>5,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <button onClick={() => onClickBuyMinus(1)}>-</button>
+                              <p>5,000(<em>{buy1}</em>)</p>
+                              <button onClick={() => onClickBuyPlus(1)}>+</button>
                             </div>
                             <button className="deal_buy_max">MAX</button>
                           </div>
@@ -150,10 +225,10 @@ const Exchange = () => {
                         <div className="div_td">
                           <div className="deal_buy">
                             <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>10,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <span>350</span>                              
+                              <button onClick={() => onClickBuyMinus(2)}>-</button>
+                              <p>10,000(<em>{buy2}</em>)</p>
+                              <button onClick={() => onClickBuyPlus(2)}>+</button>
                             </div>
                             <button className="deal_buy_max">MAX</button>
                           </div>
@@ -179,9 +254,9 @@ const Exchange = () => {
                           <div className="deal_buy">
                             <div className="buy_ui">
                               <span>350</span>
-                              <button>-</button>
-                              <p>50,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <button onClick={() => onClickBuyMinus(3)}>-</button>
+                              <p>50,000(<em>{buy3}</em>)</p>
+                              <button onClick={() => onClickBuyPlus(3)}>+</button>
                             </div>
                             <button className="deal_buy_max">MAX</button>
                           </div>
@@ -207,9 +282,9 @@ const Exchange = () => {
                           <div className="deal_buy">
                             <div className="buy_ui">
                               <span>350</span>
-                              <button>-</button>
-                              <p>100,000(<em>0</em>)</p>
-                              <button>+</button>
+                              <button onClick={() => onClickBuyMinus(4)}>-</button>
+                              <p>100,000(<em>{buy4}</em>)</p>
+                              <button onClick={() => onClickBuyPlus(4)}>+</button>
                             </div>
                             <button className="deal_buy_max">MAX</button>
                           </div>
@@ -256,358 +331,17 @@ const Exchange = () => {
                   {/* 매수매도 */}
                 </div>
               </TabPane>
-              <TabPane tab="2분거래" key="2">
-                <div className="deal_div">
-                  {/* 계약시간 */}
-                  <div className="timer">
-                    <div className="ing_deal">
-                      <p>남은 계약 시간</p>
-                      <ul>
-                        <li><span>0</span></li>
-                        <li><span>2</span></li>
-                        <li>:</li>
-                        <li><span>0</span></li>
-                        <li><span>5</span></li>
-                      </ul>
-                    </div>
-                    <div className="next_deal">
-                      <p>다음 계약 시간</p>
-                      <ul>
-                        <li><span>0</span></li>
-                        <li><span>2</span></li>
-                        <li>:</li>
-                        <li><span>0</span></li>
-                        <li><span>5</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* 계약시간 */}
-                  {/* 매수매도 */}
-                  <div className="buy_sell">
-                    <div className="div_table">
-                      <div className="div_table_th">
-                      <div className="div_th">수량</div>
-                        <div className="div_th">실현/실격</div>
-                        <div className="div_th buy_color">매수</div>
-                        <div className="div_th sell_color">매도</div>
-                      </div>
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">1LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>5,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>5,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">2LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>10,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>10,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">10LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>50,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>50,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">20LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>100,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>100,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_foot */}
-                      <div className="div_table_foot">
-                        <div className="div_foot">보유금액: 10,000 원</div>
-                        <div className="div_foot">신청금액:</div>
-                        <div className="div_foot buy_color">100,000</div>
-                        <div className="div_foot sell_color">200,000</div>
-                      </div>
-                      {/* div_table_foot */}
-                      {/* div_table_btn */}
-                      <div className="div_table_btn">
-                        <div className="div_btn">
-                          <button className="sell_del">초기화</button>
-                        </div>
-                        <div className="div_btn">
-                          <button className="buy_ok">매수신청</button>
-                          <button className="buy_max">매수MAX</button>
-                        </div>
-                        <div className="div_btn">
-                          <button className="sell_ok">매도신청</button>
-                          <button className="sell_max">매도MAX</button>
-                        </div>
 
-                      </div>
-                      {/* div_table_btn */}
-                    </div>
-                  </div>
-                  {/* 매수매도 */}
-                </div>
-              </TabPane>
-              <TabPane tab="5분거래" key="3">
-                <div className="deal_div">
-                  {/* 계약시간 */}
-                  <div className="timer">
-                    <div className="ing_deal">
-                      <p>남은 계약 시간</p>
-                      <ul>
-                        <li><span>0</span></li>
-                        <li><span>2</span></li>
-                        <li>:</li>
-                        <li><span>0</span></li>
-                        <li><span>5</span></li>
-                      </ul>
-                    </div>
-                    <div className="next_deal">
-                      <p>다음 계약 시간</p>
-                      <ul>
-                        <li><span>0</span></li>
-                        <li><span>2</span></li>
-                        <li>:</li>
-                        <li><span>0</span></li>
-                        <li><span>5</span></li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* 계약시간 */}
-                  {/* 매수매도 */}
-                  <div className="buy_sell">
-                    <div className="div_table">
-                      <div className="div_table_th">
-                      <div className="div_th">수량</div>
-                        <div className="div_th">실현/실격</div>
-                        <div className="div_th buy_color">매수</div>
-                        <div className="div_th sell_color">매도</div>
-                      </div>
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">1LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>5,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>5,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">2LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>10,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>10,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">10LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>50,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>50,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_td */}
-                      <div className="div_table_td">
-                        <div className="div_td">20LOT</div>
-                        <div className="div_td">10</div>
-                        <div className="div_td">
-                          <div className="deal_buy">
-                            <div className="buy_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>100,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_buy_max">MAX</button>
-                          </div>
-                        </div>
-                        <div className="div_td">
-                          <div className="deal_sell">
-                            <div className="sell_ui">
-                              <span>350</span>
-                              <button>-</button>
-                              <p>100,000(<em>0</em>)</p>
-                              <button>+</button>
-                            </div>
-                            <button className="deal_sell_max">MAX</button>
-                          </div>
-                        </div>
-                      </div>
-                      {/* div_table_td */}
-                      {/* div_table_foot */}
-                      <div className="div_table_foot">
-                        <div className="div_foot">보유금액: 10,000 원</div>
-                        <div className="div_foot">신청금액:</div>
-                        <div className="div_foot buy_color">100,000</div>
-                        <div className="div_foot sell_color">200,000</div>
-                      </div>
-                      {/* div_table_foot */}
-                      {/* div_table_btn */}
-                      <div className="div_table_btn">
-                        <div className="div_btn">
-                          <button className="sell_del">초기화</button>
-                        </div>
-                        <div className="div_btn">
-                          <button className="buy_ok">매수신청</button>
-                          <button className="buy_max">매수MAX</button>
-                        </div>
-                        <div className="div_btn">
-                          <button className="sell_ok">매도신청</button>
-                          <button className="sell_max">매도MAX</button>
-                        </div>
 
-                      </div>
-                      {/* div_table_btn */}
-                    </div>
-                  </div>
-                  {/* 매수매도 */}
-                </div>
-              </TabPane>
+
+
+
+
+
+
+
+              
+           
             </Tabs>
           </div>
         </div>
