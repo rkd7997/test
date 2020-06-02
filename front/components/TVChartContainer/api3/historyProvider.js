@@ -12,9 +12,9 @@ export default {
 					var bars = [];
 					if(first){
 					for(var i=0; i<response.data.length;i++){
+
 						const el = response.data[i];
 						let times = new Date(el.time).getTime();
-						console.log(times,'타임즈')
 						const obj ={
 							time: times, //TradingView requires bar time in ms
 							low: el.low,
