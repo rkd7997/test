@@ -22,7 +22,7 @@ export default {
 		var symbol_stub = {
 			name: symbolName,
 			description: '',
-			type: 'USD',
+			type: 'crypto',
 			session: '24x7',
 			timezone: 'Etc/UTC',
 			ticker: symbolName,
